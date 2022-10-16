@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -19,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import com.example.onboardingcompose.R
 import com.example.onboardingcompose.navigation.Screen
 import com.example.onboardingcompose.util.OnBoardingPage
 import com.example.onboardingcompose.viewmodel.WelcomeViewModel
@@ -31,6 +33,9 @@ fun WelcomeScreen(
     navController: NavHostController,
     welcomeViewModel: WelcomeViewModel = hiltViewModel()
 ) {
+    Image(painter = painterResource(id = R.drawable.imgonline_com_ua_resize_llvkvthsnqrxz), contentDescription = null,
+    modifier = Modifier.fillMaxSize().fillMaxHeight().fillMaxWidth(), contentScale = ContentScale.FillHeight)
+
     val pages = listOf(
         OnBoardingPage.First,
         OnBoardingPage.Second,
