@@ -9,6 +9,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.onboardingcompose.screen.HomeScreen
+import com.example.onboardingcompose.screen.Papers
 
 import com.example.onboardingcompose.screen.WelcomeScreen
 
@@ -29,7 +30,11 @@ fun SetupNavGraph(
             WelcomeScreen(navController = navController)
         }
         composable(route = Screen.Home.route) {
-         HomeScreen(navController = navController)
+            HomeScreen(navController = navController)
+        }
+        composable(route = Screen.Papers.route) {
+            Papers(navController = navController)
+
         }
     }
 }

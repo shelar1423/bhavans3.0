@@ -12,7 +12,8 @@ sealed class slider(
    // val description: String
 ) {
     object First : slider(
-        image = R.drawable.b3)
+        image = R.drawable.b3
+    )
        /* title = "Welcome",
         description = "to the official Bhavan's App"
     )*/

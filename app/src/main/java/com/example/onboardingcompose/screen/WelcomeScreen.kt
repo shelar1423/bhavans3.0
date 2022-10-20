@@ -22,6 +22,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.onboardingcompose.R
 import com.example.onboardingcompose.navigation.Screen
+import com.example.onboardingcompose.ui.theme.ButtonBlue
 import com.example.onboardingcompose.util.OnBoardingPage
 import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 import com.google.accompanist.pager.*
@@ -33,7 +34,8 @@ fun WelcomeScreen(
     navController: NavHostController,
     welcomeViewModel: WelcomeViewModel = hiltViewModel()
 ) {
-    Image(painter = painterResource(id = R.drawable.imgonline_com_ua_resize_llvkvthsnqrxz), contentDescription = null,
+
+    Image(painter = painterResource(id = R.drawable.mock1), contentDescription = null,
     modifier = Modifier.fillMaxSize().fillMaxHeight().fillMaxWidth(), contentScale = ContentScale.FillHeight)
 
     val pages = listOf(
@@ -84,13 +86,13 @@ fun PagerScreen(onBoardingPage: OnBoardingPage) {
             painter = painterResource(id = onBoardingPage.image),
             contentDescription = "Pager Image"
         )
-        Text(
+        Text( color = ButtonBlue,
             modifier = Modifier
                 .fillMaxWidth(),
             text = onBoardingPage.title,
             fontSize = MaterialTheme.typography.h4.fontSize,
             fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
         )
         Text(
             modifier = Modifier
@@ -129,7 +131,7 @@ fun FinishButton(
                     contentColor = Color.White
                 )
             ) {
-                Text(text = "Finish")
+                Text(text = "Finish", color = Color.White)
             }
         }
     }
