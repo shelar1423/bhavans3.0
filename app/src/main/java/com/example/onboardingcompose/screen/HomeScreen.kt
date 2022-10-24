@@ -145,7 +145,7 @@ fun HomeScreen(
         contentDescription = null,
         //alignment = Alignment.TopCenter,
         modifier = Modifier
-            .padding(top = 0.dp, bottom =1.dp)
+            .padding(top = 0.dp, bottom = 1.dp)
 
             .background(color = Color.Transparent)
            //.fillMaxWidth()

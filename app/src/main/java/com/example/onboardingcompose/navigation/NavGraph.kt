@@ -34,7 +34,6 @@ fun SetupNavGraph(
         }
         composable(route = Screen.Papers.route) {
             Papers(navController = navController)
-
         }
     }
 }

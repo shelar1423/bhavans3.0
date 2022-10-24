@@ -41,14 +41,15 @@ fun WelcomeScreen(
     val pages = listOf(
         OnBoardingPage.First,
         OnBoardingPage.Second,
-        OnBoardingPage.Third
+        OnBoardingPage.Third,
+        OnBoardingPage.Fourth
     )
     val pagerState = rememberPagerState()
 
     Column(modifier = Modifier.fillMaxSize()) {
         HorizontalPager(
             modifier = Modifier.weight(10f),
-            count = 3,
+            count = 4,
             state = pagerState,
             verticalAlignment = Alignment.Top
         ) { position ->
@@ -123,7 +124,7 @@ fun FinishButton(
     ) {
         AnimatedVisibility(
             modifier = Modifier.fillMaxWidth(),
-            visible = pagerState.currentPage == 2
+            visible = pagerState.currentPage == 3
         ) {
             Button(
                 onClick = onClick,
@@ -158,5 +159,13 @@ fun SecondOnBoardingScreenPreview() {
 fun ThirdOnBoardingScreenPreview() {
     Column(modifier = Modifier.fillMaxSize()) {
         PagerScreen(onBoardingPage = OnBoardingPage.Third)
+    }
+}
+
+@Composable
+@Preview(showBackground = true)
+fun FourthOnBoardingScreenPreview() {
+    Column(modifier = Modifier.fillMaxSize()) {
+        PagerScreen(onBoardingPage = OnBoardingPage.Fourth)
     }
 }
