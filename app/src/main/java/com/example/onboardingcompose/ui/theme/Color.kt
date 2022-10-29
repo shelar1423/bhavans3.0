@@ -27,7 +27,4 @@ val BlueViolet1 = Color(0xffaeb4fd)
 val BlueViolet2 = Color(0xff9fa5fe)
 val grey = Color(0xA8C1C2D8)
 
-val c1= Color(0xFF73e8ff)
-val c2= Color(0xffeeeeee)
-
 
