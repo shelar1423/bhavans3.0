@@ -16,13 +16,19 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
 import com.example.onboardingcompose.ui.theme.c1
 import com.example.onboardingcompose.ui.theme.c2
 import com.example.onboardingcompose.R
 import com.example.onboardingcompose.ui.theme.OnBoardingComposeTheme
+import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 
 @Composable
-fun Main3() {
+fun Main3(
+    navController: NavHostController,
+    welcomeViewModel: WelcomeViewModel = hiltViewModel()
+) {
     TopImg()
     Column {
         h1()
@@ -95,6 +101,7 @@ fun body3() {
 }
 
 //prev1
+/*
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview3() {
@@ -108,3 +115,5 @@ fun DefaultPreview3() {
 
     }
 }
+
+ */

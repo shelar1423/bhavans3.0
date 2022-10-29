@@ -16,10 +16,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.example.onboardingcompose.ui.theme.c1
 import com.example.onboardingcompose.ui.theme.c2
 import com.example.onboardingcompose.R
+import com.example.onboardingcompose.navigation.Screen
 import com.example.onboardingcompose.ui.theme.OnBoardingComposeTheme
+import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 
 @Composable
 fun TopImg() {
@@ -48,14 +53,61 @@ fun TopImg() {
 }
 
 @Composable
-fun Main1() {
+fun Main1(navController: NavHostController,
+          welcomeViewModel: WelcomeViewModel = hiltViewModel()
+) {
     TopImg()
     Column {
         h1()
-        body1()
+
+
+            Column(verticalArrangement = Arrangement.spacedBy(30.dp),
+                modifier = Modifier.fillMaxHeight()) {
+                Box(modifier = Modifier.padding(30.dp, bottom = 10.dp, top = 40.dp),
+                    contentAlignment = Alignment.Center,
+
+                    ) {
+                    Text(text = "Which Degree are you searching for",
+                        fontSize = 35.sp,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                }
+
+                GradientButton(
+                    text = "Under Graduation (U.G)",
+                    onClick = { navController.navigate(Screen.ug1.route) },
+                    textColor = Color.Black,
+                    gradient = Brush.horizontalGradient(
+                        colors = listOf(c2, c1)
+
+                    )
+                )
+
+                GradientButton(
+                    text = "Post Graduation (P.G)",
+                    onClick = { navController.navigate(Screen.pg1.route) },
+                    textColor = Color.Black,
+                    gradient = Brush.horizontalGradient(
+                        colors = listOf(c2, c1)
+                    )
+                )
+
+                GradientButton(
+                    text = "Doctor of Philosophy (Ph.D)",
+                    onClick = { navController.navigate(Screen.ph1.route) },
+                    textColor = Color.Black,
+                    gradient = Brush.horizontalGradient(
+                        colors = listOf(c2, c1)
+                    )
+                )
+            }
+
+
+
+        }
     }
 
-}
+
 
 @Composable
 fun h1() {
@@ -85,9 +137,9 @@ fun h1() {
 
 
 }
-
+/*
 @Composable
-fun body1() {
+fun body1(  navController: NavHostController) {
 
     Column(verticalArrangement = Arrangement.spacedBy(30.dp),
         modifier = Modifier.fillMaxHeight()) {
@@ -103,6 +155,7 @@ fun body1() {
 
         GradientButton(
             text = "Under Graduation (U.G)",
+            onClick = { navController.navigate(Screen.Welcome.route) },
             textColor = Color.Black,
             gradient = Brush.horizontalGradient(
                 colors = listOf(c2, c1)
@@ -131,7 +184,10 @@ fun body1() {
 
 }
 
+
+ */
 //prev1
+/*
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview1() {
@@ -145,3 +201,6 @@ fun DefaultPreview1() {
 
     }
 }
+
+
+ */

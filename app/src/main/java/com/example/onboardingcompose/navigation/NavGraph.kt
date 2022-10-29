@@ -8,10 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.onboardingcompose.screen.HomeScreen
-import com.example.onboardingcompose.screen.Papers
-
-import com.example.onboardingcompose.screen.WelcomeScreen
+import com.example.onboardingcompose.screen.*
 
 import com.google.accompanist.pager.ExperimentalPagerApi
 
@@ -34,6 +31,18 @@ fun SetupNavGraph(
         }
         composable(route = Screen.Papers.route) {
             Papers(navController = navController)
+        }
+        composable(route= Screen.Question1.route) {
+            Main1(navController = navController)
+        }
+        composable(route= Screen.ug1.route) {
+            Main2(navController = navController)
+        }
+        composable(route= Screen.pg1.route) {
+            Main3(navController = navController)
+        }
+        composable(route= Screen.ph1.route) {
+            Main4(navController = navController)
         }
     }
 }
