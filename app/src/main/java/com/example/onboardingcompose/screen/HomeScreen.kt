@@ -145,7 +145,7 @@ fun HomeScreen(
         contentDescription = null,
         //alignment = Alignment.TopCenter,
         modifier = Modifier
-            .padding(top = 0.dp, bottom =1.dp)
+            .padding(top = 0.dp, bottom = 1.dp)
 
             .background(color = Color.Transparent)
            //.fillMaxWidth()
@@ -232,7 +232,7 @@ fun HomeScreen(
     }*/
 
     GradientButton1(
-        onClick = { navController.navigate(Screen.Welcome.route) },
+        onClick = { navController.navigate(Screen.Question1.route) },
         gradient = gradient,
 
     )
@@ -337,9 +337,6 @@ fun GradientButton2(gradient: Brush, onClick: () -> Unit, ) {
        // horizontalAlignment = Alignment,
         // verticalArrangement = Arrangement.spacedBy(10.49358081817627.dp, Alignment.Top),
         modifier = Modifier
-
-
-
             .clip(RoundedCornerShape(topStart = 17.489301681518555.dp, topEnd = 17.489301681518555.dp, bottomStart = 17.489301681518555.dp, bottomEnd = 17.489301681518555.dp))
     ) {
 
@@ -355,8 +352,6 @@ fun GradientButton2(gradient: Brush, onClick: () -> Unit, ) {
                 .background(gradient),
 
                 //.padding(horizontal = 1.dp, vertical = 8.dp)
-
-
 
             onClick = onClick
         ) {
