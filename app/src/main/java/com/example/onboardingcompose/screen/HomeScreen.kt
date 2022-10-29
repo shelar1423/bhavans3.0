@@ -21,7 +21,6 @@ import androidx.compose.ui.unit.sp
 import com.example.onboardingcompose.R
 import android.service.autofill.OnClickAction as OnClickAction1*/
 
-
 /*@Composable
 @Preview
 fun HomeScreen() {
