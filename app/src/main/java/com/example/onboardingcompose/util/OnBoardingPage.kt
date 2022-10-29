@@ -10,29 +10,27 @@ sealed class OnBoardingPage(
     val image: Int,
     val title: String,
     val description: String,
-
+    val color: Color
 ) {
     object First : OnBoardingPage(
         image = R.drawable.bvcreal,
-        title = "Bhavans",
-        description = "Welcome to the official Bhavan's App"
+        title = "Welcome",
+        description = "to the official Bhavan's App",
+        color = ButtonBlue
     )
 
     object Second : OnBoardingPage(
-        image = R.drawable.preqp,
-        title = "Question Papers",
-        description = "You can access previous year question papers"
+        image = R.drawable.cap_1,
+        title = "T.B.D",
+        description = "TO Be Decided",
+        color = Color.Blue
+
     )
 
     object Third : OnBoardingPage(
-        image = R.drawable.nav1,
-        title = "Navigation",
-        description = "Makes your navigation in the college much easier"
-    )
-
-    object Fourth : OnBoardingPage(
-        image = R.drawable.manymore,
-        title = "",
-        description = "And Many More!!... "
+        image = R.drawable.image_1,
+        title = "T.B.D",
+        description = "TO Be Decided",
+        color = ButtonBlue
     )
 }
