@@ -302,7 +302,7 @@ fun GradientButton1(gradient: Brush, onClick: () -> Unit, ) {
 
             modifier = Modifier
                 //.padding(150.dp)
-                .padding(top = 350.dp, start = 205.dp)
+                .padding(top = 350.dp, start = 170.dp)
                 .height(100.dp)
                 .width(188.dp)
                 .clip(shape = RoundedCornerShape(20.dp))
@@ -430,7 +430,7 @@ fun GradientButton4(gradient: Brush, onClick: () -> Unit, ) {
 
             modifier = Modifier
                 //.padding(150.dp)
-                .padding(top = 470.dp, start = 205.dp)
+                .padding(top = 470.dp, start = 170.dp)
 
                 .height(100.dp)
                 .width(188.dp)
@@ -539,7 +539,7 @@ fun GradientButton6(gradient: Brush, onClick: () -> Unit, ) {
             modifier = Modifier
                 .wrapContentWidth()
                 //.padding(150.dp)
-                .padding(top = 590.dp, start = 205.dp)
+                .padding(top = 590.dp, start = 170.dp)
                 .height(100.dp)
                 .width(187.dp)
                 .clip(shape = RoundedCornerShape(20.dp))

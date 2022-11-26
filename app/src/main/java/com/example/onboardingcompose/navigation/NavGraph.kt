@@ -44,5 +44,8 @@ fun SetupNavGraph(
         composable(route= Screen.ph1.route) {
             Main4(navController = navController)
         }
+        composable(route= Screen.hm2.route) {
+            HM1(navController = navController)
+        }
     }
 }
