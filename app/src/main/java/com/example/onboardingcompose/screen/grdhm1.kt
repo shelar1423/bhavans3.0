@@ -75,14 +75,14 @@ fun HM1(
         painter = painterResource(id = R.drawable.whitegrad), contentDescription = null,
         modifier = Modifier
             .padding(top = 1.dp)
-            .fillMaxSize()
             .fillMaxWidth()
 
             .fillMaxHeight()
         /*.background(
             Color.White
         )*/,
-        contentScale = ContentScale.FillHeight,
+        contentScale = ContentScale.FillWidth,
+
     )
 
     val gradient =
@@ -128,7 +128,7 @@ fun HM1(
             )
 
         }
-        Box(modifier = Modifier.height(100.dp)){
+        Box(modifier = Modifier.height(75.dp)){
 
         }
         Column(verticalArrangement = Arrangement.spacedBy(1.dp),

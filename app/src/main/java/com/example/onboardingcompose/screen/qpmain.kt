@@ -3,6 +3,8 @@ package com.example.onboardingcompose.screen
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -35,7 +37,7 @@ fun TopImg() {
             modifier = Modifier
                 .fillMaxWidth()
                 .fillMaxHeight(),
-            contentScale = ContentScale.FillHeight
+            contentScale = ContentScale.FillWidth
         )
 
     }
@@ -59,19 +61,33 @@ fun Main1(navController: NavHostController,
     TopImg()
     Column {
         h1()
+        Box(
+            modifier = Modifier.padding(30.dp, bottom = 10.dp, top = 40.dp),
+            contentAlignment = Alignment.Center,
+
+            ) {
+            Text(
+                text = "Which Degree are you searching for",
+                fontSize = 35.sp,
+                fontWeight = FontWeight.SemiBold
+            )
+        }
 
 
-            Column(verticalArrangement = Arrangement.spacedBy(30.dp),
-                modifier = Modifier.fillMaxHeight()) {
-                Box(modifier = Modifier.padding(30.dp, bottom = 10.dp, top = 40.dp),
+
+            Column(
+                verticalArrangement = Arrangement.spacedBy(15.dp),
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .verticalScroll(rememberScrollState())
+            ) {
+                /*Box(
+                    modifier = Modifier.padding(30.dp, bottom = 10.dp, top = 40.dp),
                     contentAlignment = Alignment.Center,
 
                     ) {
-                    Text(text = "Which Degree are you searching for",
-                        fontSize = 35.sp,
-                        fontWeight = FontWeight.SemiBold
-                    )
-                }
+
+                }*/
 
                 GradientButton(
                     text = "Under Graduation (U.G)",
@@ -103,40 +119,43 @@ fun Main1(navController: NavHostController,
             }
 
 
-
         }
     }
 
 
 
-@Composable
-fun h1() {
-    val im2= painterResource(id = R.drawable.bvcreal )
+    @Composable
+    fun h1() {
+        val im2 = painterResource(id = R.drawable.bvcreal)
 
-    Row() {
-        Image(painter = im2, contentDescription = null,
-            modifier = Modifier
-                .height(200.dp)
-                .width(150.dp)
-                .weight(1f)
+        Row() {
+            Image(
+                painter = im2, contentDescription = null,
+                modifier = Modifier
+                    .height(200.dp)
+                    .width(150.dp)
+                    .weight(1f)
 
-        )
+            )
 
-        Text(text = "Past Year Papers",
-            fontSize = 50.sp,
-            fontWeight = FontWeight.ExtraBold,
-            color = Color.White,
-            fontFamily = FontFamily.Serif,
-            modifier = Modifier
-                .weight(2f)
-                .padding(top = 25.dp, start = 10.dp)
+            Text(
+                text = "Past Year Papers",
+                fontSize = 50.sp,
+                fontWeight = FontWeight.ExtraBold,
+                color = Color.White,
+                fontFamily = FontFamily.Serif,
+                modifier = Modifier
+                    .weight(2f)
+                    .padding(top = 25.dp, start = 10.dp)
 
-        )
+            )
+        }
     }
 
 
 
-}
+
+
 /*
 @Composable
 fun body1(  navController: NavHostController) {
