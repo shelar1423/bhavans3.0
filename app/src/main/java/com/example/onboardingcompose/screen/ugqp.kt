@@ -1,7 +1,10 @@
 package com.example.onboardingcompose.screen
 
 
+import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -24,7 +27,9 @@ import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 fun But2() {
 
     Column(verticalArrangement = Arrangement.spacedBy(30.dp),
-        modifier = Modifier.fillMaxHeight())
+        modifier = Modifier
+            .fillMaxHeight()
+            .verticalScroll(rememberScrollState()))
     {
         Box(modifier = Modifier.padding(30.dp, bottom = 10.dp, top = 40.dp),
             contentAlignment = Alignment.Center,

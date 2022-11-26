@@ -8,5 +8,7 @@ sealed class Screen(val route: String) {
     object ug1 : Screen(route = "ug1")
     object pg1 : Screen(route = "pg1")
     object ph1 : Screen(route = "ph1")
+    object hm2 : Screen(route = "ph1")
+
 
 }

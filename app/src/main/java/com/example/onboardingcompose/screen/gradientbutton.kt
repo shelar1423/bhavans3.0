@@ -2,6 +2,8 @@ package com.example.onboardingcompose.screen
 
 
 import android.graphics.LinearGradient
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -11,14 +13,19 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.onboardingcompose.ui.theme.bab
 import com.example.onboardingcompose.ui.theme.c1
 import com.example.onboardingcompose.ui.theme.c2
+import com.google.accompanist.pager.ExperimentalPagerApi
 
 
 @Composable
@@ -95,4 +102,51 @@ fun GradientPreview() {
 
     }
 }
+
+@ExperimentalAnimationApi
+@ExperimentalPagerApi
+@Composable
+fun GradientB1(
+    gradient: Brush,
+    onClick: () -> Unit,
+    text: String,
+    img: Painter
+) {
+    Button(
+
+        colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
+
+        contentPadding = PaddingValues(),
+
+        modifier = Modifier
+            //.padding(150.dp)
+            .padding(top = 5.dp, start = 1.dp, end = 1.dp, bottom = 5.dp)
+            .height(100.dp)
+            .width(170.dp)
+            .clip(shape = RoundedCornerShape(20.dp))
+            //.fillMaxSize()
+            //.padding(horizontal = 1.dp, vertical = 8.dp)
+            .background(gradient),
+
+
+        onClick = onClick
+    ) {
+
+        Image(
+            //painterResource(id = R.drawable.exam),
+            painter = img,
+            contentDescription = "Cart button icon",
+            alignment = Alignment.Center,
+            modifier = Modifier.height(60.dp)
+
+        )
+        Text(
+            text = text,
+            color = Color.White,
+            fontWeight = FontWeight.ExtraBold,
+            fontFamily = bab,
+        )
+    }
+}
+
 
