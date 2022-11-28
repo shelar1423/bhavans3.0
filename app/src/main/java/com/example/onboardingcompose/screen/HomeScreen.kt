@@ -137,7 +137,7 @@ fun HomeScreen(
             /*.background(
                 Color.White
             )*/,
-        contentScale = ContentScale.FillHeight,
+        contentScale = ContentScale.FillBounds,
         )
     Image(
         painter = painterResource(id = R.drawable.jdjl),
