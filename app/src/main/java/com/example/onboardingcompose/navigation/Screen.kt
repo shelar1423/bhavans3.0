@@ -9,6 +9,13 @@ sealed class Screen(val route: String) {
     object pg1 : Screen(route = "pg1")
     object ph1 : Screen(route = "ph1")
     object hm2 : Screen(route = "ph1")
+    object Navscreen :Screen(route = "nav1")
+    object commerce:Screen(route = "comblock")
+    object it:Screen(route = "it")
+    object mba:Screen(route = "mba")
+    object lib:Screen(route = "lib")
+    object bio:Screen(route = "bio")
+    object science:Screen(route = "science")
 
 
 }

@@ -1,6 +1,8 @@
 package com.example.onboardingcompose
 
 import android.os.Bundle
+import android.webkit.WebSettings
+import android.webkit.WebView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.ExperimentalAnimationApi
@@ -35,5 +37,6 @@ class MainActivity : ComponentActivity() {
                 SetupNavGraph(navController = navController, startDestination = screen)
             }
         }
+
     }
 }

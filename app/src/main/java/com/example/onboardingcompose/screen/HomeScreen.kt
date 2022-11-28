@@ -231,7 +231,7 @@ fun HomeScreen(
     }*/
 
     GradientButton1(
-        onClick = { navController.navigate(Screen.Question1.route) },
+        onClick = { navController.navigate(Screen.Welcome.route) },
         gradient = gradient,
 
     )
@@ -242,13 +242,13 @@ fun HomeScreen(
         onClick = { navController.navigate(Screen.Welcome.route) },
         gradient = gradient    )
     GradientButton4(
-        onClick = { navController.navigate(Screen.Welcome.route) },
+        onClick = { navController.navigate(Screen.Navscreen.route) },
         gradient = gradient    )
     GradientButton5(
         onClick = { navController.navigate(Screen.Welcome.route) },
         gradient = gradient    )
     GradientButton6(
-        onClick = { navController.navigate(Screen.Welcome.route) },
+        onClick = { navController.navigate(Screen.Navscreen.route) },
         gradient = gradient    )
 
 
