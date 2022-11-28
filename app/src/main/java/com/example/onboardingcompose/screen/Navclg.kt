@@ -29,8 +29,7 @@ import com.example.onboardingcompose.navigation.Screen
 import com.example.onboardingcompose.ui.theme.bab
 import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 import com.google.accompanist.pager.ExperimentalPagerApi
-import org.w3c.dom.Text
-import androidx.compose.material.Text as MaterialText
+
 
 @ExperimentalAnimationApi
 @ExperimentalPagerApi
