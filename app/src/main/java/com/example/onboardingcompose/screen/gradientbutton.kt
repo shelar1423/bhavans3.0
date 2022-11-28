@@ -150,3 +150,49 @@ fun GradientB1(
 }
 
 
+@ExperimentalAnimationApi
+@ExperimentalPagerApi
+@Composable
+fun GradientB2(
+    gradient: Brush,
+    onClick: () -> Unit,
+    text: String,
+    img: Painter
+) {
+    Button(
+
+        colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
+
+        contentPadding = PaddingValues(),
+
+        modifier = Modifier
+            //.padding(150.dp)
+            .padding(top = 5.dp, start = 1.dp, end = 1.dp, bottom = 5.dp)
+            .height(100.dp)
+            .width(170.dp)
+            .clip(shape = RoundedCornerShape(20.dp))
+            //.fillMaxSize()
+            //.padding(horizontal = 1.dp, vertical = 8.dp)
+            .background(gradient),
+
+
+        onClick = onClick
+    ) {
+
+        Image(
+            //painterResource(id = R.drawable.exam),
+            painter = img,
+            contentDescription = "Cart button icon",
+            alignment = Alignment.Center,
+            modifier = Modifier.height(60.dp)
+
+        )
+        Text(
+            text = text,
+            color = Color.Black,
+            fontWeight = FontWeight.ExtraBold,
+            fontFamily = bab,
+        )
+    }
+}
+

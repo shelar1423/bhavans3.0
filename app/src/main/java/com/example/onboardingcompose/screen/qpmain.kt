@@ -140,7 +140,7 @@ fun Main1(navController: NavHostController,
 
             Text(
                 text = "Past Year Papers",
-                fontSize = 50.sp,
+                fontSize = 40.sp,
                 fontWeight = FontWeight.ExtraBold,
                 color = Color.White,
                 fontFamily = FontFamily.Serif,

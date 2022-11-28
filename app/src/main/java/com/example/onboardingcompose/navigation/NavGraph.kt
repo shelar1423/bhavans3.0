@@ -44,9 +44,7 @@ fun SetupNavGraph(
         composable(route= Screen.ph1.route) {
             Main4(navController = navController)
         }
-        composable(route= Screen.hm2.route) {
-            HM1(navController = navController)
-        }
+
         composable(route = Screen.Navscreen.route)
         {
             Navscreen(navController = navController)
@@ -73,6 +71,14 @@ fun SetupNavGraph(
         composable(route = Screen.lib.route)
         {
             lib(navController=navController, url ="https://www.google.com/maps/place/Library+Block+Bhavan's+vivekanada+college/@17.48866,78.5344046,180m/data=!3m1!1e3!4m22!1m16!4m15!1m6!1m2!1s0x3bcb9b102ac29611:0xf3f87c17db4e78e2!2sCommerceBlockBVC,+BHAVAN'S+VIVEKANANDA+COLLEGE,+New+Kranthi+Nagar,+Sainikpuri,+Secunderabad,+Telangana!2m2!1d78.5347303!2d17.4892123!1m6!1m2!1s0x3bcb9b0fcc30cadd:0x4c09f90816ab32d7!2sLibrary+Block+Bhavan's+vivekanada+college,+692,+New+Kranthi+Nagar,+Sainikpuri,+Secunderabad,+Telangana+500094!2m2!1d78.5345619!2d17.4881206!3e2!3m4!1s0x3bcb9b0fcc30cadd:0x4c09f90816ab32d7!8m2!3d17.4881206!4d78.5345619")
+        }
+        composable(route = Screen.result.route)
+        {
+            result(navController=navController, url ="http://www.bvcexams.com/Examination%20Results.html")
+        }
+        composable(route = Screen.notification.route)
+        {
+            notification(navController=navController, url ="http://www.bvcexams.com/Examination%20Notifications.html")
         }
 
     }

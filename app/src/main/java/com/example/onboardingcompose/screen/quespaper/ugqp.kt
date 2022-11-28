@@ -31,15 +31,7 @@ fun But2() {
             .fillMaxHeight()
             .verticalScroll(rememberScrollState()))
     {
-        Box(modifier = Modifier.padding(30.dp, bottom = 10.dp, top = 40.dp),
-            contentAlignment = Alignment.Center,
 
-            ) {
-            Text(text = "Select Your Course",
-                fontSize = 40.sp,
-                fontWeight = FontWeight.SemiBold
-            )
-        }
         Column(verticalArrangement = Arrangement.spacedBy(40.dp),
             modifier = Modifier.fillMaxHeight()) {
             Row(horizontalArrangement = Arrangement.SpaceEvenly
@@ -120,6 +112,15 @@ fun Main2(navController: NavHostController,
     TopImg()
     Column {
         h1()
+        Box(modifier = Modifier.padding(30.dp, bottom = 10.dp, top = 40.dp),
+            contentAlignment = Alignment.Center,
+
+            ) {
+            Text(text = "Select Your Course",
+                fontSize = 40.sp,
+                fontWeight = FontWeight.SemiBold
+            )
+        }
         But2()
     }
 }

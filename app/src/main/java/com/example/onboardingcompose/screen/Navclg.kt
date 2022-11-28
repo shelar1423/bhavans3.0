@@ -101,12 +101,12 @@ fun Navscreen(navController: NavHostController,
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.fillMaxWidth()) {
 
-                GradientB1(gradient = gradient,
+                GradientB2(gradient = gradient,
                     onClick = { navController.navigate(Screen.commerce.route) },
                     text = "COMMERCE" ,
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
 
-                GradientB1(gradient = gradient,
+                GradientB2(gradient = gradient,
                     onClick = { navController.navigate(Screen.lib.route) },
                     text = "Library",
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
@@ -119,12 +119,12 @@ fun Navscreen(navController: NavHostController,
                 modifier = Modifier.fillMaxWidth()
             ) {
 
-                GradientB1(gradient = gradient,
+                GradientB2(gradient = gradient,
                     onClick = { navController.navigate(Screen.mba.route) },
                     text = "MBA",
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
 
-                GradientB1(gradient = gradient,
+                GradientB2(gradient = gradient,
                     onClick = { navController.navigate(Screen.bio.route) },
                     text = "BIO CHEM",
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
@@ -136,12 +136,12 @@ fun Navscreen(navController: NavHostController,
                 modifier = Modifier.fillMaxWidth()
             ) {
 
-                GradientB1(gradient = gradient,
+                GradientB2(gradient = gradient,
                     onClick = { navController.navigate(Screen.it.route) },
                     text = "IT",
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
 
-                GradientB1(gradient = gradient,
+                GradientB2(gradient = gradient,
                     onClick = { navController.navigate(Screen.science.route) },
                     text = "SCIENCE",
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))

@@ -3,6 +3,8 @@ package com.example.onboardingcompose.screen
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -25,24 +27,14 @@ import com.example.onboardingcompose.ui.theme.OnBoardingComposeTheme
 import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 
 @Composable
-fun Main4(
+fun Main3(
     navController: NavHostController,
     welcomeViewModel: WelcomeViewModel = hiltViewModel()
 ) {
     TopImg()
     Column {
         h1()
-        body4()
-    }
-
-}
-
-@Composable
-fun body4() {
-
-    Column(verticalArrangement = Arrangement.spacedBy(30.dp),
-        modifier = Modifier.fillMaxHeight()) {
-        Box(modifier = Modifier.padding(30.dp, bottom = 10.dp, top = 40.dp),
+        Box(modifier = Modifier.padding(30.dp, bottom = 5.dp, top = 5.dp),
             contentAlignment = Alignment.Center,
 
             ) {
@@ -51,9 +43,24 @@ fun body4() {
                 fontWeight = FontWeight.SemiBold
             )
         }
+        body3()
+    }
+
+}
+
+
+
+@Composable
+fun body3() {
+
+    Column(verticalArrangement = Arrangement.spacedBy(5.dp),
+        modifier = Modifier
+            .fillMaxHeight()
+            .verticalScroll(rememberScrollState())) {
+
 
         GradientButton(
-            text = "Ph.D in Physics",
+            text = "Master of Computer Science (M.Sc)",
             textColor = Color.Black,
             gradient = Brush.horizontalGradient(
                 colors = listOf(c2, c1)
@@ -62,7 +69,7 @@ fun body4() {
         ) { }
 
         GradientButton(
-            text = "Ph.D in Microbiology",
+            text = "M.Sc Microbiology",
             textColor = Color.Black,
             gradient = Brush.horizontalGradient(
                 colors = listOf(c2, c1)
@@ -70,7 +77,7 @@ fun body4() {
         ) { }
 
         GradientButton(
-            text = "Ph.D in Biochemistry",
+            text = "M.Sc Biochemistry",
             textColor = Color.Black,
             gradient = Brush.horizontalGradient(
                 colors = listOf(c2, c1)
@@ -78,7 +85,15 @@ fun body4() {
         ) { }
 
         GradientButton(
-            text = "Ph.D in Management",
+            text = "M.Com",
+            textColor = Color.Black,
+            gradient = Brush.horizontalGradient(
+                colors = listOf(c2, c1)
+            )
+        ) { }
+
+        GradientButton(
+            text = "Master of Business Administration (M.B.A)",
             textColor = Color.Black,
             gradient = Brush.horizontalGradient(
                 colors = listOf(c2, c1)
@@ -94,12 +109,12 @@ fun body4() {
 /*
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview4() {
+fun DefaultPreview3() {
     OnBoardingComposeTheme {
         Column(modifier = Modifier
             .fillMaxSize()) {
             Box {
-                Main4()
+                Main3()
             }
         }
 

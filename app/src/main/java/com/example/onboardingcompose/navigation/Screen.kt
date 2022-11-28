@@ -16,6 +16,8 @@ sealed class Screen(val route: String) {
     object lib:Screen(route = "lib")
     object bio:Screen(route = "bio")
     object science:Screen(route = "science")
+    object result:Screen(route = "result")
+    object notification:Screen(route = "notification")
 
 
 }
