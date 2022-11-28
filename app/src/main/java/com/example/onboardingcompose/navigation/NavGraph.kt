@@ -56,7 +56,7 @@ fun SetupNavGraph(
         }
         composable(route = Screen.it.route)
         {
-          it(navController=navController, url ="https://www.google.com/maps/place/BVC+Central+Instrumentation+Room-(+IT-Block)/@17.4896906,78.534856,56m/data=!3m1!1e3!4m22!1m16!4m15!1m6!1m2!1s0x3bcb9b102ac29611:0xf3f87c17db4e78e2!2sCommerceBlockBVC,+BHAVAN'S+VIVEKANANDA+COLLEGE,+New+Kranthi+Nagar,+Sainikpuri,+Secunderabad,+Telangana!2m2!1d78.5347303!2d17.4892123!1m6!1m2!1s0x3bcb9b0fcc30cadd:0x4c09f90816ab32d7!2sLibrary+Block+Bhavan's+vivekanada+college,+692,+New+Kranthi+Nagar,+Sainikpuri,+Secunderabad,+Telangana+500094!2m2!1d78.5345619!2d17.4881206!3e2!3m4!1s0x3bcb9bb02100b98f:0xa86b69ad3bde2d2b!8m2!3d17.4896785!4d78.5348379")
+          it(navController=navController, url ="https://www.google.com/maps/place/IT+block/@17.4894723,78.5349013,17z/data=!3m1!4b1!4m5!3m4!1s0x3bcb9bde49a8c001:0x71aa806707fc2879!8m2!3d17.4894723!4d78.5349013?hl=en-IN")
         }
         composable(route = Screen.mba.route)
         {
