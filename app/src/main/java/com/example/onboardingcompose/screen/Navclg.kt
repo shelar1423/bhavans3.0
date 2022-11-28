@@ -107,7 +107,7 @@ fun Navscreen(navController: NavHostController,
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
 
                 GradientB1(gradient = gradient,
-                    onClick = { navController.navigate(Screen.Question1.route) },
+                    onClick = { navController.navigate(Screen.lib.route) },
                     text = "Library",
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
 
@@ -120,12 +120,12 @@ fun Navscreen(navController: NavHostController,
             ) {
 
                 GradientB1(gradient = gradient,
-                    onClick = { navController.navigate(Screen.Welcome.route) },
+                    onClick = { navController.navigate(Screen.mba.route) },
                     text = "MBA",
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
 
                 GradientB1(gradient = gradient,
-                    onClick = { navController.navigate(Screen.Navscreen.route) },
+                    onClick = { navController.navigate(Screen.bio.route) },
                     text = "BIO CHEM",
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
             }
@@ -137,12 +137,12 @@ fun Navscreen(navController: NavHostController,
             ) {
 
                 GradientB1(gradient = gradient,
-                    onClick = { navController.navigate(Screen.Welcome.route) },
+                    onClick = { navController.navigate(Screen.it.route) },
                     text = "IT",
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
 
                 GradientB1(gradient = gradient,
-                    onClick = { navController.navigate(Screen.Question1.route) },
+                    onClick = { navController.navigate(Screen.science.route) },
                     text = "SCIENCE",
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
             }

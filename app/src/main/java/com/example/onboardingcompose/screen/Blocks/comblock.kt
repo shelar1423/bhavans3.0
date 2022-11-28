@@ -29,7 +29,7 @@ fun WebViewPage(navController: NavHostController,
 
         }
     }, update = {
-        it.loadUrl("file:///android_asset/demo.html")
+        it.loadUrl(url)
 
     })
 }

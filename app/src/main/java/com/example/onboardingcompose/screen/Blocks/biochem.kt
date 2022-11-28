@@ -28,8 +28,8 @@ fun bio(navController: NavHostController,
             settings.javaScriptEnabled = true
 
         }
-    }, update = {
-        it.loadUrl("file:///android_asset/demo.html")
+    }, update ={
+        it.loadUrl(url)
 
     })
 }
