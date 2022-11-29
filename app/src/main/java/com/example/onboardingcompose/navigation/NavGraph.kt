@@ -49,6 +49,10 @@ fun SetupNavGraph(
         {
             Navscreen(navController = navController)
         }
+        composable(route = Screen.antirag.route)
+        {
+            antirag(navController = navController)
+        }
         composable(route = Screen.commerce.route){
             WebViewPage(navController = navController, url = "https://www.google.com/maps/place/CommerceBlockBVC,+New+Kranthi+Nagar,+Sainikpuri,+Secunderabad,+Telangana+500094/data=!4m2!3m1!1s0x3bcb9b102ac29611:0xf3f87c17db4e78e2?sa=X&ved=2ahUKEwivi7e7-dD7AhWU1jgGHYyaDZkQ8gF6BAgUEAE")
         }

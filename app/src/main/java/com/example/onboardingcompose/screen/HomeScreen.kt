@@ -161,7 +161,7 @@ fun HomeScreen(
                     img = painterResource(id = R.drawable._61788c1_816e_4ce1_8030_6cd54350dc1b_removebg_preview))
 
                 GradientB1(gradient = gradient,
-                    onClick = { navController.navigate(Screen.Question1.route) },
+                    onClick = { navController.navigate(Screen.antirag.route) },
                     text = "Anti-Ragging",
                     img = painterResource(id = R.drawable._a199798_b921_47c8_aa71_30d9330f37c2_removebg_preview))
             }
