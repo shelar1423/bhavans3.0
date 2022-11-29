@@ -28,6 +28,9 @@ fun notification(navController: NavHostController,
             webViewClient = WebViewClient()
             loadUrl(url)
             settings.javaScriptEnabled = true
+           settings.loadWithOverviewMode = true;
+            settings.useWideViewPort = true;
+            settings.builtInZoomControls = true;
 
         }
     }, update = {
