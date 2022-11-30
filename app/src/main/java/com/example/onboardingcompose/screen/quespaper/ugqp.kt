@@ -21,87 +21,12 @@ import com.example.onboardingcompose.ui.theme.c1
 import com.example.onboardingcompose.ui.theme.c2
 import com.example.onboardingcompose.ui.theme.OnBoardingComposeTheme
 import com.example.onboardingcompose.viewmodel.WelcomeViewModel
+import androidx.navigation.NavController
+import com.example.onboardingcompose.navigation.Screen
 
 
 @Composable
 fun But2() {
-
-    Column(verticalArrangement = Arrangement.spacedBy(30.dp),
-        modifier = Modifier
-            .fillMaxHeight()
-            .verticalScroll(rememberScrollState()))
-    {
-
-        Column(verticalArrangement = Arrangement.spacedBy(40.dp),
-            modifier = Modifier.fillMaxHeight()) {
-            Row(horizontalArrangement = Arrangement.SpaceEvenly
-                , verticalAlignment = Alignment.CenterVertically
-                , modifier = Modifier.fillMaxWidth()) {
-                GradientButton2(
-                    text = "B.Com",
-                    textColor = Color.Black,
-                    gradient = Brush.horizontalGradient(
-                        colors = listOf(c2, c1)
-                    )
-                ) { }
-                GradientButton2(
-                    text = "BBA",
-                    textColor = Color.Black,
-                    gradient = Brush.horizontalGradient(
-                        colors = listOf(c2, c1)
-                    )
-                ) { }
-            }
-
-            Row(
-                horizontalArrangement = Arrangement.SpaceEvenly
-                , verticalAlignment = Alignment.CenterVertically
-                , modifier = Modifier.fillMaxWidth()
-            ) {
-                GradientButton2(
-                    text = "BCA",
-                    textColor = Color.Black,
-                    gradient = Brush.horizontalGradient(
-                        colors = listOf(c2, c1)
-                    )
-                ) { }
-
-                GradientButton2(
-                    text = "B.Sc (L.S)",
-                    textColor = Color.Black,
-                    gradient = Brush.horizontalGradient(
-                        colors = listOf(c2, c1)
-                    )
-                ) { }
-            }
-
-            Row(
-                horizontalArrangement = Arrangement.SpaceEvenly
-                , verticalAlignment = Alignment.CenterVertically
-                , modifier = Modifier.fillMaxWidth()
-            ) {
-                GradientButton2(
-                    text = "B.A",
-                    textColor = Color.Black,
-                    gradient = Brush.horizontalGradient(
-                        colors = listOf(c2, c1)
-                    )
-                ) { }
-                GradientButton2(
-                    text = "B.Sc (P.S)",
-                    textColor = Color.Black,
-                    gradient = Brush.horizontalGradient(
-                        colors = listOf(c2, c1)
-                    )
-                ) { }
-            }
-        }
-
-
-
-
-    }
-
 
 }
 
@@ -121,6 +46,90 @@ fun Main2(navController: NavHostController,
                 fontWeight = FontWeight.SemiBold
             )
         }
+
+        Column(verticalArrangement = Arrangement.spacedBy(30.dp),
+            modifier = Modifier
+                .fillMaxHeight()
+                .verticalScroll(rememberScrollState()))
+        {
+
+            Column(verticalArrangement = Arrangement.spacedBy(40.dp),
+                modifier = Modifier.fillMaxHeight()) {
+                Row(horizontalArrangement = Arrangement.SpaceEvenly
+                    , verticalAlignment = Alignment.CenterVertically
+                    , modifier = Modifier.fillMaxWidth()) {
+                    GradientButton2(
+                        text = "B.Com",
+                        textColor = Color.Black,
+                        gradient = Brush.horizontalGradient(
+                            colors = listOf(c2, c1)
+                        ),
+                        onClick = {navController.navigate(Screen.bcap.route)}
+                    )
+                    GradientButton2(
+                        text = "BBA",
+                        textColor = Color.Black,
+                        gradient = Brush.horizontalGradient(
+                            colors = listOf(c2, c1)
+                        ),
+                        onClick = {navController.navigate(Screen.bcap.route)}
+                    )
+                }
+
+                Row(
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                    , verticalAlignment = Alignment.CenterVertically
+                    , modifier = Modifier.fillMaxWidth()
+                ) {
+                    GradientButton2(
+                        text = "BCA",
+                        textColor = Color.Black,
+                        gradient = Brush.horizontalGradient(
+                            colors = listOf(c2, c1)
+                        ),
+                        onClick = {navController.navigate(Screen.bcap.route)}
+                    )
+
+                    GradientButton2(
+                        text = "B.Sc (L.S)",
+                        textColor = Color.Black,
+                        gradient = Brush.horizontalGradient(
+                            colors = listOf(c2, c1)
+                        ),
+                        onClick = {navController.navigate(Screen.bcap.route)}
+                    )
+                }
+
+                Row(
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                    , verticalAlignment = Alignment.CenterVertically
+                    , modifier = Modifier.fillMaxWidth()
+                ) {
+                    GradientButton2(
+                        text = "B.A",
+                        textColor = Color.Black,
+                        gradient = Brush.horizontalGradient(
+                            colors = listOf(c2, c1)
+                        ),
+                        onClick = {navController.navigate(Screen.bcap.route)}
+                    )
+                    GradientButton2(
+                        text = "B.Sc (P.S)",
+                        textColor = Color.Black,
+                        gradient = Brush.horizontalGradient(
+                            colors = listOf(c2, c1)
+                        ),
+                        onClick = {navController.navigate(Screen.bcap.route)}
+                    )
+                }
+            }
+
+
+
+
+        }
+
+
         But2()
     }
 }

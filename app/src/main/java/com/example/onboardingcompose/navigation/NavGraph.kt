@@ -9,6 +9,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.onboardingcompose.screen.*
+import com.example.onboardingcompose.screen.quespaper.bcap
 
 import com.google.accompanist.pager.ExperimentalPagerApi
 
@@ -83,6 +84,10 @@ fun SetupNavGraph(
         composable(route = Screen.notification.route)
         {
             notification(navController=navController, url ="http://www.bvcexams.com/Examination%20Notifications.html")
+        }
+        composable(route = Screen.bcap.route)
+        {
+            bcap(navController=navController, url ="https://drive.google.com/file/d/1FmCZM6hfayerRX8eugK8b3as3muzCGCj/view?usp=sharing")
         }
 
     }
