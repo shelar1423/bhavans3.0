@@ -19,12 +19,11 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 @ExperimentalPagerApi
 @Composable
 fun SetupNavGraph(
-    navController: NavHostController,
-    startDestination: String
+    navController: NavHostController
 ) {
     NavHost(
         navController = navController,
-        startDestination = startDestination
+        startDestination = NavigationItem.Home.route
     ) {
         composable(NavigationItem.Home.route) {
             HomeScreen(navController = navController)

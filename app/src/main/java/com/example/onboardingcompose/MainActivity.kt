@@ -7,8 +7,10 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.getValue
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.rememberNavController
+import com.example.onboardingcompose.navigation.Screen
 import com.example.onboardingcompose.navigation.SetupNavGraph
 import com.example.onboardingcompose.screen.Navigation
+import com.example.onboardingcompose.screen.WelcomeScreen
 import com.example.onboardingcompose.ui.theme.OnBoardingComposeTheme
 import com.example.onboardingcompose.viewmodel.SplashViewModel
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -34,7 +36,7 @@ class MainActivity : ComponentActivity() {
             OnBoardingComposeTheme {
                 val screen by splashViewModel.startDestination
                 val navController = rememberNavController()
-                SetupNavGraph(navController = navController, startDestination = screen)
+                SetupNavGraph(navController = navController)
 
                     Navigation()
 

@@ -22,6 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import com.example.onboardingcompose.R
 import com.example.onboardingcompose.navigation.Screen
@@ -303,10 +304,11 @@ fun Navigation() {
                                 if (currentRoute != it.route) {
 
                                     navController.graph?.startDestinationRoute?.let {
-                                        navController.popBackStack(it, true)
+                                        navController.popBackStack(it ,true)
                                     }
 
                                     navController.navigate(it.route) {
+                                        popUpTo(navController.graph.findStartDestination().id)
                                         launchSingleTop = true
                                     }
 
@@ -321,8 +323,7 @@ fun Navigation() {
 
 
             }) {
-            SetupNavGraph(navController = navController,
-                startDestination = NavigationItem.Home.route)
+            SetupNavGraph(navController = navController )
 
 
         }
