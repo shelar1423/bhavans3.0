@@ -6,6 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.onboardingcompose.data.DataStoreRepository
+import com.example.onboardingcompose.navigation.NavigationItem
 import com.example.onboardingcompose.navigation.Screen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
@@ -26,7 +27,7 @@ class SplashViewModel @Inject constructor(
         viewModelScope.launch {
             repository.readOnBoardingState().collect { completed ->
                 if (completed) {
-                    _startDestination.value = Screen.Home.route
+                    _startDestination.value = NavigationItem.Home.route
                 } else {
                     _startDestination.value = Screen.Welcome.route
                 }

@@ -2,10 +2,12 @@
 
 package com.example.onboardingcompose.navigation
 
+import actscreen
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import androidx.navigation.activity
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.onboardingcompose.screen.*
@@ -24,12 +26,22 @@ fun SetupNavGraph(
         navController = navController,
         startDestination = startDestination
     ) {
+        composable(NavigationItem.Home.route) {
+            HomeScreen(navController = navController)
+        }
+        composable(NavigationItem.academics.route) {
+            actscreen(navController = navController)
+        }
+
+        composable(NavigationItem.Activities.route) {
+            exam(navController = navController)
+        }
         composable(route = Screen.Welcome.route) {
             WelcomeScreen(navController = navController)
         }
-        composable(route = Screen.Home.route) {
+        /*composable(route = Screen.Home.route) {
             HomeScreen(navController = navController)
-        }
+        }*/
         composable(route = Screen.Papers.route) {
             Papers(navController = navController)
         }
@@ -46,7 +58,7 @@ fun SetupNavGraph(
             Main4(navController = navController)
         }
 
-        composable(route = Screen.Navscreen.route)
+        composable(route = NavigationItem.Navscreen.route)
         {
             Navscreen(navController = navController)
         }
@@ -90,5 +102,9 @@ fun SetupNavGraph(
             bcap(navController=navController, url ="https://drive.google.com/file/d/1FmCZM6hfayerRX8eugK8b3as3muzCGCj/view?usp=sharing")
         }
 
+
+        }
+
+
+
     }
-}

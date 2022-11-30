@@ -1,7 +1,6 @@
 package com.example.onboardingcompose.screen
 
 
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.*
@@ -9,28 +8,17 @@ import androidx.compose.foundation.layout.*
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.material.ButtonDefaults.buttonColors
-import androidx.compose.material.MaterialTheme.colors
-import androidx.compose.material.SnackbarDefaults.backgroundColor
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -38,12 +26,16 @@ import androidx.navigation.NavHostController
 import com.example.onboardingcompose.R
 import com.example.onboardingcompose.navigation.Screen
 import com.example.onboardingcompose.ui.theme.*
-import com.example.onboardingcompose.ui.theme.Blue700
-import com.example.onboardingcompose.util.OnBoardingPage
-import com.example.onboardingcompose.util.slider
 import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 import com.google.accompanist.pager.*
-import androidx.navigation.NavController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
+import androidx.navigation.compose.rememberNavController
+import com.example.onboardingcompose.navigation.NavigationItem
+
+
+import com.example.onboardingcompose.navigation.SetupNavGraph
 
 
 @ExperimentalAnimationApi
@@ -52,7 +44,9 @@ import androidx.navigation.NavController
 fun HomeScreen(
     navController: NavHostController,
     welcomeViewModel: WelcomeViewModel = hiltViewModel()
+
 ) {
+
 
     Image(
         painter = painterResource(id = R.drawable.whitegrad), contentDescription = null,
@@ -64,7 +58,7 @@ fun HomeScreen(
         /*.background(
             Color.White
         )*/,
-        contentScale = ContentScale.FillWidth,
+        contentScale = ContentScale.FillBounds,
 
         )
 
@@ -144,7 +138,7 @@ fun HomeScreen(
                     img = painterResource(id = R.drawable.feedbackreal))
 
                 GradientB1(gradient = gradient,
-                    onClick = { navController.navigate(Screen.Navscreen.route) },
+                    onClick = { navController.navigate(NavigationItem.Navscreen.route) },
                     text = "Navigation",
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
             }
@@ -234,15 +228,128 @@ fun HomeScreen(
     }
 }
 
-/*
-private enum class MarqueeLayers { MainText, SecondaryText, EdgesGradient }
-private data class TextLayoutInfo(val textWidth: Int, val containerWidth: Int)
+/*@ExperimentalAnimationApi
+@ExperimentalPagerApi
+@Composable
+fun NavigationController(navController: NavHostController,startDestination: String) {
+    NavHost(navController = navController, startDestination = startDestination) {
+
+        composable(NavigationItem.Home.route) {
+            HomeScreen(navController = navController)
+        }
+        composable(NavigationItem.Notifications.route) {
+            actscreen(navController = navController)
+        }
+
+        composable(NavigationItem.Settings.route) {
+            exam(navController = navController)
+        }
+
+
+
+    }
+
+
+}*/
+
+
 @ExperimentalAnimationApi
 @ExperimentalPagerApi
-@get:Composable
-val Colors.myExtraColor: Color
-    get() = if (isLight) Color.Blue else Color.Green
+@Composable
+fun Navigation() {
 
 
- */
+
+
+    val navController = rememberNavController()
+
+    val items = listOf(
+        NavigationItem.Home,
+        NavigationItem.academics,
+        NavigationItem.Activities,
+
+        )
+
+
+
+        Scaffold(
+            bottomBar = {
+                BottomNavigation(backgroundColor =Color(0xFF0CC5AD)) {
+
+
+
+                    val navBackStackEntry by navController.currentBackStackEntryAsState()
+                    val currentRoute = navBackStackEntry?.destination?.route
+                
+
+                    items.forEach {
+                        BottomNavigationItem(selected = currentRoute == it.route,
+                            label = {
+                                Text(
+                                    text = it.label,
+                                    color = if (currentRoute == it.route) Color.Black else Color.LightGray
+                                )
+                            },
+                            icon = {
+                                Icon(
+                                    imageVector = it.Icon, contentDescription = null ,
+                                    tint = if (currentRoute == it.route)Color(0xFFDA1D1D) else Color(
+                                        0xFFFFFFFF)
+                                )
+
+                            },
+
+                            onClick = {
+                                if (currentRoute != it.route) {
+
+                                    navController.graph?.startDestinationRoute?.let {
+                                        navController.popBackStack(it, true)
+                                    }
+
+                                    navController.navigate(it.route) {
+                                        launchSingleTop = true
+                                    }
+
+                                }
+
+                            })
+
+                    }
+
+
+                }
+
+
+            }) {
+            SetupNavGraph(navController = navController,
+                startDestination = NavigationItem.Home.route)
+
+
+        }
+
+    }
+
+
+
+
+
+@Composable
+fun Settings() {
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(text = "Settings")
+
+        }
+    }
+}
+
+
 

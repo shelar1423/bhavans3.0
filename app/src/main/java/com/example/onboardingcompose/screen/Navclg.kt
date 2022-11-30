@@ -37,6 +37,7 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 fun Navscreen(navController: NavHostController,
               welcomeViewModel: WelcomeViewModel = hiltViewModel()
 ) {
+
     Image(
         painter = painterResource(id = R.drawable.llines), contentDescription = null,
         modifier = Modifier
@@ -69,9 +70,9 @@ fun Navscreen(navController: NavHostController,
                     .padding(top = 0.dp, bottom = 1.dp)
 
                     .background(color = Color.Transparent)
-                .fillMaxWidth()
-                .fillMaxHeight()
-                .fillMaxSize(),
+                    .fillMaxWidth()
+                    .fillMaxHeight()
+                    .fillMaxSize(),
 
                 contentScale = ContentScale.FillWidth,
             )

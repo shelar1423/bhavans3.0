@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.onboardingcompose.R
+import com.example.onboardingcompose.navigation.NavigationItem
 import com.example.onboardingcompose.navigation.Screen
 import com.example.onboardingcompose.ui.theme.ButtonBlue
 import com.example.onboardingcompose.util.OnBoardingPage
@@ -67,7 +68,7 @@ fun WelcomeScreen(
         ) {
             welcomeViewModel.saveOnBoardingState(completed = true)
             navController.popBackStack()
-            navController.navigate(Screen.Home.route)
+            navController.navigate(NavigationItem.Home.route)
         }
     }
 }
@@ -134,8 +135,7 @@ fun FinishButton(
             ) {
                 Text(text = "Finish", color = Color.White)
             }
-        }
-    }
+        }    }
 }
 
 @Composable

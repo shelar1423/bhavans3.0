@@ -1,8 +1,6 @@
 package com.example.onboardingcompose
 
 import android.os.Bundle
-import android.webkit.WebSettings
-import android.webkit.WebView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.ExperimentalAnimationApi
@@ -10,11 +8,13 @@ import androidx.compose.runtime.getValue
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.rememberNavController
 import com.example.onboardingcompose.navigation.SetupNavGraph
+import com.example.onboardingcompose.screen.Navigation
 import com.example.onboardingcompose.ui.theme.OnBoardingComposeTheme
 import com.example.onboardingcompose.viewmodel.SplashViewModel
 import com.google.accompanist.pager.ExperimentalPagerApi
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import com.example.onboardingcompose.navigation.NavigationItem as NavigationItem1
 
 @ExperimentalAnimationApi
 @ExperimentalPagerApi
@@ -35,8 +35,14 @@ class MainActivity : ComponentActivity() {
                 val screen by splashViewModel.startDestination
                 val navController = rememberNavController()
                 SetupNavGraph(navController = navController, startDestination = screen)
+
+                    Navigation()
+
             }
         }
 
+
+
     }
 }
+
