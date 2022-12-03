@@ -286,8 +286,6 @@ fun Navigation() {
 
     val navController = rememberNavController()
 
-
-
     Scaffold(
         bottomBar = {
 
