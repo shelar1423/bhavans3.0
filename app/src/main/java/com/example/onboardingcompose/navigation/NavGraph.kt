@@ -22,6 +22,7 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 fun NavGraphBuilder.SetupNavGraph(
     navController: NavHostController
 ) {
+
     navigation(
         startDestination = Screen.Welcome.route,
         route = Graph.NavGraph
