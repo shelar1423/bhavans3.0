@@ -7,6 +7,7 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.getValue
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.rememberNavController
+import com.example.onboardingcompose.navigation.RootNavGraph
 import com.example.onboardingcompose.navigation.Screen
 import com.example.onboardingcompose.navigation.SetupNavGraph
 import com.example.onboardingcompose.screen.Navigation
@@ -36,9 +37,9 @@ class MainActivity : ComponentActivity() {
             OnBoardingComposeTheme {
                 val screen by splashViewModel.startDestination
                 val navController = rememberNavController()
-                SetupNavGraph(navController = navController)
+                RootNavGraph(navController = navController)
 
-                    Navigation()
+//                    Navigation()
 
             }
         }
