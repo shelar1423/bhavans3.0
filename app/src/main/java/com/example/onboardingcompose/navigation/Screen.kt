@@ -32,6 +32,8 @@ sealed class Screen(val route: String,) {
     object antirag:Screen(route = "antirag")
     object bcap:Screen(route = "bcap")
 
+    object HomeScreen:Screen(route = "home_screen")
+
 
 }
 sealed class NavigationItem(val route: String, val label: String,val Icon: ImageVector) {

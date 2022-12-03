@@ -33,6 +33,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.onboardingcompose.navigation.BottomNavGraph
 import com.example.onboardingcompose.navigation.NavigationItem
 
 
@@ -55,21 +56,26 @@ fun HomeScreen(
             .padding(top = 1.dp)
             .fillMaxWidth()
 
-            .fillMaxHeight()
+            .fillMaxHeight(),
         /*.background(
             Color.White
-        )*/,
+        )*/
         contentScale = ContentScale.FillBounds,
 
         )
 
     val gradient =
-        Brush.horizontalGradient(listOf(Color(0xFF28D8A3),
-            Color(0xFF00BEB2)))
+        Brush.horizontalGradient(
+            listOf(
+                Color(0xFF28D8A3),
+                Color(0xFF00BEB2)
+            )
+        )
 
-    Column(modifier = Modifier
-        .verticalScroll(rememberScrollState())
-        .fillMaxHeight()
+    Column(
+        modifier = Modifier
+            .verticalScroll(rememberScrollState())
+            .fillMaxHeight()
     ) {
         Box(modifier = Modifier.fillMaxWidth()) {
 
@@ -80,19 +86,20 @@ fun HomeScreen(
                 modifier = Modifier
                     .padding(top = 0.dp, bottom = 1.dp)
 
-                    .background(color = Color.Transparent)
+                    .background(color = Color.Transparent),
                 //.fillMaxWidth()
                 //.fillMaxHeight()
                 //.fillMaxSize(),
-                ,
                 contentScale = ContentScale.FillWidth,
             )
 
-            Text(text = " Hello Bhavanite,",
+            Text(
+                text = " Hello Bhavanite,",
                 modifier = Modifier.padding(start = 10.dp, top = 25.dp),
                 color = Color.White,
                 fontSize = 25.sp,
-                fontFamily = FontFamily.SansSerif)
+                fontFamily = FontFamily.SansSerif
+            )
             Image(
                 painter = painterResource(id = R.drawable.logohome),
                 contentDescription = null,
@@ -106,24 +113,32 @@ fun HomeScreen(
             )
 
         }
-        Box(modifier = Modifier.height(75.dp)){
+        Box(modifier = Modifier.height(75.dp)) {
 
         }
-        Column(verticalArrangement = Arrangement.spacedBy(1.dp),
-            modifier = Modifier.fillMaxHeight()) {
-            Row(horizontalArrangement = Arrangement.SpaceEvenly,
+        Column(
+            verticalArrangement = Arrangement.spacedBy(1.dp),
+            modifier = Modifier.fillMaxHeight()
+        ) {
+            Row(
+                horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.fillMaxWidth()) {
+                modifier = Modifier.fillMaxWidth()
+            ) {
 
-                GradientB1(gradient = gradient,
+                GradientB1(
+                    gradient = gradient,
                     onClick = { navController.navigate(Screen.result.route) },
                     text = "Results",
-                    img = painterResource(id = R.drawable.c7489d50a04427ad0ed4e3966230c0d3_removebg_preview))
+                    img = painterResource(id = R.drawable.c7489d50a04427ad0ed4e3966230c0d3_removebg_preview)
+                )
 
-                GradientB1(gradient = gradient,
+                GradientB1(
+                    gradient = gradient,
                     onClick = { navController.navigate(Screen.Question1.route) },
                     text = "Previous Year Q.P",
-                    img = painterResource(id = R.drawable.exam))
+                    img = painterResource(id = R.drawable.exam)
+                )
 
             }
 
@@ -133,15 +148,19 @@ fun HomeScreen(
                 modifier = Modifier.fillMaxWidth()
             ) {
 
-                GradientB1(gradient = gradient,
+                GradientB1(
+                    gradient = gradient,
                     onClick = { navController.navigate(Screen.Welcome.route) },
                     text = "Feedback",
-                    img = painterResource(id = R.drawable.feedbackreal))
+                    img = painterResource(id = R.drawable.feedbackreal)
+                )
 
-                GradientB1(gradient = gradient,
+                GradientB1(
+                    gradient = gradient,
                     onClick = { navController.navigate(NavigationItem.Navscreen.route) },
                     text = "Navigation",
-                    img = painterResource(id = R.drawable.images_removebg_preview__2_))
+                    img = painterResource(id = R.drawable.images_removebg_preview__2_)
+                )
             }
 
             Row(
@@ -150,15 +169,19 @@ fun HomeScreen(
                 modifier = Modifier.fillMaxWidth()
             ) {
 
-                GradientB1(gradient = gradient,
+                GradientB1(
+                    gradient = gradient,
                     onClick = { navController.navigate(Screen.notification.route) },
                     text = "Notification",
-                    img = painterResource(id = R.drawable._61788c1_816e_4ce1_8030_6cd54350dc1b_removebg_preview))
+                    img = painterResource(id = R.drawable._61788c1_816e_4ce1_8030_6cd54350dc1b_removebg_preview)
+                )
 
-                GradientB1(gradient = gradient,
+                GradientB1(
+                    gradient = gradient,
                     onClick = { navController.navigate(Screen.antirag.route) },
                     text = "Anti-Ragging",
-                    img = painterResource(id = R.drawable._a199798_b921_47c8_aa71_30d9330f37c2_removebg_preview))
+                    img = painterResource(id = R.drawable._a199798_b921_47c8_aa71_30d9330f37c2_removebg_preview)
+                )
             }
         }
 
@@ -260,78 +283,68 @@ fun NavigationController(navController: NavHostController,startDestination: Stri
 fun Navigation() {
 
 
-
-
     val navController = rememberNavController()
 
     val items = listOf(
         NavigationItem.Home,
         NavigationItem.academics,
         NavigationItem.Activities,
+    )
 
-        )
-
-
-
-        Scaffold(
-            bottomBar = {
-                BottomNavigation(backgroundColor =Color(0xFF0CC5AD)) {
+    Scaffold(
+        bottomBar = {
+            BottomNavigation(backgroundColor = Color(0xFF0CC5AD)) {
 
 
+                val navBackStackEntry by navController.currentBackStackEntryAsState()
+                val currentRoute = navBackStackEntry?.destination?.route
 
-                    val navBackStackEntry by navController.currentBackStackEntryAsState()
-                    val currentRoute = navBackStackEntry?.destination?.route
-                
 
-                    items.forEach {
-                        BottomNavigationItem(selected = currentRoute == it.route,
-                            label = {
-                                Text(
-                                    text = it.label,
-                                    color = if (currentRoute == it.route) Color.Black else Color.LightGray
+                items.forEach {
+                    BottomNavigationItem(selected = currentRoute == it.route,
+                        label = {
+                            Text(
+                                text = it.label,
+                                color = if (currentRoute == it.route) Color.Black else Color.LightGray
+                            )
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = it.Icon, contentDescription = null,
+                                tint = if (currentRoute == it.route) Color(0xFFDA1D1D) else Color(
+                                    0xFFFFFFFF
                                 )
-                            },
-                            icon = {
-                                Icon(
-                                    imageVector = it.Icon, contentDescription = null ,
-                                    tint = if (currentRoute == it.route)Color(0xFFDA1D1D) else Color(
-                                        0xFFFFFFFF)
-                                )
+                            )
 
-                            },
+                        },
 
-                            onClick = {
-                                if (currentRoute != it.route) {
+                        onClick = {
+                            if (currentRoute != it.route) {
 
-                                    navController.graph?.startDestinationRoute?.let {
-                                        navController.popBackStack(it ,true)
-                                    }
-
-                                    navController.navigate(it.route) {
-                                        popUpTo(navController.graph.findStartDestination().id)
-                                        launchSingleTop = true
-                                    }
-
+                                navController.graph?.startDestinationRoute?.let {
+                                    navController.popBackStack(it, true)
                                 }
 
-                            })
+                                navController.navigate(it.route) {
+                                    popUpTo(navController.graph.findStartDestination().id)
+                                    launchSingleTop = true
+                                }
 
-                    }
+                            }
 
+                        })
 
                 }
 
 
-            }) {
-            SetupNavGraph(navController = navController )
+            }
 
 
-        }
-
+        }) {
+        BottomNavGraph(navController = navController)
     }
 
-
-
+}
 
 
 @Composable

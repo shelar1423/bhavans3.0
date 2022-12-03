@@ -68,7 +68,7 @@ fun WelcomeScreen(
         ) {
             welcomeViewModel.saveOnBoardingState(completed = true)
             navController.popBackStack()
-            navController.navigate(NavigationItem.Home.route)
+            navController.navigate(Screen.HomeScreen.route)
         }
     }
 }
