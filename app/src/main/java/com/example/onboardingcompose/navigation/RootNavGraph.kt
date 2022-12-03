@@ -6,13 +6,15 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.onboardingcompose.screen.Navigation
+import com.example.onboardingcompose.viewmodel.SplashViewModel
 import com.google.accompanist.pager.ExperimentalPagerApi
 
 
 @OptIn(ExperimentalAnimationApi::class, ExperimentalPagerApi::class)
 @Composable
 fun RootNavGraph(
-    navController: NavHostController
+    navController: NavHostController,
+    splashViewModel: SplashViewModel
 ) {
 
     NavHost(
@@ -20,7 +22,8 @@ fun RootNavGraph(
         route = Graph.ROOT_NAV_GRAPH,
         startDestination = Graph.ON_START_GRAPH
     ) {
-        onStartGraph(navController = navController)
+        SetupNavGraph(navController = navController)
+        onStartGraph(navController = navController, splashViewModel = splashViewModel)
         composable(route = Graph.BOTTOM_NAV_GRAPH) {
             Navigation()
         }

@@ -1,18 +1,14 @@
 package com.example.onboardingcompose.navigation
 
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.Icon
-import android.media.Image
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
-import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.material.icons.filled.Book
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.painterResource
-import com.example.onboardingcompose.R
-import com.example.onboardingcompose.util.OnBoardingPage.First.image
 
 sealed class Screen(val route: String,) {
     object Welcome : Screen(route = "welcome_screen")
+    object SplashScreen : Screen(route = "splash_screen")
     //object Home : Screen(route = "home_screen")
     object Papers :Screen(route = "papers")
     object Question1 : Screen(route = "Question1")
