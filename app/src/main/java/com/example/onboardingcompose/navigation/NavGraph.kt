@@ -23,7 +23,7 @@ fun SetupNavGraph(
 ) {
     NavHost(
         navController = navController,
-        startDestination = NavigationItem.Home.route
+        startDestination = Screen.Welcome.route
     ) {
         composable(NavigationItem.Home.route) {
             HomeScreen(navController = navController)
