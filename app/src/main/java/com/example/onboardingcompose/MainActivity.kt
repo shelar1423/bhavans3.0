@@ -29,15 +29,15 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         installSplashScreen().setKeepOnScreenCondition {
             !splashViewModel.isLoading.value
         }
 
         setContent {
             OnBoardingComposeTheme {
-                val screen by splashViewModel.startDestination
                 val navController = rememberNavController()
-                RootNavGraph(navController = navController)
+                RootNavGraph(navController = navController, splashViewModel = splashViewModel)
 
 //                    Navigation()
 

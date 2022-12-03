@@ -22,7 +22,6 @@ fun BottomNavGraph(
         route = Graph.BOTTOM_NAV_GRAPH,
         startDestination = NavigationItem.Home.route
     ) {
-        SetupNavGraph(navController = navController)
         composable(NavigationItem.Home.route) {
             HomeScreen(navController = navController)
         }

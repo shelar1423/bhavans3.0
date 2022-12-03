@@ -7,23 +7,26 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.onboardingcompose.screen.Navigation
+import com.example.onboardingcompose.screen.SplashScreen
 import com.example.onboardingcompose.screen.WelcomeScreen
+import com.example.onboardingcompose.viewmodel.SplashViewModel
 import com.google.accompanist.pager.ExperimentalPagerApi
 
 @OptIn(ExperimentalAnimationApi::class, ExperimentalPagerApi::class)
 fun NavGraphBuilder.onStartGraph(
     navController: NavHostController,
+    splashViewModel: SplashViewModel
 ) {
 
     navigation(
         route = Graph.ON_START_GRAPH,
-        startDestination = Screen.Welcome.route
+        startDestination = Screen.SplashScreen.route
     ) {
         composable(route = Screen.HomeScreen.route) {
             Navigation()
         }
-        composable(route = Screen.Welcome.route) {
-            WelcomeScreen(navController = navController)
+        composable(route = Screen.SplashScreen.route) {
+            SplashScreen(navController = navController, splashViewModel = splashViewModel)
         }
     }
 
