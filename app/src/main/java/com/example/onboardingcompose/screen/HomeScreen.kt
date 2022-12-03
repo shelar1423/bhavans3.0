@@ -22,6 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import com.example.onboardingcompose.R
@@ -285,63 +286,75 @@ fun Navigation() {
 
     val navController = rememberNavController()
 
+
+
+    Scaffold(
+        bottomBar = {
+
+
+            BottomBar(navController)
+
+        }) {
+        BottomNavGraph(navController = navController)
+    }
+
+}
+
+@Composable
+fun BottomBar(
+    navController: NavController
+) {
+
     val items = listOf(
         NavigationItem.Home,
         NavigationItem.academics,
         NavigationItem.Activities,
     )
 
-    Scaffold(
-        bottomBar = {
-            BottomNavigation(backgroundColor = Color(0xFF0CC5AD)) {
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentRoute = navBackStackEntry?.destination?.route
 
+    val bottomBarDestination = items.any { it.route == currentRoute }
 
-                val navBackStackEntry by navController.currentBackStackEntryAsState()
-                val currentRoute = navBackStackEntry?.destination?.route
+    if (bottomBarDestination) {
+        BottomNavigation(backgroundColor = Color(0xFF0CC5AD)) {
 
-
-                items.forEach {
-                    BottomNavigationItem(selected = currentRoute == it.route,
-                        label = {
-                            Text(
-                                text = it.label,
-                                color = if (currentRoute == it.route) Color.Black else Color.LightGray
+            items.forEach {
+                BottomNavigationItem(selected = currentRoute == it.route,
+                    label = {
+                        Text(
+                            text = it.label,
+                            color = if (currentRoute == it.route) Color.Black else Color.LightGray
+                        )
+                    },
+                    icon = {
+                        Icon(
+                            imageVector = it.Icon, contentDescription = null,
+                            tint = if (currentRoute == it.route) Color(0xFFDA1D1D) else Color(
+                                0xFFFFFFFF
                             )
-                        },
-                        icon = {
-                            Icon(
-                                imageVector = it.Icon, contentDescription = null,
-                                tint = if (currentRoute == it.route) Color(0xFFDA1D1D) else Color(
-                                    0xFFFFFFFF
-                                )
-                            )
+                        )
 
-                        },
+                    },
 
-                        onClick = {
-                            if (currentRoute != it.route) {
+                    onClick = {
+                        if (currentRoute != it.route) {
 
-                                navController.graph?.startDestinationRoute?.let {
-                                    navController.popBackStack(it, true)
-                                }
-
-                                navController.navigate(it.route) {
-                                    popUpTo(navController.graph.findStartDestination().id)
-                                    launchSingleTop = true
-                                }
-
+                            navController.graph?.startDestinationRoute?.let {
+                                navController.popBackStack(it, true)
                             }
 
-                        })
+                            navController.navigate(it.route) {
+                                popUpTo(navController.graph.findStartDestination().id)
+                                launchSingleTop = true
+                            }
 
-                }
+                        }
 
+                    })
 
             }
-
-
-        }) {
-        BottomNavGraph(navController = navController)
+        }
     }
 
 }
