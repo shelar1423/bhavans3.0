@@ -6,12 +6,10 @@ import actscreen
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.activity
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.navigation
 import com.example.onboardingcompose.screen.*
 import com.example.onboardingcompose.screen.quespaper.bcap
 
@@ -19,13 +17,27 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 
 @ExperimentalAnimationApi
 @ExperimentalPagerApi
-fun NavGraphBuilder.SetupNavGraph(
+@Composable
+fun SetupNavGraph(
     navController: NavHostController
 ) {
-    navigation(
-        route = Graph.NavGraph,
-        startDestination = Screen.Welcome.route
+    NavHost(
+        navController = navController,
+        startDestination = NavigationItem.Home.route
     ) {
+        composable(NavigationItem.Home.route) {
+            HomeScreen(navController = navController)
+        }
+        composable(NavigationItem.academics.route) {
+            actscreen(navController = navController)
+        }
+
+        composable(NavigationItem.Activities.route) {
+            exam(navController = navController)
+        }
+        composable(route = Screen.Welcome.route) {
+            WelcomeScreen(navController = navController)
+        }
         /*composable(route = Screen.Home.route) {
             HomeScreen(navController = navController)
         }*/
