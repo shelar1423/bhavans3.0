@@ -30,9 +30,9 @@ fun NavGraphBuilder.SetupNavGraph(
         composable(route = Screen.Welcome.route) {
             WelcomeScreen(navController = navController)
         }
-        /*composable(route = Screen.Home.route) {
+        composable(route = Screen.HomeScreen.route) {
             HomeScreen(navController = navController)
-        }*/
+        }
         composable(route = Screen.Papers.route) {
             Papers(navController = navController)
         }
