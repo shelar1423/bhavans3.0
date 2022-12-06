@@ -3,7 +3,6 @@ package com.example.onboardingcompose.navigation
 import actscreen
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -96,6 +95,18 @@ fun BottomNavGraph(
         composable(route = Screen.bcap.route)
         {
             bcap(navController=navController, url ="https://drive.google.com/file/d/1FmCZM6hfayerRX8eugK8b3as3muzCGCj/view?usp=sharing")
+        }
+        composable(route = Screen.placement.route)
+        {
+            bcap(navController=navController, url ="https://www.bhavansvc.ac.in/placementcell.html")
+        }
+        composable(route = Screen.payment.route)
+        {
+            bcap(navController=navController, url ="https://www.feepayr.com/")
+        }
+        composable(route = Screen.alumni.route)
+        {
+            bcap(navController=navController, url ="https://alumni.bhavansvc.ac.in/")
         }
 
 

@@ -1,10 +1,15 @@
 package com.example.onboardingcompose.navigation
 
+
+//import androidx.compose.material.icons.filled.Book
+
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Book
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.materialIcon
+import androidx.compose.material.icons.materialPath
 import androidx.compose.ui.graphics.vector.ImageVector
+
 
 sealed class Screen(val route: String,) {
     object Welcome : Screen(route = "welcome_screen")
@@ -27,6 +32,9 @@ sealed class Screen(val route: String,) {
     object notification:Screen(route = "notification")
     object antirag:Screen(route = "antirag")
     object bcap:Screen(route = "bcap")
+    object placement:Screen(route = "placement")
+    object payment:Screen(route = "payment")
+    object alumni:Screen(route = "alumni")
 
     object HomeScreen:Screen(route = "home_screen")
 
@@ -45,3 +53,36 @@ sealed class NavigationItem(val route: String, val label: String,val Icon: Image
 
 
 }
+
+
+//in my device book was not working
+public val Icons.Filled.Book: ImageVector
+    get() {
+        if (_book != null) {
+            return _book!!
+        }
+        _book = materialIcon(name = "Filled.Book") {
+            materialPath {
+                moveTo(18.0f, 2.0f)
+                horizontalLineTo(6.0f)
+                curveToRelative(-1.1f, 0.0f, -2.0f, 0.9f, -2.0f, 2.0f)
+                verticalLineToRelative(16.0f)
+                curveToRelative(0.0f, 1.1f, 0.9f, 2.0f, 2.0f, 2.0f)
+                horizontalLineToRelative(12.0f)
+                curveToRelative(1.1f, 0.0f, 2.0f, -0.9f, 2.0f, -2.0f)
+                verticalLineTo(4.0f)
+                curveToRelative(0.0f, -1.1f, -0.9f, -2.0f, -2.0f, -2.0f)
+                close()
+                moveTo(6.0f, 4.0f)
+                horizontalLineToRelative(5.0f)
+                verticalLineToRelative(8.0f)
+                lineToRelative(-2.5f, -1.5f)
+                lineTo(6.0f, 12.0f)
+                verticalLineTo(4.0f)
+                close()
+            }
+        }
+        return _book!!
+    }
+
+private var _book: ImageVector? = null

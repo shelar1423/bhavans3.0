@@ -1,7 +1,5 @@
 package com.example.onboardingcompose.ui.theme
 
-import androidx.compose.material.Colors
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 
 val Blue200 = Color(0xFF73e8ff)
@@ -28,6 +26,8 @@ val BlueViolet2 = Color(0xff9fa5fe)
 val grey = Color(0xA8C1C2D8)
 
 val c1= Color(0xFF73e8ff)
-val c2= Color(0xffeeeeee)
+val c2=Color(0xFFFFFFFF)
+val c4= Color(0xFF0167E2)
+val c3=Color(0xFF8BECCE)
 
 
