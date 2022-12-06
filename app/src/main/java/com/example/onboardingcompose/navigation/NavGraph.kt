@@ -2,7 +2,7 @@
 
 package com.example.onboardingcompose.navigation
 
-import actscreen
+
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
@@ -92,8 +92,22 @@ fun NavGraphBuilder.SetupNavGraph(
         {
             bcap(navController=navController, url ="https://drive.google.com/file/d/1FmCZM6hfayerRX8eugK8b3as3muzCGCj/view?usp=sharing")
         }
-
-
+        composable(route = Screen.almanac.route)
+        {
+            almanac(navController=navController, url ="https://www.bhavansvc.ac.in/almanac.html")
+        }
+        composable(route = Screen.syllabi.route)
+        {
+            almanac(navController=navController, url ="https://www.bhavansvc.ac.in/syllabi.html")
+        }
+        composable(route = Screen.website.route)
+        {
+            website(navController=navController, url ="https://www.bhavansvc.ac.in/")
+        }
+        composable(route = Screen.marquee.route)
+        {
+            MarqueenText(navController = navController, text = "hi")
+        }
         }
 
 

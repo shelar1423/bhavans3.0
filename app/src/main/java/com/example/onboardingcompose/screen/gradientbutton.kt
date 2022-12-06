@@ -17,11 +17,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.onboardingcompose.R
 import com.example.onboardingcompose.ui.theme.bab
 import com.example.onboardingcompose.ui.theme.c1
 import com.example.onboardingcompose.ui.theme.c2
@@ -184,8 +187,9 @@ fun GradientB2(
             //painterResource(id = R.drawable.exam),
             painter = img,
             contentDescription = "Cart button icon",
-            alignment = Alignment.Center,
+           alignment = Alignment.Center,
             modifier = Modifier.height(60.dp)
+                .padding(start = 1.dp)
 
         )
         Text(
@@ -193,6 +197,48 @@ fun GradientB2(
             color = Color.Black,
             fontWeight = FontWeight.ExtraBold,
             fontFamily = bab,
+        )
+    }
+}
+
+@ExperimentalAnimationApi
+@ExperimentalPagerApi
+@Composable
+fun GradientB3(
+    gradient: Brush,
+    onClick: () -> Unit,
+    text: String,
+
+
+) {val avtar = FontFamily(Font(R.font.ok))
+    Button(
+
+        colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
+
+        contentPadding = PaddingValues(),
+
+        modifier = Modifier
+            //.padding(150.dp)
+            .padding(top = 5.dp, start = 1.dp, end = 1.dp, bottom = 5.dp)
+            .height(100.dp)
+            .width(170.dp)
+            .clip(shape = RoundedCornerShape(20.dp))
+            //.fillMaxSize()
+            //.padding(horizontal = 1.dp, vertical = 8.dp)
+            .background(gradient),
+        //commentline
+
+
+        onClick = onClick
+    ) {
+
+
+        Text(
+
+            text = text,
+            color = Color.White,
+            fontWeight = FontWeight.ExtraBold,
+            fontFamily = FontFamily.Serif,
         )
     }
 }

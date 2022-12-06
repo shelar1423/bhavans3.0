@@ -10,6 +10,7 @@ import androidx.compose.ui.unit.sp
 import com.example.onboardingcompose.R
 
 val bab = FontFamily(Font(R.font.nunito_extrabold_italic))
+val avtar = FontFamily(Font(R.font.ok))
 
 // Set of Material typography styles to start with
 val Typography = Typography(

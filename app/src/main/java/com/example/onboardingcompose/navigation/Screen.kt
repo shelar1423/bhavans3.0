@@ -37,7 +37,10 @@ sealed class Screen(val route: String,) {
     object alumni:Screen(route = "alumni")
 
     object HomeScreen:Screen(route = "home_screen")
-
+ object  syllabi:Screen(route = "syllabi")
+    object  almanac:Screen(route = "almanac")
+    object  website:Screen(route = "website")
+    object  marquee:Screen(route = "marquee")
 
 }
 sealed class NavigationItem(val route: String, val label: String,val Icon: ImageVector) {

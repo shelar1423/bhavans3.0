@@ -1,6 +1,8 @@
 package com.example.onboardingcompose.screen
 
 
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -15,6 +17,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -412,6 +415,8 @@ fun HomeScreen123(
     welcomeViewModel: WelcomeViewModel = hiltViewModel()
 
 ) {
+    val context = LocalContext.current
+    val webIntent: Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/"))
 
 
     Image(
@@ -469,6 +474,7 @@ fun HomeScreen123(
                 contentDescription = null,
                 //alignment = Alignment.BottomStart,
                 modifier = Modifier
+                    .clickable { navController.navigate(Screen.website.route) }
                     //.background(color = Color.White)
                     .padding(top = 40.dp, bottom = 100.dp, start = 270.dp)
                     .fillMaxWidth()

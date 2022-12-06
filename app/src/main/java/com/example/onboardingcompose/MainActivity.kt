@@ -4,12 +4,20 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.rememberNavController
 import com.example.onboardingcompose.navigation.RootNavGraph
 import com.example.onboardingcompose.navigation.Screen
 import com.example.onboardingcompose.navigation.SetupNavGraph
+import com.example.onboardingcompose.screen.MarqueenText
+
 import com.example.onboardingcompose.screen.Navigation
 import com.example.onboardingcompose.screen.WelcomeScreen
 import com.example.onboardingcompose.ui.theme.OnBoardingComposeTheme
@@ -42,6 +50,8 @@ class MainActivity : ComponentActivity() {
 //                    Navigation()
 
             }
+
+
         }
 
 

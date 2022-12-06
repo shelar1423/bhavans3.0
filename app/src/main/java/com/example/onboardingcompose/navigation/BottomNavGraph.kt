@@ -1,6 +1,7 @@
 package com.example.onboardingcompose.navigation
 
-import actscreen
+import act
+
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
@@ -25,7 +26,7 @@ fun BottomNavGraph(
             HomeScreen(navController = navController)
         }
         composable(NavigationItem.academics.route) {
-            actscreen(navController = navController)
+            act(navController = navController)
         }
 
         composable(NavigationItem.Activities.route) {
@@ -108,7 +109,16 @@ fun BottomNavGraph(
         {
             bcap(navController=navController, url ="https://alumni.bhavansvc.ac.in/")
         }
-
+        composable(route = Screen.syllabi.route){
+            WebViewPage(navController = navController, url = "https://www.bhavansvc.ac.in/syllabi.html")
+        }
+        composable(route = Screen.almanac.route){
+            WebViewPage(navController = navController, url = "https://www.bhavansvc.ac.in/almanac.html")
+        }
+        composable(route = Screen.website.route)
+        {
+            website(navController=navController, url ="https://www.bhavansvc.ac.in/")
+        }
 
     }
 
