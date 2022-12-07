@@ -71,7 +71,7 @@ fun HomeScreen(
         modifier = Modifier
             //.background(color = Color.White)
             .padding(top = 250.dp, bottom = 100.dp, start = 0.dp)
-            .fillMaxWidth().clickable { navController.navigate(Screen.website.route) },
+            .fillMaxWidth().clickable { navController.navigate(Screen.almanac.route) },
         contentScale =  ContentScale.FillWidth
 
 

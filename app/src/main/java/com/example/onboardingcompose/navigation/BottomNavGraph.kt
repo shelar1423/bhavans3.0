@@ -112,7 +112,10 @@ fun BottomNavGraph(
         {
             website(navController=navController, url ="https://www.bhavansvc.ac.in/")
         }
-
+        composable(route = Screen.linktree.route)
+        {
+            linktree(navController=navController, url ="https://linktr.ee/BhavansCollege")
+        }
     }
 
 }

@@ -39,6 +39,7 @@ sealed class Screen(val route: String,) {
     object  almanac:Screen(route = "almanac")
     object  website:Screen(route = "website")
     object  marquee:Screen(route = "marquee")
+    object  linktree:Screen(route = "linktree")
 
 }
 sealed class NavigationItem(val route: String, val label: String,val Icon: ImageVector) {
