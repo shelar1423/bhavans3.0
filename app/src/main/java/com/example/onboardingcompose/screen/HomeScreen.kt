@@ -115,15 +115,7 @@ modifier = Modifier
     val scroll = rememberScrollState(0)
 
     Box(modifier = Modifier.height(25.dp)) {
-        Text(text = "Kulapathi Dr. K. M. Munshi founded Bharatiya Vidya Bhavan on 7 November 1938 with the blessings of Mahatma Gandhi. Over a period of time, Bhavans has grown into a secular, apolitical, cultural and educational organization. It has around 367 constituent institutions, 119 centers in India and 8 centers overseas. About 22,000 members have committed themselves to the Bhavan's ideal \" Vasudhaiva Kutumbakam \" (The World is One Family) and lives by its code.",
-            modifier = Modifier
-                .fillMaxWidth()
-                .horizontalScroll(scroll)
-            ,
-            fontSize = 20.sp,
-            color=Color.Black,
-            overflow = TextOverflow.Clip)
-        Spacer(modifier = Modifier.height(50.dp))
+
     }
     Box(modifier = Modifier.height(20.dp))
     /*
@@ -175,15 +167,7 @@ modifier = Modifier
             modifier = Modifier.fillMaxWidth()
         ) {
             Column(Modifier.weight(2f)) {
-                Image(
-                    painter = painterResource(R.drawable.pl1),
-                    contentDescription = "avatar",
-                    contentScale = ContentScale.Crop,            // crop the image if it's not a square
-                    modifier = Modifier
-                        .size(64.dp)
-                        .clip(CircleShape)                       // clip to the circle shape
-                        .border(2.dp, Color.Gray, CircleShape)   // add a border (optional)
-                )
+
             }
             Column(Modifier.weight(8f)) {
                 GBhome(
@@ -386,13 +370,13 @@ fun GBhome(
             backgroundColor =  Color.Transparent
         ),
         contentPadding = PaddingValues(),
-        shape = RoundedCornerShape(topEnd = 30.dp, bottomStart = 30.dp),
+        //shape = RoundedCornerShape(topEnd = 30.dp, bottomStart = 30.dp),
         onClick = onClick) {
         Box(
             modifier = Modifier
                 .background(gradient)
                 .padding(top = 10.dp, bottom = 10.dp, start = 10.dp, end = 10.dp)
-                .fillMaxWidth()
+                .width(1000.dp)
                 .height(40.dp),
             contentAlignment = Alignment.Center) {
             Text(text = text, color = textColor,
@@ -686,21 +670,21 @@ fun BottomBar(
     val bottomBarDestination = items.any { it.route == currentRoute }
 
     if (bottomBarDestination) {
-        BottomNavigation(backgroundColor = Color(0xFF0CC5AD)) {
+        BottomNavigation(backgroundColor = Color(0xD08FE1)) {
 
             items.forEach {
                 BottomNavigationItem(selected = currentRoute == it.route,
                     label = {
                         Text(
                             text = it.label,
-                            color = if (currentRoute == it.route) Color.Black else Color.LightGray
+                            color = if (currentRoute == it.route) Color.Black else Color.Black
                         )
                     },
                     icon = {
                         Icon(
                             imageVector = it.Icon, contentDescription = null,
                             tint = if (currentRoute == it.route) Color(0xFFDA1D1D) else Color(
-                                0xFFFFFFFF
+                                0xFF4027DE
                             )
                         )
 
