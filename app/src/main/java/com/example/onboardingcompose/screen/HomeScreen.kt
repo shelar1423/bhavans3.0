@@ -65,7 +65,7 @@ fun HomeScreen(
 
         )
     Image(
-        painter = painterResource(id = R.drawable.finaltop),
+        painter = painterResource(id = R.drawable.socialnone),
         contentDescription = null,
         //alignment = Alignment.BottomStart,
         modifier = Modifier
