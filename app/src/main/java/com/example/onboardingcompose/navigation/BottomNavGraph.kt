@@ -9,6 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.onboardingcompose.screen.*
 import com.example.onboardingcompose.screen.quespaper.bcap
+import com.example.onboardingcompose.screen.quespaper.newqp
 import com.google.accompanist.pager.ExperimentalPagerApi
 
 @OptIn(ExperimentalAnimationApi::class, ExperimentalPagerApi::class)
@@ -42,17 +43,9 @@ fun BottomNavGraph(
             Papers(navController = navController)
         }
         composable(route= Screen.Question1.route) {
-            Main1(navController = navController)
+            newqp(navController = navController)
         }
-        composable(route= Screen.ug1.route) {
-            Main2(navController = navController)
-        }
-        composable(route= Screen.pg1.route) {
-            Main3(navController = navController)
-        }
-        composable(route= Screen.ph1.route) {
-            Main4(navController = navController)
-        }
+
 
         composable(route = NavigationItem.Navscreen.route)
         {

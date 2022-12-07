@@ -1,7 +1,6 @@
 package com.example.onboardingcompose.screen
 
 
-import android.graphics.LinearGradient
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -211,6 +210,49 @@ fun GradientB3(
 
 
 ) {val avtar = FontFamily(Font(R.font.ok))
+    Button(
+
+        colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
+
+        contentPadding = PaddingValues(),
+
+        modifier = Modifier
+            //.padding(150.dp)
+            .padding(top = 5.dp, start = 1.dp, end = 1.dp, bottom = 5.dp)
+            .height(100.dp)
+            .width(170.dp)
+            .clip(shape = RoundedCornerShape(20.dp))
+            //.fillMaxSize()
+            //.padding(horizontal = 1.dp, vertical = 8.dp)
+            .background(gradient),
+        //commentline
+
+
+        onClick = onClick
+    ) {
+
+
+        Text(
+
+            text = text,
+            color = Color.White,
+            fontWeight = FontWeight.ExtraBold,
+            fontFamily = FontFamily.Serif,
+        )
+    }
+}
+
+
+@ExperimentalAnimationApi
+@ExperimentalPagerApi
+@Composable
+fun GradientB4(
+    gradient: Brush,
+    onClick: () -> Unit,
+    text: String,
+
+
+    ) {val avtar = FontFamily(Font(R.font.ok))
     Button(
 
         colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),

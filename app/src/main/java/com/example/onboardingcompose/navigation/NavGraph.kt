@@ -5,16 +5,12 @@ package com.example.onboardingcompose.navigation
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.runtime.Composable
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
-import androidx.navigation.activity
-import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.onboardingcompose.screen.*
 import com.example.onboardingcompose.screen.quespaper.bcap
-
 import com.google.accompanist.pager.ExperimentalPagerApi
 
 @ExperimentalAnimationApi
@@ -36,18 +32,7 @@ fun NavGraphBuilder.SetupNavGraph(
         composable(route = Screen.Papers.route) {
             Papers(navController = navController)
         }
-        composable(route= Screen.Question1.route) {
-            Main1(navController = navController)
-        }
-        composable(route= Screen.ug1.route) {
-            Main2(navController = navController)
-        }
-        composable(route= Screen.pg1.route) {
-            Main3(navController = navController)
-        }
-        composable(route= Screen.ph1.route) {
-            Main4(navController = navController)
-        }
+
 
         composable(route = NavigationItem.Navscreen.route)
         {
