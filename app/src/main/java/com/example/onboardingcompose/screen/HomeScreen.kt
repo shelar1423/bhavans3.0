@@ -2,13 +2,12 @@ package com.example.onboardingcompose.screen
 
 
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.animation.core.*
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -25,20 +24,15 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
-import com.example.onboardingcompose.R
-import com.example.onboardingcompose.navigation.Screen
-import com.example.onboardingcompose.ui.theme.*
-import com.example.onboardingcompose.viewmodel.WelcomeViewModel
-import com.google.accompanist.pager.*
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.onboardingcompose.R
 import com.example.onboardingcompose.navigation.BottomNavGraph
 import com.example.onboardingcompose.navigation.NavigationItem
-
-
-import com.example.onboardingcompose.navigation.SetupNavGraph
+import com.example.onboardingcompose.navigation.Screen
+import com.example.onboardingcompose.ui.theme.bab
+import com.example.onboardingcompose.viewmodel.WelcomeViewModel
+import com.google.accompanist.pager.ExperimentalPagerApi
 
 
 @ExperimentalAnimationApi
@@ -109,8 +103,9 @@ fun HomeScreen(
                 //alignment = Alignment.BottomStart,
                 modifier = Modifier
                     //.background(color = Color.White)
-                    .padding(top = 20.dp, bottom = 100.dp, start = 0.dp, end = 220.dp)
-                    .fillMaxWidth().clickable { navController.navigate(Screen.website.route) }
+                    .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 220.dp)
+                    .fillMaxWidth()
+                    .clickable { navController.navigate(Screen.website.route) }
 
 
             )
@@ -131,7 +126,8 @@ fun HomeScreen(
             modifier = Modifier
                 //.background(color = Color.White)
                 .padding(top = 0.dp, bottom = 10.dp, start = 0.dp)
-                .fillMaxWidth().clickable { navController.navigate(Screen.almanac.route) },
+                .fillMaxWidth()
+                .clickable { navController.navigate(Screen.almanac.route) },
             contentScale =  ContentScale.FillWidth
 
 
@@ -253,21 +249,22 @@ fun HomeScreen(
 
             onClick = onClick
         ) {
+Column() {
+    Image(
+        //painterResource(id = R.drawable.exam),
+        painter = img,
+        contentDescription = "Cart button icon",
+        alignment = Alignment.Center,
+        modifier = Modifier.height(180.dp).width(180.dp)
 
-            Image(
-                //painterResource(id = R.drawable.exam),
-                painter = img,
-                contentDescription = "Cart button icon",
-                alignment = Alignment.Center,
-                modifier = Modifier.height(80.dp)
-
-            )
-            Text(
-                text = text,
-                color = Color.Blue,
-                fontWeight = FontWeight.ExtraBold,
-                fontFamily = bab,
-            )
+    )
+    Text(
+        text = text,
+        color = Color.Blue,
+        fontWeight = FontWeight.ExtraBold,
+        fontFamily = bab,
+    )
+}
         }
     }
 }

@@ -4,12 +4,9 @@ package com.example.onboardingcompose.screen
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
-import androidx.compose.material.ButtonColors
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -124,8 +121,9 @@ fun GradientB1(
 
         contentPadding = PaddingValues(),
 
-        modifier = Modifier.shadow(shape =  RoundedCornerShape(20.dp),
-            elevation = 2.dp)
+        modifier = Modifier
+            .shadow(shape = RoundedCornerShape(20.dp),
+                elevation = 2.dp)
             //.padding(150.dp)
             .padding(top = 5.dp, start = 1.dp, end = 1.dp, bottom = 5.dp)
             .height(130.dp)
@@ -138,21 +136,25 @@ fun GradientB1(
 
         onClick = onClick
     ) {
+        Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+            Image(
+                //painterResource(id = R.drawable.exam),
+                painter = img,
+                contentDescription = "Cart button icon",
+                alignment = Alignment.Center,
+                modifier = Modifier.height(80.dp).width(80.dp)
 
-        Image(
-            //painterResource(id = R.drawable.exam),
-            painter = img,
-            contentDescription = "Cart button icon",
-            alignment = Alignment.Center,
-            modifier = Modifier.height(60.dp)
+            )
+            Text(
+                text = text,
+                color = Color.Black,
+                fontWeight = FontWeight.ExtraBold,
+                fontFamily = bab,
+                fontSize = 20.sp
+            )
+        }
 
-        )
-        Text(
-            text = text,
-            color = Color.Black,
-            fontWeight = FontWeight.ExtraBold,
-            fontFamily = bab,
-        )
+
     }
 }
 
