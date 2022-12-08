@@ -52,7 +52,7 @@ fun HomeScreen(
 
 
     Image(
-        painter = painterResource(id = R.drawable.whitegrad), contentDescription = null,
+        painter = painterResource(id = R.drawable.blue), contentDescription = null,
         modifier = Modifier
             .padding(top = 1.dp)
             .fillMaxWidth()
@@ -64,24 +64,12 @@ fun HomeScreen(
         contentScale = ContentScale.FillBounds,
 
         )
-    Image(
-        painter = painterResource(id = R.drawable.socialnone),
-        contentDescription = null,
-        //alignment = Alignment.BottomStart,
-        modifier = Modifier
-            //.background(color = Color.White)
-            .padding(top = 250.dp, bottom = 100.dp, start = 0.dp)
-            .fillMaxWidth().clickable { navController.navigate(Screen.almanac.route) },
-        contentScale =  ContentScale.FillWidth
-
-
-    )
 
     val gradient =
         Brush.horizontalGradient(
             listOf(
-                Color(0xFF6E5DD5),
-                Color(0xFFC557C5)
+                Color(0xFF008EFF),
+                Color(0xFFFFFFFF)
             )
         )
 
@@ -92,23 +80,25 @@ fun HomeScreen(
     ) {
         Box(modifier = Modifier.fillMaxWidth()) {
 
-            Image(
-                painter = painterResource(id = R.drawable.jdjl),
-                contentDescription = null,
-                //alignment = Alignment.TopCenter,
-                modifier = Modifier
-                    .padding(top = 0.dp, bottom = 1.dp)
 
-                    .background(color = Color.Transparent),
-                //.fillMaxWidth()
-                //.fillMaxHeight()
-                //.fillMaxSize(),
-                contentScale = ContentScale.FillWidth,
-            )
 
             Text(
                 text = " Hello Bhavanite,",
-                modifier = Modifier.padding(start = 10.dp, top = 25.dp),
+                modifier = Modifier.padding(start = 180.dp, top = 31.dp),
+                color = Color.White,
+                fontSize = 25.sp,
+                fontFamily = FontFamily.SansSerif
+            )
+            Text(
+                text = "Digvijay",
+                modifier = Modifier.padding(start = 186.dp, top = 70.dp),
+                color = Color.White,
+                fontSize = 25.sp,
+                fontFamily = FontFamily.SansSerif
+            )
+            Text(
+                text = "BCA",
+                modifier = Modifier.padding(start = 186.dp, top = 110.dp),
                 color = Color.White,
                 fontSize = 25.sp,
                 fontFamily = FontFamily.SansSerif
@@ -119,7 +109,7 @@ fun HomeScreen(
                 //alignment = Alignment.BottomStart,
                 modifier = Modifier
                     //.background(color = Color.White)
-                    .padding(top = 40.dp, bottom = 100.dp, start = 230.dp)
+                    .padding(top = 20.dp, bottom = 100.dp, start = 0.dp, end = 220.dp)
                     .fillMaxWidth().clickable { navController.navigate(Screen.website.route) }
 
 
@@ -127,13 +117,25 @@ fun HomeScreen(
 
 
         }
-        Box(modifier = Modifier.height(110.dp)) {
+        Box(modifier = Modifier.height(0.dp)) {
+
 
         }
         Column(
-            verticalArrangement = Arrangement.spacedBy(1.dp),
+            verticalArrangement = Arrangement.spacedBy(25.dp),
             modifier = Modifier.fillMaxHeight()
-        ) {
+        ) { Image(
+            painter = painterResource(id = R.drawable.abhinavtransaprent),
+            contentDescription = null,
+            //alignment = Alignment.BottomStart,
+            modifier = Modifier
+                //.background(color = Color.White)
+                .padding(top = 0.dp, bottom = 10.dp, start = 0.dp)
+                .fillMaxWidth().clickable { navController.navigate(Screen.almanac.route) },
+            contentScale =  ContentScale.FillWidth
+
+
+        )
             Row(
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically,
@@ -196,6 +198,9 @@ fun HomeScreen(
                     text = "FeedBack",
                     img = painterResource(id = R.drawable.feedbackreal)
                 )
+
+            }
+            Box(modifier = Modifier.height(5.dp)) {
 
             }
         }

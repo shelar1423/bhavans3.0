@@ -4,15 +4,19 @@ package com.example.onboardingcompose.screen
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
+import androidx.compose.material.ButtonColors
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
@@ -116,15 +120,16 @@ fun GradientB1(
 ) {
     Button(
 
-        colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
+        colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
 
         contentPadding = PaddingValues(),
 
-        modifier = Modifier
+        modifier = Modifier.shadow(shape =  RoundedCornerShape(20.dp),
+            elevation = 2.dp)
             //.padding(150.dp)
             .padding(top = 5.dp, start = 1.dp, end = 1.dp, bottom = 5.dp)
-            .height(100.dp)
-            .width(170.dp)
+            .height(130.dp)
+            .width(160.dp)
             .clip(shape = RoundedCornerShape(20.dp))
             //.fillMaxSize()
             //.padding(horizontal = 1.dp, vertical = 8.dp)
@@ -144,7 +149,7 @@ fun GradientB1(
         )
         Text(
             text = text,
-            color = Color.White,
+            color = Color.Black,
             fontWeight = FontWeight.ExtraBold,
             fontFamily = bab,
         )
@@ -187,7 +192,8 @@ fun GradientB2(
             painter = img,
             contentDescription = "Cart button icon",
            alignment = Alignment.Center,
-            modifier = Modifier.height(60.dp)
+            modifier = Modifier
+                .height(60.dp)
                 .padding(start = 1.dp)
 
         )
@@ -207,6 +213,7 @@ fun GradientB3(
     gradient: Brush,
     onClick: () -> Unit,
     text: String,
+
 
 
 ) {val avtar = FontFamily(Font(R.font.ok))
@@ -250,9 +257,11 @@ fun GradientB4(
     gradient: Brush,
     onClick: () -> Unit,
     text: String,
+    img: Painter
 
 
-    ) {val avtar = FontFamily(Font(R.font.ok))
+    ) {
+    val avtar = FontFamily(Font(R.font.ok))
     Button(
 
         colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
@@ -261,10 +270,10 @@ fun GradientB4(
 
         modifier = Modifier
             //.padding(150.dp)
-            .padding(top = 5.dp, start = 1.dp, end = 1.dp, bottom = 5.dp)
-            .height(100.dp)
-            .width(170.dp)
-            .clip(shape = RoundedCornerShape(20.dp))
+            .padding(top = 300.dp, start = 1.dp, end = 1.dp, bottom = 5.dp)
+            .height(150.dp)
+            .width(180.dp)
+            .clip(shape = RoundedCornerShape(40.dp))
             //.fillMaxSize()
             //.padding(horizontal = 1.dp, vertical = 8.dp)
             .background(gradient),
@@ -273,15 +282,29 @@ fun GradientB4(
 
         onClick = onClick
     ) {
+        Column() {
 
 
-        Text(
+            Image(
+                //painterResource(id = R.drawable.exam),
+                painter = img,
+                contentDescription = "Cart button icon",
+                alignment = Alignment.Center,
+                modifier = Modifier
+                    .height(60.dp)
+                    .padding(start = 10.dp))
 
-            text = text,
-            color = Color.White,
-            fontWeight = FontWeight.ExtraBold,
-            fontFamily = FontFamily.Serif,
-        )
+            Text(
+
+                text = text,
+                color = Color.Black,
+                fontWeight = FontWeight.ExtraBold,
+                fontFamily = FontFamily.Serif,
+                textAlign = TextAlign.Center,
+             //   modifier = Modifier.padding(start = 0.dp)
+            )
+
+        }
     }
-}
 
+}
