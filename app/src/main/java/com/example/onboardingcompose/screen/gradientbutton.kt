@@ -25,6 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.onboardingcompose.R
+import com.example.onboardingcompose.navigation.NavigationItem
 import com.example.onboardingcompose.ui.theme.bab
 import com.example.onboardingcompose.ui.theme.c1
 import com.example.onboardingcompose.ui.theme.c2
@@ -115,6 +116,8 @@ fun GradientB1(
     text: String,
     img: Painter
 ) {
+    val homefont = FontFamily(
+        Font(R.font.home))
     Button(
 
         colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
@@ -149,8 +152,8 @@ fun GradientB1(
                 text = text,
                 color = Color.Black,
                 fontWeight = FontWeight.ExtraBold,
-                fontFamily = bab,
-                fontSize = 20.sp
+                fontFamily = homefont,
+                fontSize = 15.sp
             )
         }
 

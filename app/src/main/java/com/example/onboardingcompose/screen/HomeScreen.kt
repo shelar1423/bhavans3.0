@@ -16,6 +16,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -43,10 +44,11 @@ fun HomeScreen(
     welcomeViewModel: WelcomeViewModel = hiltViewModel()
 
 ) {
-
+    val homefont = FontFamily(
+        Font(R.font.home))
 
     Image(
-        painter = painterResource(id = R.drawable.blue), contentDescription = null,
+        painter = painterResource(id = R.drawable.finalbghome), contentDescription = null,
         modifier = Modifier
             .padding(top = 1.dp)
             .fillMaxWidth()
@@ -81,21 +83,21 @@ fun HomeScreen(
                 modifier = Modifier.padding(start = 180.dp, top = 31.dp),
                 color = Color.White,
                 fontSize = 25.sp,
-                fontFamily = FontFamily.SansSerif
+                fontFamily = homefont
             )
             Text(
                 text = "Digvijay",
                 modifier = Modifier.padding(start = 186.dp, top = 70.dp),
                 color = Color.White,
                 fontSize = 25.sp,
-                fontFamily = FontFamily.SansSerif
+                fontFamily = homefont
             )
             Text(
                 text = "BCA",
                 modifier = Modifier.padding(start = 186.dp, top = 110.dp),
                 color = Color.White,
                 fontSize = 25.sp,
-                fontFamily = FontFamily.SansSerif
+                fontFamily = homefont
             )
             Image(
                 painter = painterResource(id = R.drawable.logohome),
@@ -170,7 +172,7 @@ fun HomeScreen(
                     gradient = gradient,
                     onClick = { navController.navigate(Screen.antirag.route) },
                     text = "Anti-Ragging",
-                    img = painterResource(id = R.drawable._a199798_b921_47c8_aa71_30d9330f37c2_removebg_preview)
+                    img = painterResource(id = R.drawable.antiragfinal)
                 )
 
 
@@ -344,7 +346,7 @@ fun BottomBar(
                     icon = {
                         Icon(
                             imageVector = it.Icon, contentDescription = null,
-                            tint = if (currentRoute == it.route) Color(0xFFA83FFE) else Color(
+                            tint = if (currentRoute == it.route) Color(0xFFFF0623) else Color(
                                 0xFF4027DE
                             )
                         )

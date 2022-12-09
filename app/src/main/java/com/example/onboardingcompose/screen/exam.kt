@@ -42,7 +42,7 @@ fun exam(navController: NavHostController,
         )
 
    Image(
-        painter = painterResource(id = R.drawable.blue), contentDescription = null,
+        painter = painterResource(id = R.drawable.homeicon), contentDescription = null,
         modifier = Modifier
             .padding(top = 1.dp)
             .fillMaxWidth()
@@ -126,7 +126,7 @@ fun exam(navController: NavHostController,
                 gradient = gradient,
                 onClick = { navController.navigate(Screen.antirag.route) },
                 text = "Anti-Ragging",
-                img = painterResource(id = R.drawable._a199798_b921_47c8_aa71_30d9330f37c2_removebg_preview)
+                img = painterResource(id = R.drawable.antiragfinal)
             )
 
 

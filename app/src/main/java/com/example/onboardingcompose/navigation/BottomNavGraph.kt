@@ -114,7 +114,7 @@ fun BottomNavGraph(
         }
         composable(route = Screen.linktree.route)
         {
-            linktree(navController=navController, url ="https://linktr.ee/BhavansCollege")
+            linktree(navController=navController, url ="https://koji.to/k/7DIs")
         }
     }
 
