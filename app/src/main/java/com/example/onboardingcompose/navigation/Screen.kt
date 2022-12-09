@@ -4,8 +4,9 @@ package com.example.onboardingcompose.navigation
 //import androidx.compose.material.icons.filled.Book
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Backpack
+import androidx.compose.material.icons.filled.Book
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.materialIcon
 import androidx.compose.material.icons.materialPath
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -52,9 +53,9 @@ sealed class NavigationItem(val route: String, val label: String,val Icon: Image
 
     object Home : NavigationItem("Home/{name}", "Home", Icons.Default.Home)
     object academics :
-        NavigationItem("academics", "Academics", Icons.Default.Book)
+        NavigationItem("academics", "Academics", Icons.Default.Backpack)
 
-    object Activities : NavigationItem("Activities","Activities",Icons.Default.Info)
+    object Activities : NavigationItem("Activities","Papers",Icons.Default.Book)
     companion object Navigation1
 
 

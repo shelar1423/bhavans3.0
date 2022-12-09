@@ -36,7 +36,6 @@ import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 import com.google.accompanist.pager.ExperimentalPagerApi
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.random.Random.Default.nextInt
 
 
 @ExperimentalAnimationApi
@@ -52,7 +51,16 @@ fun HomeScreen(
     val time1 = dateNow.time
     val homefont = FontFamily(
         Font(R.font.home))
-    val list = listOf("'Take risks in your life, If you win, you can lead! If you loose, you can guide!'")
+    val list = listOf("'Take risks in your life, If you win, you can lead! If you loose, you can guide!'",
+    "Don’t let what you cannot do interfere with what you can do.",
+    "You are braver than you believe, stronger than you seem and smarter than you think.",
+    "Life is not a problem to be solved, but a reality to be experienced.",
+    "Life is like riding a bicycle. To keep your balance, you must keep moving.",
+    "Make each day your masterpiece."+
+    "Arise, awake, and stop not till the goal is reached"+
+    "impossible itself says i'm possible",
+    "be a warrior not a worrier",
+    "Life is like a coin. You can spend it any way you wish, but you only spend it once.")
     val randomElement = list.random()
 
 
@@ -128,7 +136,7 @@ fun HomeScreen(
             verticalArrangement = Arrangement.spacedBy(10.dp),
             modifier = Modifier.fillMaxHeight()
         ) { Image(
-            painter = painterResource(id = R.drawable.abhinavtransaprent),
+            painter = painterResource(id = R.drawable.newlink1),
             contentDescription = null,
             //alignment = Alignment.BottomStart,
             modifier = Modifier

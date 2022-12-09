@@ -1,36 +1,28 @@
 package com.example.onboardingcompose.screen
 
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.foundation.Image
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import androidx.navigation.Navigation
 import com.example.onboardingcompose.R
-import com.example.onboardingcompose.navigation.NavigationItem
-import com.example.onboardingcompose.navigation.NavigationItem.Activities.route
 import com.example.onboardingcompose.navigation.Screen
 import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 import com.google.accompanist.pager.ExperimentalPagerApi
-import java.text.SimpleDateFormat
-import java.util.*
 
 @ExperimentalPagerApi
 @ExperimentalAnimationApi
@@ -38,71 +30,326 @@ import java.util.*
 fun exam(navController: NavHostController,
          welcomeViewModel: WelcomeViewModel = hiltViewModel()
 ) {
-    val dummyValue = remember { mutableStateOf("")}
-    Box (modifier = Modifier.fillMaxSize()) {
-        Column (
-            modifier = Modifier.fillMaxWidth(),
-            horizontalAlignment = Alignment. CenterHorizontally
+
+    Image(
+        painter = painterResource(id = R.drawable.qpbg), contentDescription = null,
+        modifier = Modifier
+            .padding(top = 1.dp)
+            .fillMaxWidth()
+
+            .fillMaxHeight(),
+        /*.background(
+            Color.White
+        )*/
+        contentScale = ContentScale.FillBounds,
+    )
+
+
+    val gradient =
+        Brush.horizontalGradient(
+            listOf(
+                Color(0xFFA374AC),
+                Color(0xFFEB9329)
+            )
+        )
+
+
+    Column(
+        modifier = Modifier
+            .verticalScroll(rememberScrollState())
+            .fillMaxHeight()
+
+    ) { Box(modifier = Modifier.height(5.dp))
+
+        Box(modifier = Modifier.fillMaxWidth()) {
+
+            Image(
+                painter = painterResource(id = R.drawable.previousyear),
+                contentDescription = null,
+                //alignment = Alignment.TopCenter,
+                modifier = Modifier
+                    .padding(top = 0.dp, bottom = 1.dp)
+
+                    .background(color = Color.Transparent)
+                    .fillMaxWidth(),
+                //.fillMaxHeight()
+                //.fillMaxSize(),
+                contentScale = ContentScale.FillWidth,
+            )
+
+
+        }
+        Box(modifier = Modifier.height(30.dp)) {
+
+        }
+        Column(
+            verticalArrangement = Arrangement.spacedBy(1.dp),
+            modifier = Modifier.fillMaxHeight()
+
         ) {
-            Text(
-                // on below line we are specifying text to display.
-                text = "Current Date and Time in Android",
-
-                // on below line we are specifying
-                // modifier to fill max width.
-                modifier = Modifier.fillMaxWidth(),
-
-                // on below line we are
-                // specifying text alignment.
-                textAlign = TextAlign.Center,
-
-                // on below line we are
-                // specifying color for our text.
-                color = Color.Black,
-
-                // on below line we are specifying font weight
-                fontWeight = FontWeight.Bold,
-
-                // on below line we are updating font size.
-                fontSize = 25.sp,
+            Box(modifier = Modifier
+                .fillMaxWidth()
             )
+            {
+                Text(text = "Under Graduate Papers", fontSize = 25.sp, color = Color.Black)
+                Spacer(modifier = Modifier.height(50.dp))
+            }
 
-            // on below line we are creating a spacer.
-            Spacer(modifier = Modifier.height(20.dp))
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .horizontalScroll(rememberScrollState())
+            ) {
 
-            // on below line we are creating and initializing
-            // variable for simple date format.
-            val sdf = SimpleDateFormat("'Date\n'dd-MM-yyyy '\n\nand\n\nTime\n'HH:mm:ss z")
+                GBqp(
+                    gradient = gradient,
+                    text = "B.com(Gen)",
+                    onClick = {navController.navigate(Screen.bcap.route)}
 
-            // on below line we are creating a variable for
-            // current date and time and calling a simple
-            // date format in it.
-            val currentDateAndTime = sdf.format(Date())
+                )
+                GBqp(
+                    gradient = gradient,
+                    text = "B.com(Hns)",
+                    onClick = {navController.navigate(Screen.bcap.route)}
 
-            Text(
-                // on below line we are
-                // specifying text to display.
-                text = currentDateAndTime,
+                )
+                GBqp(
+                    gradient = gradient,
+                    text = "B.com(C.S)",
+                    onClick = {navController.navigate(Screen.bcap.route)}
 
-                // on below line we are specifying
-                // modifier to fill max width.
-                modifier = Modifier.fillMaxWidth(),
+                )
 
-                // on below line we are
-                // specifying text alignment.
-                textAlign = TextAlign.Center,
+                GBqp(
+                    gradient = gradient,
+                    text = "   BBA   ",
+                    onClick = {navController.navigate(Screen.bcap.route)}
 
-                // on below line we are specifying
-                // color for our text.
-                color = Color.Black,
+                )
 
-                // on below line we are specifying font weight
-                fontWeight = FontWeight.Bold,
 
-                // on below line we are updating font size.
-                fontSize = 25.sp,
+                GBqp(
+                    gradient = gradient,
+                    text = "   BCA   ",
+                    onClick = {navController.navigate(Screen.bcap.route)}
+
+                )
+                GBqp(
+                    gradient = gradient,
+                    text = "B.Sc(L.S)",
+                    onClick = {navController.navigate(Screen.bcap.route)}
+
+                )
+                GBqp(
+                    gradient = gradient,
+                    text = "   B.A   ",
+                    onClick = {navController.navigate(Screen.bcap.route)}
+
+                )
+                GBqp(
+                    gradient = gradient,
+                    text = "B.Sc(P.S)",
+                    onClick = {navController.navigate(Screen.bcap.route)}
+
+                )
+
+
+            }
+            Box(modifier = Modifier.height(20.dp))
+            Box(modifier = Modifier.fillMaxWidth()) {
+
+                Image(
+                    painter = painterResource(id = R.drawable.line1),
+                    contentDescription = null,
+                    //alignment = Alignment.TopCenter,
+                    modifier = Modifier
+                        .padding(top = 0.dp, bottom = 1.dp)
+
+                        .background(color = Color.Transparent)
+                        .fillMaxWidth(),
+                    //.fillMaxHeight()
+                    //.fillMaxSize(),
+                    contentScale = ContentScale.FillWidth,
+                )
+
+
+
+            }
+            Box(modifier = Modifier.height(20.dp))
+            Box(modifier = Modifier
+                .fillMaxWidth()
             )
+            {
+                Text(text = "Post Graduate Papers", fontSize = 25.sp, color = Color.Black)
+                Spacer(modifier = Modifier.height(50.dp))
+            }
+
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .horizontalScroll(rememberScrollState())
+            ) {
+
+                GBqp(
+                    gradient = gradient,
+                    text = "M.Sc Comp Sci",
+                    onClick = {navController.navigate(Screen.bcap.route)}
+
+                )
+                GBqp(
+                    gradient = gradient,
+                    text = "M.B.A",
+                    onClick = {navController.navigate(Screen.bcap.route)}
+
+                )
+                GBqp(
+                    gradient = gradient,
+                    text = "M.Sc Microbiology",
+                    onClick = {navController.navigate(Screen.bcap.route)}
+
+                )
+
+                GBqp(
+                    gradient = gradient,
+                    text = "M.Com",
+                    onClick = {navController.navigate(Screen.bcap.route)}
+
+                )
+                GBqp(
+                    gradient = gradient,
+                    text = "M.Sc Biochem",
+                    onClick = {navController.navigate(Screen.bcap.route)}
+
+                )
+            }
+
+            Box(modifier = Modifier.height(20.dp))
+            Box(modifier = Modifier.fillMaxWidth()) {
+
+
+                Image(
+                    painter = painterResource(id = R.drawable.line1),
+                    contentDescription = null,
+                    //alignment = Alignment.TopCenter,
+                    modifier = Modifier
+                        .padding(top = 0.dp, bottom = 1.dp)
+
+                        .background(color = Color.Transparent)
+                        .fillMaxWidth(),
+                    //.fillMaxHeight()
+                    //.fillMaxSize(),
+                    contentScale = ContentScale.FillWidth,
+                )
+
+
+
+            }
+            Box(modifier = Modifier.height(20.dp))
+            Box(modifier = Modifier
+                .fillMaxWidth()
+            )
+            {
+                Text(text = "Doctor of Philosophy Papers", fontSize = 25.sp, color = Color.Black)
+                Spacer(modifier = Modifier.height(50.dp))
+            }
+
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .horizontalScroll(rememberScrollState())
+            ) {
+
+                GBqp(
+                    gradient = gradient,
+                    text = "Physics",
+                    onClick = {navController.navigate(Screen.bcap.route)}
+
+                )
+                GBqp(
+                    gradient = gradient,
+                    text = "Microbiology",
+                    onClick = {navController.navigate(Screen.bcap.route)}
+
+                )
+                GBqp(
+                    gradient = gradient,
+                    text = "Biochemistry",
+                    onClick = {navController.navigate(Screen.bcap.route)}
+
+                )
+
+                GBqp(
+                    gradient = gradient,
+                    text = "Management",
+                    onClick = {navController.navigate(Screen.bcap.route)}
+
+                )
+
+                Box(modifier = Modifier.height(150.dp))
+            }
+            Box(modifier = Modifier.height(20.dp))
+
 
         }
     }
+
+
+
+
+
+}
+
+
+@Composable
+fun GBqp(
+    text :String,
+    gradient : Brush,
+    onClick: () -> Unit,
+) {
+
+    Button(
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor =  Color.Transparent
+        ),
+        contentPadding = PaddingValues(),
+        shape = RoundedCornerShape(20.dp),
+        onClick = onClick) {
+        Box(
+            modifier = Modifier
+                .background(gradient)
+                .padding(top = 30.dp, bottom = 30.dp, start = 10.dp, end = 10.dp)
+                .fillMaxWidth()
+                .height(50.dp),
+            contentAlignment = Alignment.Center) {
+            Text(text = text, color = Color.Black,
+                fontSize = 25.sp, textAlign = TextAlign.Center
+            )
+        }
     }
+
+}
+
+/*
+@ExperimentalPagerApi
+@ExperimentalAnimationApi
+@Preview(showBackground = true)
+@Composable
+fun DP() {
+    OnBoardingComposeTheme {
+        Column(modifier = Modifier
+            .fillMaxSize()) {
+            Box {
+                newqp()
+            }
+        }
+
+    }
+}
+
+ */
