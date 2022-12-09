@@ -24,7 +24,8 @@ fun BottomNavGraph(
         startDestination = NavigationItem.Home.route
     ) {
         composable(NavigationItem.Home.route) {
-            HomeScreen(navController = navController)
+            val name = it.arguments?.getString("name")
+            HomeScreen(navController = navController, name = name)
         }
         composable(NavigationItem.academics.route) {
             act(navController = navController)
@@ -37,13 +38,18 @@ fun BottomNavGraph(
             WelcomeScreen(navController = navController)
         }
         composable(route = Screen.HomeScreen.route) {
-            HomeScreen(navController = navController)
+            val name = it.arguments?.getString("name")
+            HomeScreen(navController = navController, name = name)
         }
         composable(route = Screen.Papers.route) {
             Papers(navController = navController)
         }
         composable(route= Screen.Question1.route) {
             newqp(navController = navController)
+        }
+        composable(route = Screen.academicsScreen.route){
+            exam(navController = navController)
+            
         }
 
 
@@ -116,6 +122,8 @@ fun BottomNavGraph(
         {
             linktree(navController=navController, url ="https://koji.to/k/7DIs")
         }
+
+
     }
 
 }

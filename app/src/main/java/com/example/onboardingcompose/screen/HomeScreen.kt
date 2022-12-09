@@ -34,6 +34,9 @@ import com.example.onboardingcompose.navigation.Screen
 import com.example.onboardingcompose.ui.theme.bab
 import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 import com.google.accompanist.pager.ExperimentalPagerApi
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.random.Random.Default.nextInt
 
 
 @ExperimentalAnimationApi
@@ -41,11 +44,18 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 @Composable
 fun HomeScreen(
     navController: NavHostController,
-    welcomeViewModel: WelcomeViewModel = hiltViewModel()
+    welcomeViewModel: WelcomeViewModel = hiltViewModel(),name:String?
 
-) {
+) {  val sdf = SimpleDateFormat("yyyy-MM-dd")
+    val currentDateAndTime = sdf.format(Date())
+    val dateNow = Calendar.getInstance().time
+    val time1 = dateNow.time
     val homefont = FontFamily(
         Font(R.font.home))
+    val list = listOf("'Take risks in your life, If you win, you can lead! If you loose, you can guide!'")
+    val randomElement = list.random()
+
+
 
     Image(
         painter = painterResource(id = R.drawable.finalbghome), contentDescription = null,
@@ -80,32 +90,28 @@ fun HomeScreen(
 
             Text(
                 text = " Hello Bhavanite,",
-                modifier = Modifier.padding(start = 180.dp, top = 31.dp),
+                modifier = Modifier.padding(start = 180.dp, top = 29.dp),
                 color = Color.White,
                 fontSize = 25.sp,
                 fontFamily = homefont
             )
+
             Text(
-                text = "Digvijay",
-                modifier = Modifier.padding(start = 186.dp, top = 70.dp),
+                text = randomElement,
+                modifier = Modifier.padding(start = 180.dp, top = 80.dp),
                 color = Color.White,
-                fontSize = 25.sp,
-                fontFamily = homefont
-            )
-            Text(
-                text = "BCA",
-                modifier = Modifier.padding(start = 186.dp, top = 110.dp),
-                color = Color.White,
-                fontSize = 25.sp,
-                fontFamily = homefont
-            )
+                fontSize = 18.sp,
+                fontFamily = homefont,
+
+                )
+
             Image(
                 painter = painterResource(id = R.drawable.logohome),
                 contentDescription = null,
                 //alignment = Alignment.BottomStart,
                 modifier = Modifier
                     //.background(color = Color.White)
-                    .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 220.dp)
+                    .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
                     .fillMaxWidth()
                     .clickable { navController.navigate(Screen.website.route) }
 
@@ -257,7 +263,9 @@ Column() {
         painter = img,
         contentDescription = "Cart button icon",
         alignment = Alignment.Center,
-        modifier = Modifier.height(180.dp).width(180.dp)
+        modifier = Modifier
+            .height(180.dp)
+            .width(180.dp)
 
     )
     Text(

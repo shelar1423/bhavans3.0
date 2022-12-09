@@ -1,9 +1,7 @@
-package com.example.onboardingcompose.util
+package com.example.onboardingcompose.navigation
 
 import androidx.annotation.DrawableRes
-import androidx.compose.ui.graphics.Color
 import com.example.onboardingcompose.R
-import com.example.onboardingcompose.ui.theme.ButtonBlue
 
 sealed class OnBoardingPage(
     @DrawableRes
@@ -35,4 +33,5 @@ sealed class OnBoardingPage(
         title = "",
         description = "And Many More!!... "
     )
+
 }

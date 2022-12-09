@@ -16,7 +16,6 @@ import androidx.navigation.compose.rememberNavController
 import com.example.onboardingcompose.navigation.RootNavGraph
 import com.example.onboardingcompose.navigation.Screen
 import com.example.onboardingcompose.navigation.SetupNavGraph
-import com.example.onboardingcompose.screen.MarqueenText
 
 import com.example.onboardingcompose.screen.Navigation
 import com.example.onboardingcompose.screen.WelcomeScreen

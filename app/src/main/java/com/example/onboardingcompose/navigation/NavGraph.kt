@@ -27,7 +27,8 @@ fun NavGraphBuilder.SetupNavGraph(
             WelcomeScreen(navController = navController)
         }
         composable(route = Screen.HomeScreen.route) {
-            HomeScreen(navController = navController)
+            val name = it.arguments?.getString("name")
+            HomeScreen(navController = navController, name = name)
         }
         composable(route = Screen.Papers.route) {
             Papers(navController = navController)
@@ -89,10 +90,8 @@ fun NavGraphBuilder.SetupNavGraph(
         {
             website(navController=navController, url ="https://www.bhavansvc.ac.in/")
         }
-        composable(route = Screen.marquee.route)
-        {
-            MarqueenText(navController = navController, text = "hi")
-        }
+
+
         }
 
 

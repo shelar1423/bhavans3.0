@@ -25,7 +25,6 @@ import com.example.onboardingcompose.navigation.Screen
 import com.example.onboardingcompose.screen.GradientB1
 import com.example.onboardingcompose.screen.GradientB2
 import com.example.onboardingcompose.screen.GradientB3
-import com.example.onboardingcompose.screen.MarqueenText
 import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 import com.google.accompanist.pager.ExperimentalPagerApi
 

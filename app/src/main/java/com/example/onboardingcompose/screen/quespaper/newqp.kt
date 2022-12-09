@@ -49,7 +49,7 @@ fun newqp(
         val gradient =
         Brush.horizontalGradient(
             listOf(
-                Color(0xFFB97AC4),
+                Color(0xFFA374AC),
                 Color(0xFFEB9329)
             )
         )
@@ -65,7 +65,7 @@ fun newqp(
         Box(modifier = Modifier.fillMaxWidth()) {
 
         Image(
-            painter = painterResource(id = R.drawable.qphead1),
+            painter = painterResource(id = R.drawable.previousyear),
             contentDescription = null,
             //alignment = Alignment.TopCenter,
             modifier = Modifier

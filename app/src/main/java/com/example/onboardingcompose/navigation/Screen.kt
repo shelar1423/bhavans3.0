@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 
 
 sealed class Screen(val route: String,) {
-    object Welcome : Screen(route = "welcome_screen")
+
     object SplashScreen : Screen(route = "splash_screen")
     //object Home : Screen(route = "home_screen")
     object Papers :Screen(route = "papers")
@@ -34,23 +34,29 @@ sealed class Screen(val route: String,) {
     object payment:Screen(route = "payment")
     object alumni:Screen(route = "alumni")
 
-    object HomeScreen:Screen(route = "home_screen")
+    object HomeScreen:Screen(route = "Home_screen/{name}")
  object  syllabi:Screen(route = "syllabi")
     object  almanac:Screen(route = "almanac")
     object  website:Screen(route = "website")
     object  marquee:Screen(route = "marquee")
     object  linktree:Screen(route = "linktree")
+    object  fourthscreen:Screen(route = "fourth")
+
+    object Welcome : Screen(route = "welcome_screen")
+    object name:Screen(route = "name")
+    object academicsScreen:Screen(route = "acadscreen")
 
 }
 sealed class NavigationItem(val route: String, val label: String,val Icon: ImageVector) {
     object Navscreen :Screen(route = "nav1")
 
-    object Home : NavigationItem("Home", "Home", Icons.Default.Home)
+    object Home : NavigationItem("Home/{name}", "Home", Icons.Default.Home)
     object academics :
         NavigationItem("academics", "Academics", Icons.Default.Book)
 
     object Activities : NavigationItem("Activities","Activities",Icons.Default.Info)
     companion object Navigation1
+
 
 
 
