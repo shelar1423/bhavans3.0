@@ -22,7 +22,7 @@ fun linktree(navController: NavHostController,
             )
             webViewClient = WebViewClient()
             loadUrl(url)
-            settings.javaScriptEnabled = true
+            settings.javaScriptEnabled = true;
             settings.loadWithOverviewMode = true;
             settings.useWideViewPort = true;
             settings.builtInZoomControls = true;
