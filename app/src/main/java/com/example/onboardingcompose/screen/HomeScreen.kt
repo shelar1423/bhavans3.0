@@ -117,7 +117,7 @@ fun HomeScreen(
 
         }
         Column(
-            verticalArrangement = Arrangement.spacedBy(25.dp),
+            verticalArrangement = Arrangement.spacedBy(10.dp),
             modifier = Modifier.fillMaxHeight()
         ) { Image(
             painter = painterResource(id = R.drawable.abhinavtransaprent),
@@ -127,7 +127,7 @@ fun HomeScreen(
                 //.background(color = Color.White)
                 .padding(top = 0.dp, bottom = 10.dp, start = 0.dp)
                 .fillMaxWidth()
-                .clickable { navController.navigate(Screen.almanac.route) },
+                .clickable { navController.navigate(Screen.linktree.route) },
             contentScale =  ContentScale.FillWidth
 
 
@@ -142,13 +142,13 @@ fun HomeScreen(
                     gradient = gradient,
                     onClick = { navController.navigate(Screen.placement.route) },
                     text = "Placements",
-                    img = painterResource(id = R.drawable.c7489d50a04427ad0ed4e3966230c0d3_removebg_preview)
+                    img = painterResource(id = R.drawable.placement)
                 )
                 GradientB1(
                     gradient = gradient,
                     onClick = { navController.navigate(NavigationItem.Navscreen.route) },
                     text = "Navigation",
-                    img = painterResource(id = R.drawable.images_removebg_preview__2_)
+                    img = painterResource(id = R.drawable.navigation)
                 )
 
 
@@ -164,7 +164,7 @@ fun HomeScreen(
                     gradient = gradient,
                     onClick = { navController.navigate(Screen.payment.route) },
                     text = "FeePayment",
-                    img = painterResource(id = R.drawable.fe1)
+                    img = painterResource(id = R.drawable.feepayment)
                 )
                 GradientB1(
                     gradient = gradient,
@@ -186,13 +186,13 @@ fun HomeScreen(
                     gradient = gradient,
                     onClick = { navController.navigate(Screen.alumni.route) },
                     text = "Alumni",
-                    img = painterResource(id = R.drawable.alumini)
+                    img = painterResource(id = R.drawable.aluminifinal)
                 )
                 GradientB1(
                     gradient = gradient,
                     onClick = { navController.navigate(Screen.Question1.route) },
                     text = "FeedBack",
-                    img = painterResource(id = R.drawable.feedbackreal)
+                    img = painterResource(id = R.drawable.feedbackfinal)
                 )
 
             }
