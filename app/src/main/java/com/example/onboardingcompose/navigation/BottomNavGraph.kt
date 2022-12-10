@@ -8,8 +8,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.onboardingcompose.screen.*
-import com.example.onboardingcompose.screen.quespaper.bcap
-import com.example.onboardingcompose.screen.quespaper.newqp
+import com.example.onboardingcompose.screen.homescreen.alumni
+import com.example.onboardingcompose.screen.homescreen.feedback
+import com.example.onboardingcompose.screen.homescreen.payment
+import com.example.onboardingcompose.screen.homescreen.placement
+import com.example.onboardingcompose.screen.quespaper.*
 import com.google.accompanist.pager.ExperimentalPagerApi
 
 @OptIn(ExperimentalAnimationApi::class, ExperimentalPagerApi::class)
@@ -44,9 +47,7 @@ fun BottomNavGraph(
         composable(route = Screen.Papers.route) {
             Papers(navController = navController)
         }
-        composable(route= Screen.Question1.route) {
-            newqp(navController = navController)
-        }
+
         composable(route = Screen.academicsScreen.route){
             exam(navController = navController)
             
@@ -94,21 +95,17 @@ fun BottomNavGraph(
         {
             notification(navController=navController, url ="http://www.bvcexams.com/Examination%20Notifications.html")
         }
-        composable(route = Screen.bcap.route)
-        {
-            bcap(navController=navController, url ="https://drive.google.com/file/d/1FmCZM6hfayerRX8eugK8b3as3muzCGCj/view?usp=sharing")
-        }
         composable(route = Screen.placement.route)
         {
-            bcap(navController=navController, url ="https://www.bhavansvc.ac.in/placementcell.html")
+            placement(navController=navController, url ="https://www.bhavansvc.ac.in/placementcell.html")
         }
         composable(route = Screen.payment.route)
         {
-            bcap(navController=navController, url ="https://www.feepayr.com/")
+            payment(navController=navController, url ="https://www.feepayr.com/")
         }
         composable(route = Screen.alumni.route)
         {
-            bcap(navController=navController, url ="https://alumni.bhavansvc.ac.in/")
+            alumni(navController=navController, url ="https://alumni.bhavansvc.ac.in/")
         }
         composable(route = Screen.syllabi.route){
             GifImage(navHostController = navController)
@@ -124,6 +121,81 @@ fun BottomNavGraph(
         {
             linktree(navController=navController, url ="https://koji.to/k/7DIs")
         }
+        composable(route = Screen.feedback.route)
+        {
+            feedback(navController=navController, url ="https://docs.google.com/forms/d/e/1FAIpQLSev_P_aTecLklvHdrnRdf89sgzHZcSk4BV65uZ00Z1rbJrJ3A/viewform?usp=sf_link")
+        }
+
+        //question papers
+        composable(route = Screen.bcomg.route)
+        {
+            bcomg(navController=navController, url ="https://drive.google.com/drive/folders/1k2KAu9benSHdKF9QjA7--aoz_ot3JzP1?usp=share_link")
+        }
+        composable(route = Screen.bcomh.route)
+        {
+            bcomh(navController=navController, url ="https://drive.google.com/drive/folders/1TKp23MXOBcc2kIDR8mJyNVAFNyknttGc?usp=share_link")
+        }
+        composable(route = Screen.bcomc.route)
+        {
+            bcomc(navController=navController, url ="https://drive.google.com/drive/folders/18kCyUZT06oLcU3FvNZK6XqDNBcBWl01e?usp=share_link")
+        }
+        composable(route = Screen.bba.route)
+        {
+            linktree(navController=navController, url ="https://drive.google.com/drive/folders/1wHcTMpFARsRB5QzfiPTNRMNdCgrNrXm1?usp=share_link")
+        }
+        composable(route = Screen.bca.route)
+        {
+            bca(navController=navController, url ="https://drive.google.com/drive/folders/1uorsnr-AcEIiAwuihTrtmPqNiGyY6V0O?usp=share_link")
+        }
+        composable(route = Screen.ba.route)
+        {
+            ba(navController=navController, url ="https://drive.google.com/drive/folders/1c9XUe_sf8LHrH3WTjHHT5ldelffeDVXw?usp=share_link")
+        }
+        composable(route = Screen.bscl.route)
+        {
+            bscl(navController=navController, url ="https://drive.google.com/drive/folders/1Dc2AovZ20L0pnisEbyZVnF3gpIjFvMiV?usp=share_link")
+        }
+        composable(route = Screen.bscp.route)
+        {
+            bscp(navController=navController, url ="https://drive.google.com/drive/folders/1XlpnMqF-ZUv0HKZ_Illm-xNd29BOc5go?usp=share_link")
+        }
+        composable(route = Screen.mscc.route)
+        {
+            mscc(navController=navController, url ="https://drive.google.com/drive/folders/1m6BLs02TmeblOFarhlfs0L6goZQ1Zu_h?usp=share_link")
+        }
+        composable(route = Screen.mba1.route)
+        {
+            mba1(navController=navController, url ="https://drive.google.com/drive/folders/1MJRv-C_148Nj-IX0Ovu80oaTm9UXbpeD?usp=share_link")
+        }
+        composable(route = Screen.mscm.route)
+        {
+            mscm(navController=navController, url ="https://drive.google.com/drive/folders/1QJ1mqCxaHlZOkoOF3hjnQ0RXBjVKD-pW?usp=share_link")
+        }
+        composable(route = Screen.mcom.route)
+        {
+            mcom(navController=navController, url ="https://drive.google.com/drive/folders/1W-47JYlLWZ73JM3oCBwsouEdj8KfylAk?usp=share_link")
+        }
+        composable(route = Screen.mscb.route)
+        {
+            mscb(navController=navController, url ="https://drive.google.com/drive/folders/1A-__w-0yuaNwT9J1CjbDKz902leLircn?usp=share_link")
+        }
+        composable(route = Screen.phdp.route)
+        {
+            phdp(navController=navController, url ="https://drive.google.com/drive/folders/1uxhq-xnmpxUrLEPZynk7xe7Td8DQjSXq?usp=share_link")
+        }
+        composable(route = Screen.phdm.route)
+        {
+            phdm(navController=navController, url ="https://drive.google.com/drive/folders/1-jW-QWYBYckCW16ZrCFjAv9bIfYHe9YV?usp=share_link")
+        }
+        composable(route = Screen.phdb.route)
+        {
+            phdb(navController=navController, url ="https://drive.google.com/drive/folders/1sDh9fF5_8sObLPwtMSap7oJh8hp_bWl1?usp=share_link")
+        }
+        composable(route = Screen.phdma.route)
+        {
+            phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
+        }
+
 
 
     }

@@ -105,26 +105,26 @@ fun exam(navController: NavHostController,
                 GBqp(
                     gradient = gradient,
                     text = "B.com(Gen)",
-                    onClick = {navController.navigate(Screen.bcap.route)}
+                    onClick = {navController.navigate(Screen.bcomg.route)}
 
                 )
                 GBqp(
                     gradient = gradient,
                     text = "B.com(Hns)",
-                    onClick = {navController.navigate(Screen.bcap.route)}
+                    onClick = {navController.navigate(Screen.bcomh.route)}
 
                 )
                 GBqp(
                     gradient = gradient,
                     text = "B.com(C.S)",
-                    onClick = {navController.navigate(Screen.bcap.route)}
+                    onClick = {navController.navigate(Screen.bcomc.route)}
 
                 )
 
                 GBqp(
                     gradient = gradient,
                     text = "   BBA   ",
-                    onClick = {navController.navigate(Screen.bcap.route)}
+                    onClick = {navController.navigate(Screen.bba.route)}
 
                 )
 
@@ -132,25 +132,25 @@ fun exam(navController: NavHostController,
                 GBqp(
                     gradient = gradient,
                     text = "   BCA   ",
-                    onClick = {navController.navigate(Screen.bcap.route)}
+                    onClick = {navController.navigate(Screen.bca.route)}
 
                 )
                 GBqp(
                     gradient = gradient,
                     text = "B.Sc(L.S)",
-                    onClick = {navController.navigate(Screen.bcap.route)}
+                    onClick = {navController.navigate(Screen.bscl.route)}
 
                 )
                 GBqp(
                     gradient = gradient,
                     text = "   B.A   ",
-                    onClick = {navController.navigate(Screen.bcap.route)}
+                    onClick = {navController.navigate(Screen.ba.route)}
 
                 )
                 GBqp(
                     gradient = gradient,
                     text = "B.Sc(P.S)",
-                    onClick = {navController.navigate(Screen.bcap.route)}
+                    onClick = {navController.navigate(Screen.bscp.route)}
 
                 )
 
@@ -196,32 +196,32 @@ fun exam(navController: NavHostController,
                 GBqp(
                     gradient = gradient,
                     text = "M.Sc Comp Sci",
-                    onClick = {navController.navigate(Screen.bcap.route)}
+                    onClick = {navController.navigate(Screen.mscc.route)}
 
                 )
                 GBqp(
                     gradient = gradient,
                     text = "M.B.A",
-                    onClick = {navController.navigate(Screen.bcap.route)}
+                    onClick = {navController.navigate(Screen.mba1.route)}
 
                 )
                 GBqp(
                     gradient = gradient,
                     text = "M.Sc Microbiology",
-                    onClick = {navController.navigate(Screen.bcap.route)}
+                    onClick = {navController.navigate(Screen.mscm.route)}
 
                 )
 
                 GBqp(
                     gradient = gradient,
                     text = "M.Com",
-                    onClick = {navController.navigate(Screen.bcap.route)}
+                    onClick = {navController.navigate(Screen.mcom.route)}
 
                 )
                 GBqp(
                     gradient = gradient,
                     text = "M.Sc Biochem",
-                    onClick = {navController.navigate(Screen.bcap.route)}
+                    onClick = {navController.navigate(Screen.mscb.route)}
 
                 )
             }
@@ -267,26 +267,26 @@ fun exam(navController: NavHostController,
                 GBqp(
                     gradient = gradient,
                     text = "Physics",
-                    onClick = {navController.navigate(Screen.bcap.route)}
+                    onClick = {navController.navigate(Screen.phdp.route)}
 
                 )
                 GBqp(
                     gradient = gradient,
                     text = "Microbiology",
-                    onClick = {navController.navigate(Screen.bcap.route)}
+                    onClick = {navController.navigate(Screen.phdm.route)}
 
                 )
                 GBqp(
                     gradient = gradient,
                     text = "Biochemistry",
-                    onClick = {navController.navigate(Screen.bcap.route)}
+                    onClick = {navController.navigate(Screen.phdb.route)}
 
                 )
 
                 GBqp(
                     gradient = gradient,
                     text = "Management",
-                    onClick = {navController.navigate(Screen.bcap.route)}
+                    onClick = {navController.navigate(Screen.phdma.route)}
 
                 )
 

@@ -4,9 +4,9 @@ package com.example.onboardingcompose.navigation
 //import androidx.compose.material.icons.filled.Book
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
-import androidx.compose.material.icons.materialIcon
-import androidx.compose.material.icons.materialPath
+import androidx.compose.material.icons.filled.Book
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.LibraryBooks
 import androidx.compose.ui.graphics.vector.ImageVector
 
 
@@ -28,10 +28,11 @@ sealed class Screen(val route: String,) {
     object result:Screen(route = "result")
     object notification:Screen(route = "notification")
     object antirag:Screen(route = "antirag")
-    object bcap:Screen(route = "bcap")
+
     object placement:Screen(route = "placement")
     object payment:Screen(route = "payment")
     object alumni:Screen(route = "alumni")
+    object feedback:Screen(route = "feedback")
 
     object HomeScreen:Screen(route = "Home_screen/{name}")
  object  syllabi:Screen(route = "syllabi")
@@ -45,6 +46,26 @@ sealed class Screen(val route: String,) {
     object name:Screen(route = "name")
     object academicsScreen:Screen(route = "acadscreen")
     object downloads:Screen(route = "downloads")
+
+    //question papers
+    object bcomg:Screen(route = "bcomg")
+    object bcomh:Screen(route = "bcomh")
+    object bcomc:Screen(route = "bcomc")
+    object bca:Screen(route = "bca")
+    object bba:Screen(route = "bba")
+    object ba:Screen(route = "ba")
+    object bscl:Screen(route = "bscl")
+    object bscp:Screen(route = "bscp")
+    object mscc :Screen(route = "mscc")
+    object mba1 :Screen(route = "mba")
+    object mscm :Screen(route = "mscm")
+    object mcom :Screen(route = "mcom")
+    object mscb :Screen(route = "mscb")
+    object phdp :Screen(route = "phdp")
+    object phdm :Screen(route = "phdm")
+    object phdb :Screen(route = "phdb")
+    object phdma :Screen(route = "phdma")
+
 
 }
 sealed class NavigationItem(val route: String, val label: String,val Icon: ImageVector) {
@@ -62,35 +83,3 @@ sealed class NavigationItem(val route: String, val label: String,val Icon: Image
 
 }
 
-
-//in my device book was not working
-public val Icons.Filled.Book: ImageVector
-    get() {
-        if (_book != null) {
-            return _book!!
-        }
-        _book = materialIcon(name = "Filled.Book") {
-            materialPath {
-                moveTo(18.0f, 2.0f)
-                horizontalLineTo(6.0f)
-                curveToRelative(-1.1f, 0.0f, -2.0f, 0.9f, -2.0f, 2.0f)
-                verticalLineToRelative(16.0f)
-                curveToRelative(0.0f, 1.1f, 0.9f, 2.0f, 2.0f, 2.0f)
-                horizontalLineToRelative(12.0f)
-                curveToRelative(1.1f, 0.0f, 2.0f, -0.9f, 2.0f, -2.0f)
-                verticalLineTo(4.0f)
-                curveToRelative(0.0f, -1.1f, -0.9f, -2.0f, -2.0f, -2.0f)
-                close()
-                moveTo(6.0f, 4.0f)
-                horizontalLineToRelative(5.0f)
-                verticalLineToRelative(8.0f)
-                lineToRelative(-2.5f, -1.5f)
-                lineTo(6.0f, 12.0f)
-                verticalLineTo(4.0f)
-                close()
-            }
-        }
-        return _book!!
-    }
-
-private var _book: ImageVector? = null
