@@ -51,7 +51,9 @@ fun BottomNavGraph(
             exam(navController = navController)
             
         }
-
+        composable(route= Screen.downloads.route){
+            downloads(navController = navController, url = "http://www.bvcexams.com/Examination%20Downloads.html")
+        }
 
         composable(route = NavigationItem.Navscreen.route)
         {

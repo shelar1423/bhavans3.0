@@ -32,16 +32,16 @@ fun exam(navController: NavHostController,
 ) {
 
     Image(
-        painter = painterResource(id = R.drawable.qpbg), contentDescription = null,
+        painter = painterResource(id = R.drawable.questionpaperbg1), contentDescription = null,
         modifier = Modifier
-            .padding(top = 1.dp)
+            .padding(top = 0.dp)
             .fillMaxWidth()
 
             .fillMaxHeight(),
         /*.background(
             Color.White
         )*/
-        contentScale = ContentScale.FillBounds,
+        contentScale = ContentScale.FillHeight,
     )
 
 
@@ -49,7 +49,7 @@ fun exam(navController: NavHostController,
         Brush.horizontalGradient(
             listOf(
                 Color(0xFFA374AC),
-                Color(0xFFEB9329)
+                Color(0xFF0091D3)
             )
         )
 
@@ -64,7 +64,7 @@ fun exam(navController: NavHostController,
         Box(modifier = Modifier.fillMaxWidth()) {
 
             Image(
-                painter = painterResource(id = R.drawable.previousyear),
+                painter = painterResource(id = R.drawable.prevpapers),
                 contentDescription = null,
                 //alignment = Alignment.TopCenter,
                 modifier = Modifier

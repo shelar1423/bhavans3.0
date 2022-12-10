@@ -141,7 +141,7 @@ fun HomeScreen(
             //alignment = Alignment.BottomStart,
             modifier = Modifier
                 //.background(color = Color.White)
-                .padding(top = 0.dp, bottom = 10.dp, start = 0.dp)
+                .padding(top = 20.dp, bottom = 10.dp, start = 0.dp)
                 .fillMaxWidth()
                 .clickable { navController.navigate(Screen.linktree.route) },
             contentScale =  ContentScale.FillWidth

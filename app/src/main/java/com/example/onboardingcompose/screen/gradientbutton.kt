@@ -222,6 +222,8 @@ fun GradientB3(
 
 
 ) {val avtar = FontFamily(Font(R.font.ok))
+    val homefont = FontFamily(
+        Font(R.font.home))
     Button(
 
         colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
@@ -231,7 +233,7 @@ fun GradientB3(
         modifier = Modifier
             //.padding(150.dp)
             .padding(top = 5.dp, start = 1.dp, end = 1.dp, bottom = 5.dp)
-            .height(100.dp)
+            .height(130.dp)
             .width(170.dp)
             .clip(shape = RoundedCornerShape(20.dp))
             //.fillMaxSize()
@@ -249,7 +251,8 @@ fun GradientB3(
             text = text,
             color = Color.White,
             fontWeight = FontWeight.ExtraBold,
-            fontFamily = FontFamily.Serif,
+            fontFamily = homefont,
+            fontSize = 15.sp
         )
     }
 }

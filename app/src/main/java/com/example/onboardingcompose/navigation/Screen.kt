@@ -4,9 +4,7 @@ package com.example.onboardingcompose.navigation
 //import androidx.compose.material.icons.filled.Book
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Backpack
-import androidx.compose.material.icons.filled.Book
-import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material.icons.materialIcon
 import androidx.compose.material.icons.materialPath
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -46,6 +44,7 @@ sealed class Screen(val route: String,) {
     object Welcome : Screen(route = "welcome_screen")
     object name:Screen(route = "name")
     object academicsScreen:Screen(route = "acadscreen")
+    object downloads:Screen(route = "downloads")
 
 }
 sealed class NavigationItem(val route: String, val label: String,val Icon: ImageVector) {
@@ -53,9 +52,9 @@ sealed class NavigationItem(val route: String, val label: String,val Icon: Image
 
     object Home : NavigationItem("Home/{name}", "Home", Icons.Default.Home)
     object academics :
-        NavigationItem("academics", "Academics", Icons.Default.Backpack)
+        NavigationItem("academics", "Academics", Icons.Default.Book)
 
-    object Activities : NavigationItem("Activities","Papers",Icons.Default.Book)
+    object Activities : NavigationItem("Activities","Papers",Icons.Default.LibraryBooks)
     companion object Navigation1
 
 
