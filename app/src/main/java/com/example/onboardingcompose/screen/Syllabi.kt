@@ -56,4 +56,4 @@ fun GifImage( navHostController: NavHostController,
         contentDescription = null,
         modifier = modifier.fillMaxWidth(),
     )
-}
+   }

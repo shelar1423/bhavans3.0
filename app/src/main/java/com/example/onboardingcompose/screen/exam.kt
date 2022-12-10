@@ -14,6 +14,8 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -30,9 +32,9 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 fun exam(navController: NavHostController,
          welcomeViewModel: WelcomeViewModel = hiltViewModel()
 ) {
-
+    val exam = FontFamily(Font(R.font.exam))
     Image(
-        painter = painterResource(id = R.drawable.questionpaperbg1), contentDescription = null,
+        painter = painterResource(id = R.drawable.qpkabg), contentDescription = null,
         modifier = Modifier
             .padding(top = 0.dp)
             .fillMaxWidth()
@@ -48,8 +50,8 @@ fun exam(navController: NavHostController,
     val gradient =
         Brush.horizontalGradient(
             listOf(
-                Color(0xFFA374AC),
-                Color(0xFF0091D3)
+                Color(0xFF75ADB6),
+                Color(0xFFACD8DB)
             )
         )
 
@@ -63,7 +65,7 @@ fun exam(navController: NavHostController,
         Box(modifier = Modifier.fillMaxWidth()) {
 
             Image(
-                painter = painterResource(id = R.drawable.prevpapers),
+                painter = painterResource(id = R.drawable.examtop),
                 contentDescription = null,
                 //alignment = Alignment.TopCenter,
                 modifier = Modifier
@@ -90,7 +92,7 @@ fun exam(navController: NavHostController,
                 .fillMaxWidth()
             )
             {
-                Text(text = "Under Graduate Papers", fontSize = 25.sp, color = Color.Black)
+                Text(text = "Under Graduate Papers", fontSize = 25.sp, color = Color.Black, fontFamily = exam, modifier = Modifier.padding(start = 10.dp))
                 Spacer(modifier = Modifier.height(50.dp))
             }
 
@@ -160,7 +162,7 @@ fun exam(navController: NavHostController,
             Box(modifier = Modifier.fillMaxWidth()) {
 
                 Image(
-                    painter = painterResource(id = R.drawable.line1),
+                    painter = painterResource(id = R.drawable.spear),
                     contentDescription = null,
                     //alignment = Alignment.TopCenter,
                     modifier = Modifier
@@ -181,7 +183,7 @@ fun exam(navController: NavHostController,
                 .fillMaxWidth()
             )
             {
-                Text(text = "Post Graduate Papers", fontSize = 25.sp, color = Color.Black)
+                Text(text = "Post Graduate Papers", fontSize = 25.sp, color = Color.Black,fontFamily = exam,modifier = Modifier.padding(start = 10.dp))
                 Spacer(modifier = Modifier.height(50.dp))
             }
 
@@ -231,7 +233,7 @@ fun exam(navController: NavHostController,
 
 
                 Image(
-                    painter = painterResource(id = R.drawable.line1),
+                    painter = painterResource(id = R.drawable.spear),
                     contentDescription = null,
                     //alignment = Alignment.TopCenter,
                     modifier = Modifier
@@ -252,8 +254,8 @@ fun exam(navController: NavHostController,
                 .fillMaxWidth()
             )
             {
-                Text(text = "Doctor of Philosophy Papers", fontSize = 25.sp, color = Color.Black)
-                Spacer(modifier = Modifier.height(50.dp))
+                Text(text = "Doctor of Philosophy Papers", fontSize = 25.sp, color = Color.Black,fontFamily = exam,modifier = Modifier.padding(start = 10.dp))
+                Spacer(modifier = Modifier.height(30.dp))
             }
 
             Row(
@@ -290,7 +292,7 @@ fun exam(navController: NavHostController,
 
                 )
 
-                Box(modifier = Modifier.height(150.dp))
+                Box(modifier = Modifier.height(0.dp))
             }
             Box(modifier = Modifier.height(20.dp))
 
@@ -311,13 +313,15 @@ fun GBqp(
     gradient : Brush,
     onClick: () -> Unit,
 ) {
-
+    val homefont = FontFamily(
+        Font(R.font.home))
     Button(
         colors = ButtonDefaults.buttonColors(
             backgroundColor =  Color.Transparent
         ),
         contentPadding = PaddingValues(),
         shape = RoundedCornerShape(20.dp),
+        modifier = Modifier.padding(start = 10.dp),
         onClick = onClick) {
         Box(
             modifier = Modifier
@@ -327,7 +331,8 @@ fun GBqp(
                 .height(50.dp),
             contentAlignment = Alignment.Center) {
             Text(text = text, color = Color.Black,
-                fontSize = 25.sp, textAlign = TextAlign.Center
+                fontSize = 25.sp, textAlign = TextAlign.Center, fontFamily = homefont
+
             )
         }
     }

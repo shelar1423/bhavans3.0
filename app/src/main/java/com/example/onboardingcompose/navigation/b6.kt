@@ -10,6 +10,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -43,9 +44,15 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 @ExperimentalAnimationApi
 @ExperimentalPagerApi
 @Composable
-fun Navscreen(navController: NavHostController,
+fun b6(navController: NavHostController,
               welcomeViewModel: WelcomeViewModel = hiltViewModel()
-) {
+) {  Text(
+    text = " END DESTINATION,",
+    modifier = Modifier.padding(start = 160.dp, top = 29.dp),
+    color = Color.White,
+    fontSize = 25.sp,
+    fontFamily = FontFamily.SansSerif
+)
 
     Image(
         painter = painterResource(id = R.drawable.llines), contentDescription = null,
@@ -87,7 +94,7 @@ fun Navscreen(navController: NavHostController,
             )
 
 
-       Image(
+            Image(
                 painter = painterResource(id = R.drawable.navtext),
                 contentDescription = null,
                 //alignment = Alignment.BottomStart,
@@ -112,12 +119,12 @@ fun Navscreen(navController: NavHostController,
                 modifier = Modifier.fillMaxWidth()) {
 
                 GradientB2(gradient = gradient,
-                    onClick = { navController.navigate(Screen.b1.route) },
+                    onClick = { navController.navigate(Screen.b61.route) },
                     text = "COMMERCE" ,
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
 
                 GradientB2(gradient = gradient,
-                    onClick = { navController.navigate(Screen.b2.route) },
+                    onClick = { navController.navigate(Screen.b62.route) },
                     text = "Library",
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
 
@@ -130,12 +137,12 @@ fun Navscreen(navController: NavHostController,
             ) {
 
                 GradientB2(gradient = gradient,
-                    onClick = { navController.navigate(Screen.b3.route) },
+                    onClick = { navController.navigate(Screen.b63.route) },
                     text = "MBA",
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
 
                 GradientB2(gradient = gradient,
-                    onClick = { navController.navigate(Screen.b4.route) },
+                    onClick = { navController.navigate(Screen.b64.route) },
                     text = "BIO CHEM",
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
             }
@@ -147,12 +154,12 @@ fun Navscreen(navController: NavHostController,
             ) {
 
                 GradientB2(gradient = gradient,
-                    onClick = { navController.navigate(Screen.b5.route) },
+                    onClick = { navController.navigate(Screen.b65.route) },
                     text = "IT",
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
 
                 GradientB2(gradient = gradient,
-                    onClick = { navController.navigate(Screen.b6.route) },
+                    onClick = { navController.navigate(Screen.b66.route) },
                     text = "SCIENCE",
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
             }
@@ -217,9 +224,9 @@ fun Navscreen(navController: NavHostController,
                 modifier = Modifier.height(80.dp)
 
             )
-          androidx.compose.material.Text(
+            androidx.compose.material.Text(
                 text = text,
-              color = Color.Blue,
+                color = Color.Blue,
 
                 fontWeight = FontWeight.ExtraBold,
                 fontFamily = bab,
@@ -228,73 +235,159 @@ fun Navscreen(navController: NavHostController,
     }
 }
 
+
+
+
+
+
+
+@ExperimentalCoilApi
 @Composable
-fun GradientEdge(
-    startColor: Color, endColor: Color,
+fun b61( navHostController: NavHostController,
+              modifier: Modifier = Modifier,
 ) {
-    Box(
-        modifier = Modifier
-            .width(10.dp)
-            .fillMaxHeight()
-            .background(
-                brush = Brush.horizontalGradient(
-                    0f to startColor, 1f to endColor,
-                )
-            )
+    val context = LocalContext.current
+    val imageLoader = ImageLoader.Builder(context)
+        .components {
+            if (Build.VERSION.SDK_INT >= 28) {
+                add(ImageDecoderDecoder.Factory())
+            } else {
+                add(GifDecoder.Factory())
+            }
+        }
+        .build()
+    Image(
+        painter = rememberAsyncImagePainter(
+            ImageRequest.Builder(context).data(data = R.drawable.giftry).apply(block = {
+                size(Size.ORIGINAL)
+            }).build(), imageLoader = imageLoader
+        ),
+        contentDescription = null,
+        modifier = modifier.fillMaxWidth(),
     )
 }
-
-
-@ExperimentalAnimationApi
-@ExperimentalPagerApi
+@ExperimentalCoilApi
 @Composable
-fun GradientB1(
-    gradient: Brush,
-    onClick: () -> Unit,
-    text: String,
-    color: Color,
-    img: Painter
+fun b62( navHostController: NavHostController,
+              modifier: Modifier = Modifier,
 ) {
-    Button(
-
-        colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
-        contentPadding = PaddingValues(),
-
-        modifier = Modifier
-            //.padding(150.dp)
-            .padding(top = 30.dp, start = 10.dp, end = 10.dp, bottom = 30.dp)
-            .height(100.dp)
-            .fillMaxWidth()
-            .clip(shape = RoundedCornerShape(20.dp))
-            //.fillMaxSize()
-            //.padding(horizontal = 1.dp, vertical = 8.dp)
-            .background(gradient),
-
-
-
-        onClick = onClick
-    ) {
-
-        Image(
-            //painterResource(id = R.drawable.exam),
-            painter = img,
-            contentDescription = "Cart button icon",
-            alignment = Alignment.Center,
-            modifier = Modifier.height(80.dp)
-
-        )
-        androidx.compose.material.Text(
-            text = text,
-            color = Color.Blue,
-
-            fontWeight = FontWeight.ExtraBold,
-            fontFamily = bab,
-        )
-    }
+    val context = LocalContext.current
+    val imageLoader = ImageLoader.Builder(context)
+        .components {
+            if (Build.VERSION.SDK_INT >= 28) {
+                add(ImageDecoderDecoder.Factory())
+            } else {
+                add(GifDecoder.Factory())
+            }
+        }
+        .build()
+    Image(
+        painter = rememberAsyncImagePainter(
+            ImageRequest.Builder(context).data(data = R.drawable.giftry).apply(block = {
+                size(Size.ORIGINAL)
+            }).build(), imageLoader = imageLoader
+        ),
+        contentDescription = null,
+        modifier = modifier.fillMaxWidth(),
+    )
 }
-
-
-
-
-
-
+@ExperimentalCoilApi
+@Composable
+fun b63( navHostController: NavHostController,
+              modifier: Modifier = Modifier,
+) {
+    val context = LocalContext.current
+    val imageLoader = ImageLoader.Builder(context)
+        .components {
+            if (Build.VERSION.SDK_INT >= 28) {
+                add(ImageDecoderDecoder.Factory())
+            } else {
+                add(GifDecoder.Factory())
+            }
+        }
+        .build()
+    Image(
+        painter = rememberAsyncImagePainter(
+            ImageRequest.Builder(context).data(data = R.drawable.giftry).apply(block = {
+                size(Size.ORIGINAL)
+            }).build(), imageLoader = imageLoader
+        ),
+        contentDescription = null,
+        modifier = modifier.fillMaxWidth(),
+    )
+}
+@ExperimentalCoilApi
+@Composable
+fun b64( navHostController: NavHostController,
+              modifier: Modifier = Modifier,
+) {
+    val context = LocalContext.current
+    val imageLoader = ImageLoader.Builder(context)
+        .components {
+            if (Build.VERSION.SDK_INT >= 28) {
+                add(ImageDecoderDecoder.Factory())
+            } else {
+                add(GifDecoder.Factory())
+            }
+        }
+        .build()
+    Image(
+        painter = rememberAsyncImagePainter(
+            ImageRequest.Builder(context).data(data = R.drawable.giftry).apply(block = {
+                size(Size.ORIGINAL)
+            }).build(), imageLoader = imageLoader
+        ),
+        contentDescription = null,
+        modifier = modifier.fillMaxWidth(),
+    )
+}
+@ExperimentalCoilApi
+@Composable
+fun b65( navHostController: NavHostController,
+              modifier: Modifier = Modifier,
+) {
+    val context = LocalContext.current
+    val imageLoader = ImageLoader.Builder(context)
+        .components {
+            if (Build.VERSION.SDK_INT >= 28) {
+                add(ImageDecoderDecoder.Factory())
+            } else {
+                add(GifDecoder.Factory())
+            }
+        }
+        .build()
+    Image(
+        painter = rememberAsyncImagePainter(
+            ImageRequest.Builder(context).data(data = R.drawable.giftry).apply(block = {
+                size(Size.ORIGINAL)
+            }).build(), imageLoader = imageLoader
+        ),
+        contentDescription = null,
+        modifier = modifier.fillMaxWidth(),
+    )
+}
+@ExperimentalCoilApi
+@Composable
+fun b66( navHostController: NavHostController,
+              modifier: Modifier = Modifier,
+) {
+    val context = LocalContext.current
+    val imageLoader = ImageLoader.Builder(context)
+        .components {
+            if (Build.VERSION.SDK_INT >= 28) {
+                add(ImageDecoderDecoder.Factory())
+            } else {
+                add(GifDecoder.Factory())
+            }
+        }
+        .build()
+    Image(
+        painter = rememberAsyncImagePainter(
+            ImageRequest.Builder(context).data(data = R.drawable.giftry).apply(block = {
+                size(Size.ORIGINAL)
+            }).build(), imageLoader = imageLoader
+        ),
+        contentDescription = null,
+        modifier = modifier.fillMaxWidth(),
+    )
+}

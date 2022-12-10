@@ -161,7 +161,7 @@ fun HomeScreen(
                 )
                 GradientB1(
                     gradient = gradient,
-                    onClick = { navController.navigate(NavigationItem.Navscreen.route) },
+                    onClick = { navController.navigate(Screen.Navscreen.route) },
                     text = "Navigation",
                     img = painterResource(id = R.drawable.navigation)
                 )

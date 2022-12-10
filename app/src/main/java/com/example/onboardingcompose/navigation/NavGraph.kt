@@ -34,7 +34,7 @@ fun NavGraphBuilder.SetupNavGraph(
         }
 
 
-        composable(route = NavigationItem.Navscreen.route)
+        composable(route = Screen.Navscreen.route)
         {
             Navscreen(navController = navController)
         }
