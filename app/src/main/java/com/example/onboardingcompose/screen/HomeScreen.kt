@@ -68,10 +68,9 @@ fun HomeScreen(
     Image(
         painter = painterResource(id = R.drawable.finalbghome), contentDescription = null,
         modifier = Modifier
-            .padding(top = 1.dp)
-            .fillMaxWidth()
-
-            .fillMaxHeight(),
+            .padding(top = 0.dp)
+             .fillMaxHeight()
+            .fillMaxWidth(),
         /*.background(
             Color.White
         )*/
@@ -98,7 +97,7 @@ fun HomeScreen(
 
             Text(
                 text = " Hello Bhavanite,",
-                modifier = Modifier.padding(start = 180.dp, top = 29.dp),
+                modifier = Modifier.padding(start = 160.dp, top = 29.dp),
                 color = Color.White,
                 fontSize = 25.sp,
                 fontFamily = homefont
@@ -106,9 +105,9 @@ fun HomeScreen(
 
             Text(
                 text = randomElement,
-                modifier = Modifier.padding(start = 180.dp, top = 80.dp),
+                modifier = Modifier.padding(start = 170.dp, top = 80.dp,end=15.dp),
                 color = Color.White,
-                fontSize = 18.sp,
+                fontSize = 17.sp,
                 fontFamily = homefont,
 
                 )
@@ -133,7 +132,7 @@ fun HomeScreen(
 
         }
         Column(
-            verticalArrangement = Arrangement.spacedBy(10.dp),
+            verticalArrangement = Arrangement.spacedBy(5.dp),
             modifier = Modifier.fillMaxHeight()
         ) { Image(
             painter = painterResource(id = R.drawable.newlink1),
@@ -141,7 +140,7 @@ fun HomeScreen(
             //alignment = Alignment.BottomStart,
             modifier = Modifier
                 //.background(color = Color.White)
-                .padding(top = 20.dp, bottom = 10.dp, start = 0.dp)
+                .padding(top = 0.dp, bottom = 0.dp, start = 0.dp)
                 .fillMaxWidth()
                 .clickable { navController.navigate(Screen.linktree.route) },
             contentScale =  ContentScale.FillWidth

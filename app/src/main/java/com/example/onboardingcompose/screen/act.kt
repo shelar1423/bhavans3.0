@@ -1,10 +1,11 @@
-import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.animation.core.CubicBezierEasing
-import androidx.compose.animation.core.tween
-import androidx.compose.foundation.*
 
+
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Text
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -12,18 +13,11 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import androidx.datastore.preferences.protobuf.Value
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.onboardingcompose.R
-import com.example.onboardingcompose.navigation.NavigationItem
 import com.example.onboardingcompose.navigation.Screen
-import com.example.onboardingcompose.screen.GradientB1
-import com.example.onboardingcompose.screen.GradientB2
 import com.example.onboardingcompose.screen.GradientB3
 import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -91,7 +85,7 @@ fun act(navController: NavHostController,
             //alignment = Alignment.BottomStart,
             modifier = Modifier
                 //.background(color = Color.White)
-                .padding(top = 230.dp, bottom = 10.dp, start = 1.dp)
+                .padding(top = 190.dp, bottom = 0.dp, start = 1.dp)
                 .fillMaxWidth(),
             contentScale = ContentScale.FillWidth
 
@@ -105,7 +99,7 @@ fun act(navController: NavHostController,
 
 
     }
-        Box(modifier = Modifier.height(60.dp)) {
+        Box(modifier = Modifier.height(20.dp)) {
 
         }
         Column(

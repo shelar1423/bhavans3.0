@@ -59,8 +59,7 @@ fun exam(navController: NavHostController,
             .verticalScroll(rememberScrollState())
             .fillMaxHeight()
 
-    ) { Box(modifier = Modifier.height(5.dp))
-
+    ) {
         Box(modifier = Modifier.fillMaxWidth()) {
 
             Image(

@@ -60,8 +60,7 @@ fun newqp(
             .verticalScroll(rememberScrollState())
             .fillMaxHeight()
 
-    ) { Box(modifier = Modifier.height(5.dp))
-        
+    ) {
         Box(modifier = Modifier.fillMaxWidth()) {
 
         Image(
@@ -69,7 +68,7 @@ fun newqp(
             contentDescription = null,
             //alignment = Alignment.TopCenter,
             modifier = Modifier
-                .padding(top = 0.dp, bottom = 1.dp)
+                .padding(top = -1.dp, bottom = 1.dp)
 
                 .background(color = Color.Transparent)
                 .fillMaxWidth(),
