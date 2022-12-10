@@ -205,7 +205,7 @@ fun HomeScreen(
                 )
                 GradientB1(
                     gradient = gradient,
-                    onClick = { navController.navigate(Screen.Question1.route) },
+                    onClick = { navController.navigate(Screen.syllabi.route) },
                     text = "FeedBack",
                     img = painterResource(id = R.drawable.feedbackfinal)
                 )

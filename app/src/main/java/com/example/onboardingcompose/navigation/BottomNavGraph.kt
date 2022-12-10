@@ -111,7 +111,7 @@ fun BottomNavGraph(
             bcap(navController=navController, url ="https://alumni.bhavansvc.ac.in/")
         }
         composable(route = Screen.syllabi.route){
-            WebViewPage(navController = navController, url = "https://www.bhavansvc.ac.in/syllabi.html")
+            GifImage(navHostController = navController)
         }
         composable(route = Screen.almanac.route){
             WebViewPage(navController = navController, url = "https://www.bhavansvc.ac.in/almanac.html")
