@@ -24,7 +24,7 @@ import com.example.onboardingcompose.ui.theme.Blue200
 
 private val DarkColorPalette = darkColors(
 
-    primary = White,
+    primary = Blue500,
     primaryVariant = ButtonBlue,
     secondary = Teal200,
    // onBackground = Color.Blue,
