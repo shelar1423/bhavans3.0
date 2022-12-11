@@ -117,13 +117,13 @@ fun act(navController: NavHostController,
                     gradient = gradient,
                     onClick = { navController.navigate(Screen.result.route) },
                     text = "Results",
-                   // img = painterResource(id = R.drawable.c7489d50a04427ad0ed4e3966230c0d3_removebg_preview)
+                   img = painterResource(id = R.drawable.resultsicon)
                 )
                 GradientB3(
                     gradient = gradient,
                     onClick = { navController.navigate(Screen.almanac.route) },
                     text = "Almanac",
-                    // img = painterResource(id = R.drawable.images_removebg_preview__2_)
+                    img = painterResource(id = R.drawable.alamancicon)
                 )
 
 
@@ -139,13 +139,13 @@ fun act(navController: NavHostController,
                     gradient = gradient,
                     onClick = { navController.navigate(Screen.notification.route) },
                     text = "Notification",
-                    //  img = painterResource(id = R.drawable._61788c1_816e_4ce1_8030_6cd54350dc1b_removebg_preview)
+                    img = painterResource(id = R.drawable.notificationiconhome)
                 )
                 GradientB3(
                     gradient = gradient,
                     onClick = { navController.navigate(Screen.downloads.route) },
                     text = "Downloads",
-                    // img = painterResource(id = R.drawable.exam)
+                    img = painterResource(id = R.drawable.downloadicon)
                 )
 
             }

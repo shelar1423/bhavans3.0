@@ -161,9 +161,9 @@ fun HomeScreen(
                 )
                 GradientB1(
                     gradient = gradient,
-                    onClick = { navController.navigate(NavigationItem.Home.route) },
-                    text = "TBD",
-                    img = painterResource(id = R.drawable.navigation)
+                    onClick = { navController.navigate(Screen.three60.route) },
+                    text = "360° view",
+                    img = painterResource(id = R.drawable.icon360)
                 )
 
 

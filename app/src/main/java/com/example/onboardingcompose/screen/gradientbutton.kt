@@ -218,6 +218,8 @@ fun GradientB3(
     gradient: Brush,
     onClick: () -> Unit,
     text: String,
+    img: Painter
+
 
 
 
@@ -246,14 +248,23 @@ fun GradientB3(
     ) {
 
 
-        Text(
+        Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+            Image(
+                //painterResource(id = R.drawable.exam),
+                painter = img,
+                contentDescription = "Cart button icon",
+                alignment = Alignment.Center,
+                modifier = Modifier.height(80.dp).width(80.dp)
 
-            text = text,
-            color = Color.White,
-            fontWeight = FontWeight.ExtraBold,
-            fontFamily = homefont,
-            fontSize = 15.sp
-        )
+            )
+            Text(
+                text = text,
+                color = Color.Black,
+                fontWeight = FontWeight.ExtraBold,
+                fontFamily = homefont,
+                fontSize = 15.sp
+            )
+        }
     }
 }
 
@@ -279,8 +290,8 @@ fun GradientB4(
         modifier = Modifier
             //.padding(150.dp)
             .padding(top = 300.dp, start = 1.dp, end = 1.dp, bottom = 5.dp)
-            .height(150.dp)
-            .width(180.dp)
+            .height(50.dp)
+            .width(700.dp)
             .clip(shape = RoundedCornerShape(40.dp))
             //.fillMaxSize()
             //.padding(horizontal = 1.dp, vertical = 8.dp)

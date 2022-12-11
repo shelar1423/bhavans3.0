@@ -14,6 +14,7 @@ import com.example.onboardingcompose.screen.homescreen.payment
 import com.example.onboardingcompose.screen.homescreen.placement
 import com.example.onboardingcompose.screen.quespaper.*
 import com.google.accompanist.pager.ExperimentalPagerApi
+import view360
 
 @OptIn(ExperimentalAnimationApi::class, ExperimentalPagerApi::class)
 @Composable
@@ -55,7 +56,29 @@ fun BottomNavGraph(
         composable(route= Screen.downloads.route){
             downloads(navController = navController, url = "http://www.bvcexams.com/Examination%20Downloads.html")
         }
+        composable(route = Screen.three60.route){
+            view360(navController = navController)
+        }
 
+        composable(route = Screen.itcom.route){
+            itcom(navController = navController, url = "https://www.google.com/maps/@17.4895706,78.534892,3a,75y,322.98h,80.91t/data=!3m8!1e1!3m6!1sAF1QipOfWzQ6aK9I0qpUhNWd9y96MHMChRxxg9_pyN5F!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOfWzQ6aK9I0qpUhNWd9y96MHMChRxxg9_pyN5F%3Dw203-h100-k-no-pi-0-ya294.26694-ro0-fo100!7i10240!8i5120")
+        }
+        composable(route = Screen.biosci.route){
+            biosci(navController = navController, url = "https://momento360.com/e/u/f6f326683a0f4f4ebf258288d4a763b7?utm_campaign=embed&utm_source=other&utm_medium=other")
+        }
+        composable(route = Screen.vbmba.route){
+            vbmba(navController = navController, url = "https://momento360.com/e/u/3c06ad66a83245afbd06d2d3019e351a?utm_campaign=embed&utm_source=other&utm_medium=other")
+        }
+
+        composable(route = Screen.libblock.route){
+            libblock(navController = navController, url = "https://momento360.com/e/u/90960d2ff16a490b9f5e60307a048da2?utm_campaign=embed&utm_source=other&utm_medium=other")
+        }
+        composable(route = Screen.parking.route){
+            parking(navController = navController, url = "https://momento360.com/e/u/c06eed43a45b458aa7ed19b75b9b3b20?utm_campaign=embed&utm_source=other&utm_medium=other")
+        }
+        composable(route = Screen.canteen.route){
+            canteen(navController = navController, url = "https://momento360.com/e/u/cc9dd9a5ea0540b597dcab96006a4c21?utm_campaign=embed&utm_source=other&utm_medium=other")
+        }
 
         composable(route = Screen.antirag.route)
         {

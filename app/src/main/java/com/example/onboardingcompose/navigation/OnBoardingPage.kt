@@ -23,9 +23,9 @@ sealed class OnBoardingPage(
     )
 
     object Third : OnBoardingPage(
-        image = R.drawable.nav1,
-        title = "Navigation",
-        description = "Makes your navigation in the college much easier"
+        image = R.drawable.acadmicsonboarding,
+        title = "Academics",
+        description = "All your Academics need at one place"
     )
 
     object Fourth : OnBoardingPage(
