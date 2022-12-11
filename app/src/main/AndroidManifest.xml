@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true"
         android:name=".MyApplication"
-        android:icon="@drawable/finalogo"
+        android:icon="@drawable/iconfinal2"
         android:label="@string/app_name"
         android:usesCleartextTraffic="true"
         android:supportsRtl="true"
