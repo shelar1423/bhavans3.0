@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -94,6 +95,7 @@ fun PagerScreen(onBoardingPage: OnBoardingPage) {
             fontSize = MaterialTheme.typography.h4.fontSize,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
+            fontFamily = FontFamily.Default
         )
         Text(
             modifier = Modifier
@@ -103,7 +105,8 @@ fun PagerScreen(onBoardingPage: OnBoardingPage) {
             text = onBoardingPage.description,
             fontSize = MaterialTheme.typography.subtitle1.fontSize,
             fontWeight = FontWeight.Medium,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            fontFamily = FontFamily.Default
         )
     }
 }

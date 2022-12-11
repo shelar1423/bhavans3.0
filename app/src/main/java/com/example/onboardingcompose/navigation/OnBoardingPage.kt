@@ -31,7 +31,7 @@ sealed class OnBoardingPage(
     object Fourth : OnBoardingPage(
         image = R.drawable.manymore,
         title = "",
-        description = "And Many More!!... "
+        description = "And Much More "
     )
 
 }
