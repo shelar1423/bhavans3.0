@@ -13,13 +13,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.example.onboardingcompose.R
-import com.example.onboardingcompose.navigation.NavigationItem
 import com.example.onboardingcompose.navigation.Screen
 import com.example.onboardingcompose.ui.theme.bab
 
-import com.example.onboardingcompose.navigation.OnBoardingPage
-import com.example.onboardingcompose.util.slider
 import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 import com.google.accompanist.pager.*
 

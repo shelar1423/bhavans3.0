@@ -34,10 +34,7 @@ fun NavGraphBuilder.SetupNavGraph(
         }
 
 
-        composable(route = Screen.Navscreen.route)
-        {
-            Navscreen(navController = navController)
-        }
+
         composable(route = Screen.antirag.route)
         {
             antirag(navController = navController)

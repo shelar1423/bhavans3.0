@@ -56,10 +56,7 @@ fun BottomNavGraph(
             downloads(navController = navController, url = "http://www.bvcexams.com/Examination%20Downloads.html")
         }
 
-        composable(route = Screen.Navscreen.route)
-        {
-            Navscreen(navController = navController)
-        }
+
         composable(route = Screen.antirag.route)
         {
             antirag(navController = navController)
@@ -194,119 +191,6 @@ fun BottomNavGraph(
         composable(route = Screen.phdma.route)
         {
             phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
-        }
-        composable(route = "b1"){
-            b1(navController = navController)
-        }
-        composable(route = "b2"){
-            b2(navController = navController)
-        }
-        composable(route = "b3"){
-            b3(navController = navController)
-        }
-        composable(route = "b4"){
-            b4(navController = navController)
-        }
-        composable(route = "b5"){
-            b5(navController = navController)
-        }
-        composable(route = "b6"){
-            b6(navController = navController)
-        }
-
-        composable(route = "b12"){
-            b12(navHostController = navController)
-        }
-        composable(route = "b13"){
-            b13(navHostController = navController)
-        }
-        composable(route = "b14"){
-            b14(navHostController = navController)
-        }
-        composable(route = "b15"){
-            b15(navHostController = navController)
-        }
-        composable(route = "b16"){
-            b16(navHostController = navController)
-        }
-        composable(route = "b21"){
-            b21(navHostController = navController)
-        }
-
-        composable(route = "b23"){
-            b23(navHostController = navController)
-        }
-        composable(route = "b24"){
-            b24(navHostController = navController)
-        }
-        composable(route = "b25"){
-            b25(navHostController = navController)
-        }
-        composable(route = "b26"){
-            b26(navHostController = navController)
-        }
-        composable(route = "b31"){
-            b31(navHostController = navController)
-        }
-        composable(route = "b32"){
-            b32(navHostController = navController)
-        }
-
-        composable(route = "b34"){
-            b34(navHostController = navController)
-        }
-        composable(route = "b35"){
-            b35(navHostController = navController)
-        }
-        composable(route = "b36"){
-            b36(navHostController = navController)
-        }
-        composable(route = "b41"){
-            b41(navHostController = navController)
-        }
-        composable(route = "b42"){
-            b42(navHostController = navController)
-        }
-        composable(route = "b43"){
-            b43(navHostController = navController)
-        }
-
-        composable(route = "b45"){
-            b45(navHostController = navController)
-        }
-        composable(route = "b46"){
-            b46(navHostController = navController)
-        }
-        composable(route = "b51"){
-            b51(navHostController = navController)
-        }
-        composable(route = "b52"){
-            b52(navHostController = navController)
-        }
-        composable(route = "b53"){
-            b53(navHostController = navController)
-        }
-        composable(route = "b54"){
-            b54(navHostController = navController)
-        }
-
-        composable(route = "b56"){
-            b56(navHostController = navController)
-        }
-        composable(route = "b61"){
-            b61(navHostController = navController)
-        }
-        composable(route = "b62"){
-            b62(navHostController = navController)
-        }
-        composable(route = "b63"){
-            b63(navHostController = navController)
-        }
-        composable(route = "b64"){
-            b64(navHostController = navController)
-        }
-        composable(route = "b65"){
-            b65(navHostController = navController)
         }
 
 
