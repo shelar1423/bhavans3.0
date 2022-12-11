@@ -47,13 +47,6 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 fun b2(navController: NavHostController,
               welcomeViewModel: WelcomeViewModel = hiltViewModel()
 ) {
-    Text(
-        text = " END DESTINATION,",
-        modifier = Modifier.padding(start = 160.dp, top = 29.dp),
-        color = Color.White,
-        fontSize = 25.sp,
-        fontFamily = FontFamily.SansSerif
-    )
 
     Image(
         painter = painterResource(id = R.drawable.llines), contentDescription = null,
@@ -110,9 +103,14 @@ fun b2(navController: NavHostController,
             )
 
         }
-        Box(modifier = Modifier.height(75.dp)){
 
-        }
+        Text(
+            text = " END DESTINATION,",
+            modifier = Modifier.padding(start = 10.dp, top = 0.dp),
+            color = Color.Black,
+            fontSize = 35.sp,
+            fontFamily = FontFamily.SansSerif
+        )
         Column(verticalArrangement = Arrangement.spacedBy(1.dp),
             modifier = Modifier.fillMaxHeight()) {
             Row(horizontalArrangement = Arrangement.SpaceEvenly,
@@ -122,11 +120,6 @@ fun b2(navController: NavHostController,
                 GradientB2(gradient = gradient,
                     onClick = { navController.navigate(Screen.b21.route) },
                     text = "COMMERCE" ,
-                    img = painterResource(id = R.drawable.images_removebg_preview__2_))
-
-                GradientB2(gradient = gradient,
-                    onClick = { navController.navigate(Screen.b22.route) },
-                    text = "Library",
                     img = painterResource(id = R.drawable.images_removebg_preview__2_))
 
             }
@@ -254,7 +247,7 @@ fun b21( navHostController: NavHostController,
         .build()
     Image(
         painter = rememberAsyncImagePainter(
-            ImageRequest.Builder(context).data(data = R.drawable.giftry).apply(block = {
+            ImageRequest.Builder(context).data(data = R.drawable.b21).apply(block = {
                 size(Size.ORIGINAL)
             }).build(), imageLoader = imageLoader
         ),
@@ -262,31 +255,7 @@ fun b21( navHostController: NavHostController,
         modifier = modifier.fillMaxWidth(),
     )
 }
-@ExperimentalCoilApi
-@Composable
-fun b22( navHostController: NavHostController,
-              modifier: Modifier = Modifier,
-) {
-    val context = LocalContext.current
-    val imageLoader = ImageLoader.Builder(context)
-        .components {
-            if (Build.VERSION.SDK_INT >= 28) {
-                add(ImageDecoderDecoder.Factory())
-            } else {
-                add(GifDecoder.Factory())
-            }
-        }
-        .build()
-    Image(
-        painter = rememberAsyncImagePainter(
-            ImageRequest.Builder(context).data(data = R.drawable.giftry).apply(block = {
-                size(Size.ORIGINAL)
-            }).build(), imageLoader = imageLoader
-        ),
-        contentDescription = null,
-        modifier = modifier.fillMaxWidth(),
-    )
-}
+
 @ExperimentalCoilApi
 @Composable
 fun b23( navHostController: NavHostController,
@@ -304,7 +273,7 @@ fun b23( navHostController: NavHostController,
         .build()
     Image(
         painter = rememberAsyncImagePainter(
-            ImageRequest.Builder(context).data(data = R.drawable.giftry).apply(block = {
+            ImageRequest.Builder(context).data(data = R.drawable.b23).apply(block = {
                 size(Size.ORIGINAL)
             }).build(), imageLoader = imageLoader
         ),
@@ -329,7 +298,7 @@ fun b24( navHostController: NavHostController,
         .build()
     Image(
         painter = rememberAsyncImagePainter(
-            ImageRequest.Builder(context).data(data = R.drawable.giftry).apply(block = {
+            ImageRequest.Builder(context).data(data = R.drawable.b24).apply(block = {
                 size(Size.ORIGINAL)
             }).build(), imageLoader = imageLoader
         ),
@@ -354,7 +323,7 @@ fun b25( navHostController: NavHostController,
         .build()
     Image(
         painter = rememberAsyncImagePainter(
-            ImageRequest.Builder(context).data(data = R.drawable.giftry).apply(block = {
+            ImageRequest.Builder(context).data(data = R.drawable.b25).apply(block = {
                 size(Size.ORIGINAL)
             }).build(), imageLoader = imageLoader
         ),
@@ -379,7 +348,7 @@ fun b26( navHostController: NavHostController,
         .build()
     Image(
         painter = rememberAsyncImagePainter(
-            ImageRequest.Builder(context).data(data = R.drawable.giftry).apply(block = {
+            ImageRequest.Builder(context).data(data = R.drawable.b26).apply(block = {
                 size(Size.ORIGINAL)
             }).build(), imageLoader = imageLoader
         ),

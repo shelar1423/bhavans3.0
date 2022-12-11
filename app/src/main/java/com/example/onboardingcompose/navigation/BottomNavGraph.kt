@@ -213,9 +213,7 @@ fun BottomNavGraph(
         composable(route = "b6"){
             b6(navController = navController)
         }
-        composable(route = "b11"){
-            b11(navHostController = navController)
-        }
+
         composable(route = "b12"){
             b12(navHostController = navController)
         }
@@ -231,15 +229,10 @@ fun BottomNavGraph(
         composable(route = "b16"){
             b16(navHostController = navController)
         }
-        composable(route = "b11"){
-            b11(navHostController = navController)
-        }
         composable(route = "b21"){
             b21(navHostController = navController)
         }
-        composable(route = "b22"){
-            b22(navHostController = navController)
-        }
+
         composable(route = "b23"){
             b23(navHostController = navController)
         }
@@ -258,9 +251,7 @@ fun BottomNavGraph(
         composable(route = "b32"){
             b32(navHostController = navController)
         }
-        composable(route = "b33"){
-            b33(navHostController = navController)
-        }
+
         composable(route = "b34"){
             b34(navHostController = navController)
         }
@@ -279,9 +270,7 @@ fun BottomNavGraph(
         composable(route = "b43"){
             b43(navHostController = navController)
         }
-        composable(route = "b44"){
-            b44(navHostController = navController)
-        }
+
         composable(route = "b45"){
             b45(navHostController = navController)
         }
@@ -300,9 +289,7 @@ fun BottomNavGraph(
         composable(route = "b54"){
             b54(navHostController = navController)
         }
-        composable(route = "b55"){
-            b55(navHostController = navController)
-        }
+
         composable(route = "b56"){
             b56(navHostController = navController)
         }
@@ -321,9 +308,7 @@ fun BottomNavGraph(
         composable(route = "b65"){
             b65(navHostController = navController)
         }
-        composable(route = "b66"){
-            b66(navHostController = navController)
-        }
+
 
     }
 

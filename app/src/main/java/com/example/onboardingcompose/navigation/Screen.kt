@@ -52,42 +52,42 @@ sealed class Screen(val route: String,) {
     object b4:Screen(route = "b4")
     object b5:Screen(route = "b5")
     object b6:Screen(route = "b6")
-    object b11:Screen(route = "b11")
+
     object b12:Screen(route = "b12")
     object b13:Screen(route = "b13")
     object b14:Screen(route = "b14")
     object b15:Screen(route = "b15")
     object b16:Screen(route = "b16")
     object	b21	:Screen	(route ="b21")
-    object	b22	:Screen	(route ="b21")
+
     object	b23	:Screen	(route ="b23")
-        object	b24	:Screen	(route ="b24")
-        object	b25	:Screen	(route ="b25")
-        object	b26	:Screen	(route ="b26")
+    object	b24	:Screen	(route ="b24")
+    object	b25	:Screen	(route ="b25")
+    object	b26	:Screen	(route ="b26")
     object	b31	:Screen	(route ="b31")
     object	b32	:Screen	(route ="b32")
-    object	b33	:Screen	(route ="b33")
+
     object	b34	:Screen	(route ="b34")
     object	b35	:Screen	(route ="b35")
     object	b36	:Screen	(route ="b36")
     object	b41	:Screen	(route ="b41")
     object	b42	:Screen	(route ="b42")
     object	b43	:Screen	(route ="b43")
-    object	b44	:Screen	(route ="b44")
+
     object	b45	:Screen	(route ="b45")
     object	b46	:Screen	(route ="b46")
     object	b51	:Screen	(route ="b51")
     object	b52	:Screen	(route ="b52")
     object	b53	:Screen	(route ="b53")
     object	b54	:Screen	(route ="b54")
-    object	b55	:Screen	(route ="b55")
+
     object	b56	:Screen	(route ="b56")
     object	b61	:Screen	(route ="b61")
     object	b62	:Screen	(route ="b62")
     object	b63	:Screen	(route ="b63")
     object	b64	:Screen	(route ="b64")
     object	b65	:Screen	(route ="b65")
-    object	b66	:Screen	(route ="b66")
+
 
 
 
