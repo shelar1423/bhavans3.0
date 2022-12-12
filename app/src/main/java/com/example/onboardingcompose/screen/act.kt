@@ -85,7 +85,7 @@ fun act(navController: NavHostController,
             //alignment = Alignment.BottomStart,
             modifier = Modifier
                 //.background(color = Color.White)
-                .padding(top = 190.dp, bottom = 0.dp, start = 1.dp)
+                .padding(top = 190.dp, bottom = 0.dp, start = 0.dp)
                 .fillMaxWidth(),
             contentScale = ContentScale.FillWidth
 

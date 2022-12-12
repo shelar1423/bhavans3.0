@@ -127,9 +127,7 @@ fun BottomNavGraph(
         {
             alumni(navController=navController, url ="https://alumni.bhavansvc.ac.in/")
         }
-        composable(route = Screen.syllabi.route){
-            GifImage(navHostController = navController)
-        }
+
         composable(route = Screen.almanac.route){
             WebViewPage(navController = navController, url = "https://www.bhavansvc.ac.in/almanac.html")
         }
@@ -137,10 +135,7 @@ fun BottomNavGraph(
         {
             website(navController=navController, url ="https://www.bhavansvc.ac.in/")
         }
-        composable(route = Screen.linktree.route)
-        {
-            linktree(navController=navController, url ="https://koji.to/k/7DIs")
-        }
+
         composable(route = Screen.feedback.route)
         {
             feedback(navController=navController, url ="https://docs.google.com/forms/d/e/1FAIpQLSev_P_aTecLklvHdrnRdf89sgzHZcSk4BV65uZ00Z1rbJrJ3A/viewform?usp=sf_link")
@@ -161,7 +156,7 @@ fun BottomNavGraph(
         }
         composable(route = Screen.bba.route)
         {
-            linktree(navController=navController, url ="https://drive.google.com/drive/folders/1wHcTMpFARsRB5QzfiPTNRMNdCgrNrXm1?usp=share_link")
+            bba(navController=navController, url ="https://drive.google.com/drive/folders/1wHcTMpFARsRB5QzfiPTNRMNdCgrNrXm1?usp=share_link")
         }
         composable(route = Screen.bca.route)
         {

@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -62,6 +63,7 @@ fun HomeScreen(
     "be a warrior not a worrier",
     "Life is like a coin. You can spend it any way you wish, but you only spend it once.")
     val randomElement = list.random()
+    val handler = LocalUriHandler.current
 
 
 
@@ -142,7 +144,9 @@ fun HomeScreen(
                 //.background(color = Color.White)
                 .padding(top = 0.dp, bottom = 0.dp, start = 0.dp)
                 .fillMaxWidth()
-                .clickable { navController.navigate(Screen.linktree.route) },
+                .clickable{
+                    handler.openUri("https://linktr.ee/BhavansCollege")
+                },
             contentScale =  ContentScale.FillWidth
 
 
@@ -355,6 +359,7 @@ fun BottomBar(
                     label = {
                         Text(
                             text = it.label,
+                            fontWeight = FontWeight.SemiBold,
                             color = if (currentRoute == it.route) Color.Black else Color.Black
                         )
                     },
