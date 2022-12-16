@@ -54,31 +54,31 @@ fun antirag(navController: NavHostController,
 
         )
 
-        Text(text = "Anti - Ragging", color = Color.Red,
+        Text(text = "   Anti - Ragging", color = Color.Red,
             fontSize = 30.sp, textDecoration = TextDecoration.Underline,
             fontWeight = FontWeight.Bold)
         Spacer(modifier = Modifier.height(0.dp))
 
-        Text(text = "Ragging is not a means of familiarization orintroduction with freshers.It is a form of sadistic/psychopathic behaviour. Itis a violation of human rights.\n" +
+        Text(text = "   Ragging is not a means of familiarization orintroduction with freshers.It is a form of sadistic/psychopathic behaviour. Itis a violation of human rights.\n" +
                 "\n" +
-                "       All measures for prevention of ragging are being taken on the Bhavan’s College campus as per the Anti RaggingSuprem Court verdict 2007.",
+                "           All measures for prevention of ragging are being taken on the Bhavan’s College campus as per the Anti RaggingSuprem Court verdict 2007.",
             fontSize = 20.sp, color = Color.Black)
         Spacer(modifier = Modifier.height(10.dp))
 
         Text(
-            text = "Actions to be taken by the college against those who are found involved in Ragging\n" +
+            text = "    Actions to be taken by the college against those who are found involved in Ragging\n" +
 
-                    "=> Immediate suspension from the college\n" +
-                    "=> The incident will be reported to the police station for further procedure",
+                    "   => Immediate suspension from the college\n" +
+                    "   => The incident will be reported to the police station for further procedure",
             color = Color.Black, fontSize = 20.sp)
         Spacer(modifier = Modifier.height(20.dp))
 
-        Text(text = "Contact Us",
+        Text(text = "   Contact Us",
             fontSize = 30.sp,
             color = Color.Red,
             textDecoration = TextDecoration.Underline,
             fontWeight = FontWeight.Bold)
-        Text(text = "College Nos: 040-27111611 & 27115878", color = Color.Black, fontSize = 20.sp
+        Text(text = "   College Nos: 040-27111611 & 27115878", color = Color.Black, fontSize = 20.sp
         )
         Spacer(modifier = Modifier.height(10.dp))
         Row() {
@@ -86,10 +86,10 @@ fun antirag(navController: NavHostController,
 
 
             }
-            Text(text = "Ext: 220 : Principal\n" +
-                    "225 : Head, Department of      Physics & Electronics\n" +
-                    "223 : Faculty in-charge for Commerce\n" +
-                    "255 : Faculty in-charge for B.Sc(Life Science)",
+            Text(text = "   Ext: 220 : Principal\n" +
+                    "   225 : Head, Department of      Physics & Electronics\n" +
+                    "   223 : Faculty in-charge for Commerce\n" +
+                    "   255 : Faculty in-charge for B.Sc(Life Science)",
                 color = Color.Black,
                 fontSize = 20.sp
             )
@@ -97,11 +97,11 @@ fun antirag(navController: NavHostController,
         Spacer(modifier = Modifier.height(10.dp))
         Row() {
             Box(modifier = Modifier.width(100.dp).fillMaxHeight()) {
-                Text(text = "Principal : ", color = Color.Black, fontSize = 20.sp
+                Text(text = "   Principal : ", color = Color.Black, fontSize = 20.sp
                 )
 
             }
-            Text(text = "040-27111611 & 27115878",
+            Text(text = "   040-27111611 & 27115878",
                 color = Color.Black,
                 fontSize = 20.sp
             )
@@ -109,14 +109,14 @@ fun antirag(navController: NavHostController,
         Spacer(modifier = Modifier.height(10.dp))
         Row() {
             Box(modifier = Modifier.width(200.dp).fillMaxHeight()) {
-                Text(text = "Mrs. B Niraimathi :\n "+
-                        "Head Dept. of\n" +
-                        "Physics and Electronics"
+                Text(text = "   Mrs. B Niraimathi :\n "+
+                        "   Head Dept. of\n" +
+                        "   Physics and Electronics"
                     , color = Color.Black, fontSize = 20.sp
                 )
 
             }
-            Text(text = "9989741098",
+            Text(text = "   9989741098",
                 color = Color.Black,
                 fontSize = 20.sp
             )
@@ -124,14 +124,14 @@ fun antirag(navController: NavHostController,
         Spacer(modifier = Modifier.height(10.dp))
         Row() {
             Box(modifier = Modifier.width(200.dp).fillMaxHeight()) {
-                Text(text = "Dr.C Kameshwari :\n "+
-                        "Head Dept. of\n" +
-                        "Languages"
+                Text(text = "   Dr.C Kameshwari :\n "+
+                        "   Head Dept. of\n" +
+                        "   Languages"
                     , color = Color.Black, fontSize = 20.sp
                 )
 
             }
-            Text(text = "9391136608",
+            Text(text = "   9391136608",
                 color = Color.Black,
                 fontSize = 20.sp
             )
@@ -139,19 +139,19 @@ fun antirag(navController: NavHostController,
         Spacer(modifier = Modifier.height(10.dp))
         Row() {
             Box(modifier = Modifier.width(200.dp).fillMaxHeight()) {
-                Text(text = "Dr. G Kondal Reddy :\n "+
-                        "Physical Director"
+                Text(text = "   Dr. G Kondal Reddy :\n "+
+                        "   Physical Director"
                     , color = Color.Black, fontSize = 20.sp
                 )
 
             }
-            Text(text = "9399924880",
+            Text(text = "   9399924880",
                 color = Color.Black,
                 fontSize = 20.sp
             )
         }
         Spacer(modifier = Modifier.height(10.dp))
-        Text(text = "Email : bvcantiragging@gmail.com",
+        Text(text = "   Email : bvcantiragging@gmail.com",
             color = Color.Black,
             fontSize = 20.sp
         )

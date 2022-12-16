@@ -43,7 +43,7 @@ fun exam(navController: NavHostController,
         /*.background(
             Color.White
         )*/
-        contentScale = ContentScale.FillHeight,
+        contentScale = ContentScale.FillBounds,
     )
 
 

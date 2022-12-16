@@ -71,7 +71,7 @@ fun HomeScreen(
         painter = painterResource(id = R.drawable.finalbghome), contentDescription = null,
         modifier = Modifier
             .padding(top = 0.dp)
-             .fillMaxHeight()
+            .fillMaxHeight()
             .fillMaxWidth(),
         /*.background(
             Color.White
@@ -93,6 +93,46 @@ fun HomeScreen(
             .verticalScroll(rememberScrollState())
             .fillMaxHeight()
     ) {
+        Row(modifier = Modifier.fillMaxWidth().height(160.dp)) {
+            Box(modifier = Modifier.width(160.dp)) {
+                Image(
+                    painter = painterResource(id = R.drawable.logohome),
+                    contentDescription = null,
+                    //alignment = Alignment.BottomStart,
+                    modifier = Modifier
+                        //.background(color = Color.White)
+                        // .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
+                        .fillMaxWidth()
+                        .clickable { navController.navigate(Screen.website.route) }
+
+
+                )
+            }
+
+            Box(modifier = Modifier.fillMaxWidth()) {
+                Column() {
+                    Text(
+                        text = " Hello Bhavanite,",
+                        //modifier = Modifier.padding(start = 160.dp, top = 29.dp),
+                        color = Color.White,
+                        fontSize = 25.sp,
+                        fontFamily = homefont
+                    )
+
+                    Text(
+                        text = randomElement,
+                        // modifier = Modifier.padding(start = 170.dp, top = 80.dp,end=15.dp),
+                        color = Color.White,
+                        fontSize = 17.sp,
+                        fontFamily = homefont,
+
+                        )
+                }
+            }
+
+
+        }
+        /*
         Box(modifier = Modifier.fillMaxWidth()) {
 
 
@@ -129,6 +169,8 @@ fun HomeScreen(
 
 
         }
+
+         */
         Box(modifier = Modifier.height(0.dp)) {
 
 
@@ -144,7 +186,7 @@ fun HomeScreen(
                 //.background(color = Color.White)
                 .padding(top = 0.dp, bottom = 0.dp, start = 0.dp)
                 .fillMaxWidth()
-                .clickable{
+                .clickable {
                     handler.openUri("https://linktr.ee/BhavansCollege")
                 },
             contentScale =  ContentScale.FillWidth
