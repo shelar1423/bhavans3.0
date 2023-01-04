@@ -1,5 +1,9 @@
 package com.example.onboardingcompose.screen
 
+import android.app.DownloadManager
+import android.content.Context
+import android.net.Uri
+import android.os.Environment
 import android.view.ViewGroup
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -26,6 +30,26 @@ fun almanac(navController: NavHostController,
             settings.loadWithOverviewMode = true;
             settings.useWideViewPort = true;
             settings.builtInZoomControls = true;
+            this.setDownloadListener { url, userAgent,
+                                       contentDisposition, mimetype,
+                                       contentLength ->
+
+                val downloadManager = context.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+                val request = DownloadManager.Request(Uri.parse(url.toString()+""))
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE)
+                val reference = downloadManager.enqueue(request)
+                val filename = url.split("/").toTypedArray().last().split(".").first()
+                request.setMimeType("application/pdf")
+                request.allowScanningByMediaScanner()
+                request.setAllowedOverMetered(true)
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+                request.setDestinationInExternalPublicDir(
+                    Environment.DIRECTORY_DOWNLOADS,
+                    "MyFiles/$filename"
+                )
+                downloadManager.enqueue(request)
+            }
+
 
         }
     }, update = {

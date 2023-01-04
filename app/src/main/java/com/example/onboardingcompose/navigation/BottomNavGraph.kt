@@ -4,6 +4,7 @@ import act
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -54,7 +55,7 @@ fun BottomNavGraph(
             
         }
         composable(route= Screen.downloads.route){
-            downloads(navController = navController, url = "http://www.bvcexams.com/Examination%20Downloads.html")
+            downloads(navController = navController, context = LocalContext.current)
         }
         composable(route = Screen.three60.route){
             view360(navController = navController)
@@ -129,7 +130,7 @@ fun BottomNavGraph(
         }
 
         composable(route = Screen.almanac.route){
-            WebViewPage(navController = navController, url = "https://www.bhavansvc.ac.in/almanac.html")
+            almanac(navController = navController, url = "https://www.bhavansvc.ac.in/almanac.html")
         }
         composable(route = Screen.website.route)
         {

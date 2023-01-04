@@ -1,6 +1,8 @@
 package com.example.onboardingcompose.screen
 
 
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -10,6 +12,7 @@ import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -17,6 +20,7 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -226,6 +230,9 @@ fun GradientB3(
 ) {val avtar = FontFamily(Font(R.font.ok))
     val homefont = FontFamily(
         Font(R.font.home))
+
+    val uriHandler = LocalContext.current
+    val intent = remember { Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/")) }
     Button(
 
         colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
@@ -245,6 +252,65 @@ fun GradientB3(
 
 
         onClick = onClick
+    ) {
+
+
+        Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+            Image(
+                //painterResource(id = R.drawable.exam),
+                painter = img,
+                contentDescription = "Cart button icon",
+                alignment = Alignment.Center,
+                modifier = Modifier.height(80.dp).width(80.dp)
+
+            )
+            Text(
+                text = text,
+                color = Color.Black,
+                fontWeight = FontWeight.ExtraBold,
+                fontFamily = homefont,
+                fontSize = 15.sp
+            )
+        }
+    }
+}
+@ExperimentalAnimationApi
+@ExperimentalPagerApi
+@Composable
+fun Gradienthallticket(
+    gradient: Brush,
+    onClick: () -> Unit,
+    text: String,
+    img: Painter
+
+
+
+
+) {val avtar = FontFamily(Font(R.font.ok))
+    val homefont = FontFamily(
+        Font(R.font.home))
+
+    val context = LocalContext.current
+    val intent = remember { Intent(Intent.ACTION_VIEW, Uri.parse("http://www.bvcexams.com/Examination%20Downloads.html")) }
+    Button(
+
+        colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
+
+        contentPadding = PaddingValues(),
+
+        modifier = Modifier
+            //.padding(150.dp)
+            .padding(top = 5.dp, start = 1.dp, end = 1.dp, bottom = 5.dp)
+            .height(130.dp)
+            .width(170.dp)
+            .clip(shape = RoundedCornerShape(20.dp))
+            //.fillMaxSize()
+            //.padding(horizontal = 1.dp, vertical = 8.dp)
+            .background(gradient),
+        //commentline
+
+
+        onClick = { context.startActivity(intent)}
     ) {
 
 

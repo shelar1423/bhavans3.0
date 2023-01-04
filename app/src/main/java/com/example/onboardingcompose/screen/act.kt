@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -19,6 +20,7 @@ import androidx.navigation.NavHostController
 import com.example.onboardingcompose.R
 import com.example.onboardingcompose.navigation.Screen
 import com.example.onboardingcompose.screen.GradientB3
+import com.example.onboardingcompose.screen.Gradienthallticket
 import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 import com.google.accompanist.pager.ExperimentalPagerApi
 
@@ -141,9 +143,10 @@ fun act(navController: NavHostController,
                     text = "Notification",
                     img = painterResource(id = R.drawable.notificationiconhome)
                 )
-                GradientB3(
+                Gradienthallticket(
+
                     gradient = gradient,
-                    onClick = { navController.navigate(Screen.downloads.route) },
+                    onClick = {},
                     text = "Downloads",
                     img = painterResource(id = R.drawable.downloadicon)
                 )
