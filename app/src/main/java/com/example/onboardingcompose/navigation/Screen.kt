@@ -33,6 +33,16 @@ sealed class Screen(val route: String,) {
     object payment:Screen(route = "payment")
     object alumni:Screen(route = "alumni")
     object feedback:Screen(route = "feedback")
+    object feedbackmain:Screen(route = "feedbackmain")
+    object devcon:Screen(route = "devcon")
+
+    object dinsta:Screen(route = "dinsta")
+    object dgit:Screen(route = "dgit")
+    object dlink:Screen(route = "dlink")
+    object ainsta:Screen(route = "ainsta")
+    object agit:Screen(route = "agit")
+    object alink:Screen(route = "alink")
+
 
     object HomeScreen:Screen(route = "Home_screen/{name}")
  object  syllabi:Screen(route = "syllabi")

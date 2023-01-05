@@ -9,10 +9,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.onboardingcompose.screen.*
-import com.example.onboardingcompose.screen.homescreen.alumni
-import com.example.onboardingcompose.screen.homescreen.feedback
-import com.example.onboardingcompose.screen.homescreen.payment
-import com.example.onboardingcompose.screen.homescreen.placement
+import com.example.onboardingcompose.screen.homescreen.*
 import com.example.onboardingcompose.screen.quespaper.*
 import com.google.accompanist.pager.ExperimentalPagerApi
 import view360
@@ -59,6 +56,14 @@ fun BottomNavGraph(
         }
         composable(route = Screen.three60.route){
             view360(navController = navController)
+        }
+
+        composable(route = Screen.feedbackmain.route){
+            noti1(navController = navController)
+        }
+
+        composable(route = Screen.devcon.route){
+            devcon2(navController = navController)
         }
 
         composable(route = Screen.itcom.route){
@@ -208,6 +213,31 @@ fun BottomNavGraph(
             phdb(navController=navController, url ="https://drive.google.com/drive/folders/1sDh9fF5_8sObLPwtMSap7oJh8hp_bWl1?usp=share_link")
         }
         composable(route = Screen.phdma.route)
+        {
+            phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
+        }
+
+        composable(route = Screen.dinsta.route)
+        {
+            phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
+        }
+        composable(route = Screen.dgit.route)
+        {
+            phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
+        }
+        composable(route = Screen.dlink.route)
+        {
+            phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
+        }
+        composable(route = Screen.ainsta.route)
+        {
+            phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
+        }
+        composable(route = Screen.agit.route)
+        {
+            phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
+        }
+        composable(route = Screen.alink.route)
         {
             phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
         }
