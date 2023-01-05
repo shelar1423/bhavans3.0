@@ -366,6 +366,7 @@ fun Navigation() {
     val navController = rememberNavController()
 
     Scaffold(
+
         bottomBar = {
 
 
@@ -394,7 +395,7 @@ fun BottomBar(
     val bottomBarDestination = items.any { it.route == currentRoute }
 
     if (bottomBarDestination) {
-        BottomNavigation(backgroundColor = Color(0xCC5AD)) {
+        BottomNavigation(backgroundColor = Color.Transparent, elevation = 0.dp){
 
             items.forEach {
                 BottomNavigationItem(selected = currentRoute == it.route,
@@ -429,7 +430,7 @@ fun BottomBar(
 
                         }
 
-                    })
+                    }        )
 
             }
         }
