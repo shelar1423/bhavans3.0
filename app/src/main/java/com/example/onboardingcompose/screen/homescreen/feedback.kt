@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -363,6 +364,7 @@ fun defpre2() {
 @Composable
 fun devcon2(navController: NavHostController,
             welcomeViewModel: WelcomeViewModel = hiltViewModel()) {
+    val handler = LocalUriHandler.current
     Image(
         painter = painterResource(id = R.drawable.finalbghome), contentDescription = null,
         modifier = Modifier
@@ -434,7 +436,9 @@ fun devcon2(navController: NavHostController,
                                 //.background(color = Color.White)
                                 .padding(start = 10.dp)
 
-                                .clickable { }
+                                .clickable {
+                                    handler.openUri("https://instagram.com/abhivardhan_pvt")
+                                }
                                 .height(60.dp)
                                 .width(60.dp)
 
@@ -448,7 +452,7 @@ fun devcon2(navController: NavHostController,
                                 //.background(color = Color.White)
                                 // .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
 
-                                .clickable { }
+                                .clickable {handler.openUri("https://github.com/abhi-vardhan") }
                                 .height(60.dp)
                                 .width(60.dp)
 
@@ -462,7 +466,7 @@ fun devcon2(navController: NavHostController,
                                 //.background(color = Color.White)
                                 // .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
 
-                                .clickable { }
+                                .clickable { handler.openUri("https://linkedin.com/in/d-abhinav-vardhan-b9516a226")}
                                 .height(60.dp)
                                 .width(60.dp)
 
@@ -512,7 +516,7 @@ fun devcon2(navController: NavHostController,
                                 //.background(color = Color.White)
                                 .padding(start = 10.dp)
 
-                                .clickable { }
+                                .clickable { handler.openUri("https://instagram.com/__shelar__")}
                                 .height(60.dp)
                                 .width(60.dp)
 
@@ -526,7 +530,7 @@ fun devcon2(navController: NavHostController,
                                 //.background(color = Color.White)
                                 // .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
 
-                                .clickable { }
+                                .clickable {handler.openUri("https://github.com/shelar1423") }
                                 .height(60.dp)
                                 .width(60.dp)
 
@@ -540,7 +544,7 @@ fun devcon2(navController: NavHostController,
                                 //.background(color = Color.White)
                                 // .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
 
-                                .clickable { }
+                                .clickable {handler.openUri("https://www.linkedin.com/in/digvijay-shelar-725111234") }
                                 .height(60.dp)
                                 .width(60.dp)
 

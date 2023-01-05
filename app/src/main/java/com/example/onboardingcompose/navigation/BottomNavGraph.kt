@@ -217,30 +217,6 @@ fun BottomNavGraph(
             phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
         }
 
-        composable(route = Screen.dinsta.route)
-        {
-            phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
-        }
-        composable(route = Screen.dgit.route)
-        {
-            phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
-        }
-        composable(route = Screen.dlink.route)
-        {
-            phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
-        }
-        composable(route = Screen.ainsta.route)
-        {
-            phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
-        }
-        composable(route = Screen.agit.route)
-        {
-            phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
-        }
-        composable(route = Screen.alink.route)
-        {
-            phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
-        }
 
 
     }
