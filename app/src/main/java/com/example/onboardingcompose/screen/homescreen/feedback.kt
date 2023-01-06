@@ -13,6 +13,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -127,7 +128,8 @@ fun fdb(
                 .background(gradient)
                 .padding(top = 30.dp, bottom = 30.dp, start = 10.dp, end = 10.dp)
                 .fillMaxWidth()
-                .height(100.dp).width(190.dp),
+                .height(100.dp)
+                .width(190.dp),
             contentAlignment = Alignment.Center) {
             Text(text = text, color = Color.Black,
                 fontSize = 25.sp, textAlign = TextAlign.Center, fontFamily = homefont
@@ -140,8 +142,51 @@ fun fdb(
 
 
 @Composable
+fun fdb12(
+    text :String,
+    gradient : Brush,
+    onClick: () -> Unit,
+) {
+    val homefont = FontFamily(
+        Font(R.font.home))
+    Button(
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor =  Color.Transparent
+        ),
+        contentPadding = PaddingValues(),
+        shape = RoundedCornerShape(10.dp),
+        modifier = Modifier.padding(start=260.dp, end = 10.dp, top=100.dp),
+        onClick = onClick
+    ) {
+        Box(
+            modifier = Modifier
+                .background(gradient)
+                .padding(top = 10.dp, bottom = 10.dp, end = 10.dp)
+
+                .height(30.dp)
+                .width(500.dp).shadow(50.dp),
+            contentAlignment = Alignment.Center) {
+            Text(text = text, color = Color.Black,
+                fontSize = 14.sp, textAlign = TextAlign.Center, fontFamily = homefont
+
+            )
+        }
+    }
+
+}
+
+
+
+@Composable
 fun devcon2(navController: NavHostController,
             welcomeViewModel: WelcomeViewModel = hiltViewModel()) {
+    val gradient =
+        Brush.horizontalGradient(
+            listOf(
+                Color(0xFFFFFFFF),
+                Color(0xFFFFFFFF)
+            )
+        )
     val handler = LocalUriHandler.current
     Image(
         painter = painterResource(id = R.drawable.devbg), contentDescription = null,
@@ -176,7 +221,12 @@ fun devcon2(navController: NavHostController,
                 //.fillMaxSize(),
                 contentScale = ContentScale.FillWidth,
             )
+            fdb12(
+                gradient = gradient,
+                text = "Feedback",
+                onClick = {navController.navigate(Screen.feedback.route)}
 
+            )
 
         }
         Box(modifier = Modifier.height(10.dp)) {
@@ -187,7 +237,9 @@ fun devcon2(navController: NavHostController,
 
         Column(
             verticalArrangement = Arrangement.spacedBy(10.dp),
-            modifier = Modifier.fillMaxHeight().fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxHeight()
+                .fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
 
         ) {
@@ -225,7 +277,7 @@ fun devcon2(navController: NavHostController,
                                 //.background(color = Color.White)
                                 .padding(start = 90.dp)
 
-                                .clickable { handler.openUri("https://instagram.com/__shelar__")}
+                                .clickable { handler.openUri("https://instagram.com/__shelar__") }
                                 .height(60.dp)
                                 .width(60.dp)
 
@@ -239,7 +291,7 @@ fun devcon2(navController: NavHostController,
                                 //.background(color = Color.White)
                                 // .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
 
-                                .clickable {handler.openUri("https://github.com/shelar1423") }
+                                .clickable { handler.openUri("https://github.com/shelar1423") }
                                 .height(60.dp)
                                 .width(60.dp)
 
@@ -253,7 +305,7 @@ fun devcon2(navController: NavHostController,
                                 //.background(color = Color.White)
                                 // .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
 
-                                .clickable {handler.openUri("https://www.linkedin.com/in/digvijay-shelar-725111234") }
+                                .clickable { handler.openUri("https://www.linkedin.com/in/digvijay-shelar-725111234") }
                                 .height(60.dp)
                                 .width(60.dp)
 
@@ -284,7 +336,9 @@ fun devcon2(navController: NavHostController,
             Box(modifier = Modifier
                 .fillMaxHeight(),
             ) {
-                Column(modifier = Modifier.fillMaxWidth().wrapContentSize(Alignment.Center)) {
+                Column(modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentSize(Alignment.Center)) {
                     Text(text = "D Abhinav Vardhan", fontSize = 25.sp, color = Color.Black,textAlign = TextAlign.Center
                         , modifier = Modifier.padding(start = 90.dp), textDecoration = TextDecoration.Underline,
                         fontWeight = FontWeight.Bold)
@@ -331,7 +385,7 @@ fun devcon2(navController: NavHostController,
                                 //.background(color = Color.White)
                                 // .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
 
-                                .clickable {handler.openUri("https://github.com/abhi-vardhan") }
+                                .clickable { handler.openUri("https://github.com/abhi-vardhan") }
                                 .height(60.dp)
                                 .width(60.dp)
 
@@ -345,7 +399,7 @@ fun devcon2(navController: NavHostController,
                                 //.background(color = Color.White)
                                 // .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
 
-                                .clickable { handler.openUri("https://linkedin.com/in/d-abhinav-vardhan-b9516a226")}
+                                .clickable { handler.openUri("https://linkedin.com/in/d-abhinav-vardhan-b9516a226") }
                                 .height(60.dp)
                                 .width(60.dp)
 
