@@ -36,7 +36,7 @@ import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 fun noti1(navController: NavHostController,
           welcomeViewModel: WelcomeViewModel = hiltViewModel()) {
     Image(
-        painter = painterResource(id = R.drawable.finalbghome), contentDescription = null,
+        painter = painterResource(id = R.drawable.devbg), contentDescription = null,
         modifier = Modifier
             .padding(top = 0.dp)
             .fillMaxHeight()
@@ -62,7 +62,7 @@ fun noti1(navController: NavHostController,
         Box(modifier = Modifier.fillMaxWidth()) {
 
             Image(
-                painter = painterResource(id = R.drawable.examtop),
+                painter = painterResource(id = R.drawable.feedbackbannertop),
                 contentDescription = null,
                 //alignment = Alignment.TopCenter,
                 modifier = Modifier
@@ -77,7 +77,7 @@ fun noti1(navController: NavHostController,
 
 
         }
-        Box(modifier = Modifier.height(100.dp)) {
+        Box(modifier = Modifier.height(200.dp)) {
 
         }
         Column(
@@ -89,13 +89,13 @@ fun noti1(navController: NavHostController,
             fdb(
                 gradient = gradient,
                 text = "Developer Contact",
-               onClick = {navController.navigate(Screen.devcon.route)}
+                onClick = {navController.navigate(Screen.devcon.route)}
 
             )
             fdb(
                 gradient = gradient,
                 text = "Feedback",
-               onClick = {navController.navigate(Screen.feedback.route)}
+                onClick = {navController.navigate(Screen.feedback.route)}
 
             )
         }
@@ -109,7 +109,7 @@ fun noti1(navController: NavHostController,
 fun fdb(
     text :String,
     gradient : Brush,
-   onClick: () -> Unit,
+    onClick: () -> Unit,
 ) {
     val homefont = FontFamily(
         Font(R.font.home))
@@ -121,13 +121,13 @@ fun fdb(
         shape = RoundedCornerShape(30.dp),
         modifier = Modifier.padding(start = 30.dp,end = 30.dp),
         onClick = onClick
-        ) {
+    ) {
         Box(
             modifier = Modifier
                 .background(gradient)
                 .padding(top = 30.dp, bottom = 30.dp, start = 10.dp, end = 10.dp)
                 .fillMaxWidth()
-                .height(50.dp),
+                .height(100.dp).width(190.dp),
             contentAlignment = Alignment.Center) {
             Text(text = text, color = Color.Black,
                 fontSize = 25.sp, textAlign = TextAlign.Center, fontFamily = homefont
@@ -138,235 +138,13 @@ fun fdb(
 
 }
 
-/*
-@Preview(showBackground = true)
-@Composable
-fun defpre1() {
-    Box(modifier = Modifier
-        .fillMaxWidth()
-        .fillMaxHeight()) {
-        noti1()
-    }
-
-}
-
- */
-
-@Composable
-fun devcon() {
-    Image(
-        painter = painterResource(id = R.drawable.finalbghome), contentDescription = null,
-        modifier = Modifier
-            .padding(top = 0.dp)
-            .fillMaxHeight()
-            .fillMaxWidth(),
-        /*.background(
-            Color.White
-        )*/
-        contentScale = ContentScale.FillBounds,
-
-        )
-
-    Column(
-        modifier = Modifier
-            .verticalScroll(rememberScrollState())
-            .fillMaxHeight()
-    ) {
-        Box(modifier = Modifier.fillMaxWidth()) {
-
-            Image(
-                painter = painterResource(id = R.drawable.examtop),
-                contentDescription = null,
-                //alignment = Alignment.TopCenter,
-                modifier = Modifier
-                    .padding(top = 0.dp, bottom = 1.dp)
-
-                    .background(color = Color.Transparent)
-                    .fillMaxWidth(),
-                //.fillMaxHeight()
-                //.fillMaxSize(),
-                contentScale = ContentScale.FillWidth,
-            )
-
-
-        }
-        Box(modifier = Modifier.height(30.dp)) {
-
-        }
-        Column(
-            verticalArrangement = Arrangement.spacedBy(10.dp),
-            modifier = Modifier.fillMaxHeight(),
-            horizontalAlignment = Alignment.CenterHorizontally
-
-        ) {
-            Row(
-                horizontalArrangement = Arrangement.spacedBy(1.dp),
-              //  verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .fillMaxHeight()
-
-            ) {
-                Box(modifier = Modifier
-                    .fillMaxHeight()
-                    .weight(10f)) {
-                    Column(modifier = Modifier.fillMaxWidth()) {
-                        Text(text = "D Abhinav Vardhan",fontSize = 22.sp, color = Color.Black)
-                        Spacer(modifier = Modifier.height(10.dp))
-                        Text(text = "This is me trying to do something which i dont even know how to do... "
-                            ,fontSize = 20.sp, color = Color.Black)
-                        Spacer(modifier = Modifier.height(20.dp))
-                        Row(horizontalArrangement = Arrangement.spacedBy(20.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                        ){
-                            Image(
-                                painter = painterResource(id = R.drawable.insta),
-                                contentDescription = null,
-                                //alignment = Alignment.BottomStart,
-                                modifier = Modifier
-                                    //.background(color = Color.White)
-                                    .padding(start = 10.dp)
-
-                                    .clickable { }
-                                    .height(40.dp)
-                                    .width(40.dp)
-
-
-                            )
-                            Image(
-                                painter = painterResource(id = R.drawable.github),
-                                contentDescription = null,
-                                //alignment = Alignment.BottomStart,
-                                modifier = Modifier
-                                    //.background(color = Color.White)
-                                    // .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
-
-                                    .clickable { }
-                                    .height(40.dp)
-                                    .width(40.dp)
-
-
-                            )
-                            Image(
-                                painter = painterResource(id = R.drawable.linkedin),
-                                contentDescription = null,
-                                //alignment = Alignment.BottomStart,
-                                modifier = Modifier
-                                    //.background(color = Color.White)
-                                    // .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
-
-                                    .clickable { }
-                                    .height(40.dp)
-                                    .width(40.dp)
-
-
-                            )
-                        }
-                    }
-
-                }
-                Box(modifier = Modifier
-                    .fillMaxHeight()
-                    .weight(1f)) {
-
-                    Image(
-                        painter = painterResource(id = R.drawable.line1),
-                        contentDescription = null,
-                        //alignment = Alignment.TopCenter,
-                        modifier = Modifier
-                            .padding(top = 0.dp, bottom = 1.dp, start = 1.dp)
-
-                            .background(color = Color.Transparent)
-                            .fillMaxHeight(),
-                        //.fillMaxHeight()
-                        //.fillMaxSize(),
-                        contentScale = ContentScale.FillWidth,
-                    )
-                }
-                Box(modifier = Modifier
-                    .fillMaxHeight()
-                    .weight(10f)) {
-                    Column() {
-                        Text(text = "Digvijay Shelar",fontSize = 22.sp, color = Color.Black)
-                        Spacer(modifier = Modifier.height(10.dp))
-                        Text(text = "Always Commits with ok Vro line. Need to teach Some more lines fast...",fontSize = 20.sp, color = Color.Black)
-                        Spacer(modifier = Modifier.height(20.dp))
-                        Row(horizontalArrangement = Arrangement.spacedBy(20.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ){
-                            Image(
-                                painter = painterResource(id = R.drawable.insta),
-                                contentDescription = null,
-                                //alignment = Alignment.BottomStart,
-                                modifier = Modifier
-                                    //.background(color = Color.White)
-                                    .padding(start = 10.dp)
-
-                                    .clickable { }
-                                    .height(40.dp)
-                                    .width(40.dp)
-
-
-                            )
-                            Image(
-                                painter = painterResource(id = R.drawable.github),
-                                contentDescription = null,
-                                //alignment = Alignment.BottomStart,
-                                modifier = Modifier
-                                    //.background(color = Color.White)
-                                    // .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
-
-                                    .clickable { }
-                                    .height(40.dp)
-                                    .width(40.dp)
-
-
-                            )
-                            Image(
-                                painter = painterResource(id = R.drawable.linkedin),
-                                contentDescription = null,
-                                //alignment = Alignment.BottomStart,
-                                modifier = Modifier
-                                    //.background(color = Color.White)
-                                    // .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
-
-                                    .clickable { }
-                                    .height(40.dp)
-                                    .width(40.dp)
-
-
-                            )
-                        }
-                    }
-
-                }
-
-            }
-        }
-
-    }
-
-}
-/*
-@Preview(showBackground = true)
-@Composable
-fun defpre2() {
-    Box(modifier = Modifier
-        .fillMaxWidth()
-        .fillMaxHeight()) {
-        devcon()
-    }
-
-}
-
- */
 
 @Composable
 fun devcon2(navController: NavHostController,
             welcomeViewModel: WelcomeViewModel = hiltViewModel()) {
     val handler = LocalUriHandler.current
     Image(
-        painter = painterResource(id = R.drawable.finalbghome), contentDescription = null,
+        painter = painterResource(id = R.drawable.devbg), contentDescription = null,
         modifier = Modifier
             .padding(top = 0.dp)
             .fillMaxHeight()
@@ -386,7 +164,7 @@ fun devcon2(navController: NavHostController,
         Box(modifier = Modifier.fillMaxWidth()) {
 
             Image(
-                painter = painterResource(id = R.drawable.examtop),
+                painter = painterResource(id = R.drawable.devcontact),
                 contentDescription = null,
                 //alignment = Alignment.TopCenter,
                 modifier = Modifier
@@ -413,28 +191,129 @@ fun devcon2(navController: NavHostController,
             horizontalAlignment = Alignment.CenterHorizontally
 
         ) {
+
             Box(modifier = Modifier
                 .fillMaxHeight()
             ) {
-                Column(modifier = Modifier.fillMaxWidth()) {
-                    Text(text = "D Abhinav Vardhan", fontSize = 30.sp, color = Color.Black
-                    , modifier = Modifier.padding(7.dp), textDecoration = TextDecoration.Underline,
-                    fontWeight = FontWeight.Bold)
+                Column() {
+                    Text(text = "Digvijay Shelar",fontSize = 25.sp, color = Color.Black
+                        , modifier = Modifier.padding(start =110.dp), textDecoration = TextDecoration.Underline
+                        ,fontWeight = FontWeight.Bold  )
                     Spacer(modifier = Modifier.height(10.dp))
-                    Text(text = "This is me trying to do something which i dont even know how to do!! Someone help me get out of this college 😅😅...",
-                        fontSize = 22.sp,
-                        color = Color.Black, modifier = Modifier.padding(7.dp))
+                    Image(
+                        painter = painterResource(id = R.drawable.digvijaydp),
+                        contentDescription = null,
+                        alignment = Alignment.Center,
+                        modifier = Modifier
+                            //.background(color = Color.White)
+                            // .padding(start = 10.dp)
+
+                            .height(200.dp)
+                            .width(500.dp)
+
+
+                    )
                     Spacer(modifier = Modifier.height(20.dp))
                     Row(horizontalArrangement = Arrangement.spacedBy(20.dp),
                         verticalAlignment = Alignment.CenterVertically
-                    ) {
+                    ){
                         Image(
                             painter = painterResource(id = R.drawable.insta),
                             contentDescription = null,
                             //alignment = Alignment.BottomStart,
                             modifier = Modifier
                                 //.background(color = Color.White)
-                                .padding(start = 10.dp)
+                                .padding(start = 90.dp)
+
+                                .clickable { handler.openUri("https://instagram.com/__shelar__")}
+                                .height(60.dp)
+                                .width(60.dp)
+
+
+                        )
+                        Image(
+                            painter = painterResource(id = R.drawable.github),
+                            contentDescription = null,
+                            //alignment = Alignment.BottomStart,
+                            modifier = Modifier
+                                //.background(color = Color.White)
+                                // .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
+
+                                .clickable {handler.openUri("https://github.com/shelar1423") }
+                                .height(60.dp)
+                                .width(60.dp)
+
+
+                        )
+                        Image(
+                            painter = painterResource(id = R.drawable.linkedin),
+                            contentDescription = null,
+                            //alignment = Alignment.BottomStart,
+                            modifier = Modifier
+                                //.background(color = Color.White)
+                                // .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
+
+                                .clickable {handler.openUri("https://www.linkedin.com/in/digvijay-shelar-725111234") }
+                                .height(60.dp)
+                                .width(60.dp)
+
+
+                        )
+                    }
+                }
+
+            }
+            Box(modifier = Modifier
+                .fillMaxWidth())
+            {
+
+                Image(
+                    painter = painterResource(id = R.drawable.spear),
+                    contentDescription = null,
+                    //alignment = Alignment.TopCenter,
+                    modifier = Modifier
+                        .padding(top = 1.dp, bottom = 1.dp, start = 0.dp)
+
+                        .background(color = Color.Transparent)
+                        .fillMaxWidth(),
+                    //.fillMaxHeight()
+                    //.fillMaxSize(),
+                    contentScale = ContentScale.FillWidth,
+                )
+            }
+            Box(modifier = Modifier
+                .fillMaxHeight(),
+            ) {
+                Column(modifier = Modifier.fillMaxWidth().wrapContentSize(Alignment.Center)) {
+                    Text(text = "D Abhinav Vardhan", fontSize = 25.sp, color = Color.Black,textAlign = TextAlign.Center
+                        , modifier = Modifier.padding(start = 90.dp), textDecoration = TextDecoration.Underline,
+                        fontWeight = FontWeight.Bold)
+                   Spacer(modifier = Modifier.height(10.dp))
+                    Image(
+                        painter = painterResource(id = R.drawable.abhinav),
+                        contentDescription = null,
+                        alignment = Alignment.Center,
+                        modifier = Modifier
+                            //.background(color = Color.White)
+                            // .padding(start = 10.dp)
+
+                            .height(200.dp)
+                            .width(500.dp)
+
+
+                    )
+                    Spacer(modifier = Modifier.height(15.dp))
+                    Row(horizontalArrangement = Arrangement.spacedBy(20.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+
+                        Image(
+                            painter = painterResource(id = R.drawable.insta),
+                            contentDescription = null,
+                            alignment = Alignment.Center,
+                            modifier = Modifier
+                                //.background(color = Color.White)
+                                .padding(start = 90.dp)
 
                                 .clickable {
                                     handler.openUri("https://instagram.com/abhivardhan_pvt")
@@ -476,84 +355,7 @@ fun devcon2(navController: NavHostController,
                 }
 
             }
-            Box(modifier = Modifier
-                .fillMaxWidth())
-                 {
 
-                Image(
-                    painter = painterResource(id = R.drawable.spear),
-                    contentDescription = null,
-                    //alignment = Alignment.TopCenter,
-                    modifier = Modifier
-                        .padding(top = 1.dp, bottom = 1.dp, start = 0.dp)
-
-                        .background(color = Color.Transparent)
-                        .fillMaxWidth(),
-                    //.fillMaxHeight()
-                    //.fillMaxSize(),
-                    contentScale = ContentScale.FillWidth,
-                )
-            }
-            Box(modifier = Modifier
-                .fillMaxHeight()
-                ) {
-                Column() {
-                    Text(text = "Digvijay Shelar",fontSize = 31.sp, color = Color.Black
-                        , modifier = Modifier.padding(7.dp), textDecoration = TextDecoration.Underline
-                              ,fontWeight = FontWeight.Bold  )
-                    Spacer(modifier = Modifier.height(10.dp))
-                    Text(text = "Always Commits with ok Vro line. Need to teach Some more lines fast..."
-                        ,fontSize = 22.sp, color = Color.Black, modifier = Modifier.padding(7.dp))
-                    Spacer(modifier = Modifier.height(20.dp))
-                    Row(horizontalArrangement = Arrangement.spacedBy(20.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ){
-                        Image(
-                            painter = painterResource(id = R.drawable.insta),
-                            contentDescription = null,
-                            //alignment = Alignment.BottomStart,
-                            modifier = Modifier
-                                //.background(color = Color.White)
-                                .padding(start = 10.dp)
-
-                                .clickable { handler.openUri("https://instagram.com/__shelar__")}
-                                .height(60.dp)
-                                .width(60.dp)
-
-
-                        )
-                        Image(
-                            painter = painterResource(id = R.drawable.github),
-                            contentDescription = null,
-                            //alignment = Alignment.BottomStart,
-                            modifier = Modifier
-                                //.background(color = Color.White)
-                                // .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
-
-                                .clickable {handler.openUri("https://github.com/shelar1423") }
-                                .height(60.dp)
-                                .width(60.dp)
-
-
-                        )
-                        Image(
-                            painter = painterResource(id = R.drawable.linkedin),
-                            contentDescription = null,
-                            //alignment = Alignment.BottomStart,
-                            modifier = Modifier
-                                //.background(color = Color.White)
-                                // .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
-
-                                .clickable {handler.openUri("https://www.linkedin.com/in/digvijay-shelar-725111234") }
-                                .height(60.dp)
-                                .width(60.dp)
-
-
-                        )
-                    }
-                }
-
-            }
 
         }
     }
@@ -574,8 +376,8 @@ fun defpre3() {
 
 @Composable
 fun feedback(navController: NavHostController,
-           welcomeViewModel: WelcomeViewModel = hiltViewModel(),
-           url: String) {
+             welcomeViewModel: WelcomeViewModel = hiltViewModel(),
+             url: String) {
     AndroidView(factory = {
         WebView(it).apply {
 
