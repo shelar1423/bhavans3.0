@@ -6,10 +6,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.onboardingcompose.data.DataStoreRepository
-import com.example.onboardingcompose.navigation.NavigationItem
+
 import com.example.onboardingcompose.navigation.Screen
-import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.collect
+
+
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
