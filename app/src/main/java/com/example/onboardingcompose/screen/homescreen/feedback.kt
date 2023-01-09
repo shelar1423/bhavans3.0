@@ -249,7 +249,7 @@ fun devcon2(navController: NavHostController,
             ) {
                 Column() {
                     Text(text = "Digvijay Shelar",fontSize = 25.sp, color = Color.Black
-                        , modifier = Modifier.padding(start =110.dp), textDecoration = TextDecoration.Underline
+                        , modifier = Modifier.padding(start =70.dp), textDecoration = TextDecoration.Underline
                         ,fontWeight = FontWeight.Bold  )
                     Spacer(modifier = Modifier.height(10.dp))
                     Image(
@@ -260,8 +260,8 @@ fun devcon2(navController: NavHostController,
                             //.background(color = Color.White)
                             // .padding(start = 10.dp)
 
-                            .height(200.dp)
-                            .width(500.dp)
+                            .height(150.dp)
+                            .width(300.dp)
 
 
                     )
@@ -275,7 +275,7 @@ fun devcon2(navController: NavHostController,
                             //alignment = Alignment.BottomStart,
                             modifier = Modifier
                                 //.background(color = Color.White)
-                                .padding(start = 90.dp)
+                                .padding(start = 40.dp)
 
                                 .clickable { handler.openUri("https://instagram.com/__shelar__") }
                                 .height(60.dp)
@@ -341,19 +341,19 @@ fun devcon2(navController: NavHostController,
                     .fillMaxWidth()
                     .wrapContentSize(Alignment.Center)) {
                     Text(text = "D Abhinav Vardhan", fontSize = 25.sp, color = Color.Black,textAlign = TextAlign.Center
-                        , modifier = Modifier.padding(start = 90.dp), textDecoration = TextDecoration.Underline,
+                        , modifier = Modifier.padding(start = 40.dp), textDecoration = TextDecoration.Underline,
                         fontWeight = FontWeight.Bold)
                    Spacer(modifier = Modifier.height(10.dp))
                     Image(
-                        painter = painterResource(id = R.drawable.abhinav),
+                        painter = painterResource(id = R.drawable.abhi),
                         contentDescription = null,
                         alignment = Alignment.Center,
                         modifier = Modifier
                             //.background(color = Color.White)
                             // .padding(start = 10.dp)
 
-                            .height(200.dp)
-                            .width(500.dp)
+                            .height(150.dp)
+                            .width(300.dp)
 
 
                     )
@@ -368,7 +368,7 @@ fun devcon2(navController: NavHostController,
                             alignment = Alignment.Center,
                             modifier = Modifier
                                 //.background(color = Color.White)
-                                .padding(start = 90.dp)
+                                .padding(start = 40.dp)
 
                                 .clickable {
                                     handler.openUri("https://instagram.com/abhivardhan_pvt")

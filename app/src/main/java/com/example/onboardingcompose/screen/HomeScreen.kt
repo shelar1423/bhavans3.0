@@ -125,7 +125,7 @@ Row(modifier = Modifier.fillMaxWidth()){
             text = " Hello Bhavanite,",
             modifier = Modifier.padding(top = 10.dp),
             color = Color.White,
-            fontSize = 20.sp,
+            fontSize = 22.sp,
             fontFamily = homefont
         )
     }
@@ -151,7 +151,7 @@ Row(modifier = Modifier.fillMaxWidth()){
                         text = randomElement,
                         modifier = Modifier.padding(start = 10.dp, top = 0.dp,end=15.dp),
                         color = Color.White,
-                        fontSize = 15.sp,
+                        fontSize = 17.sp,
                         fontFamily = homefont,
 
                         )
