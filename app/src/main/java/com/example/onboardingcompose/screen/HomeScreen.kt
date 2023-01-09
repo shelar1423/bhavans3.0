@@ -46,10 +46,7 @@ fun HomeScreen(
     navController: NavHostController,
     welcomeViewModel: WelcomeViewModel = hiltViewModel(),name:String?
 
-) {  val sdf = SimpleDateFormat("yyyy-MM-dd")
-    val currentDateAndTime = sdf.format(Date())
-    val dateNow = Calendar.getInstance().time
-    val time1 = dateNow.time
+) {
     val homefont = FontFamily(
         Font(R.font.home))
     val list = listOf(
