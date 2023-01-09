@@ -145,8 +145,8 @@ Row(modifier = Modifier.fillMaxWidth()){
 
         )
     }
-}
-                    Spacer(modifier = Modifier.height(23.dp))
+    }
+                        Spacer(modifier = Modifier.height(10.dp))
 
                     Text(
                         text = randomElement,
