@@ -3,18 +3,20 @@ package com.example.onboardingcompose.navigation
 import act
 
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.onboardingcompose.screen.FAQScreen
 import com.example.onboardingcompose.screen.*
 import com.example.onboardingcompose.screen.homescreen.*
 import com.example.onboardingcompose.screen.quespaper.*
 import com.google.accompanist.pager.ExperimentalPagerApi
 import view360
 
-@OptIn(ExperimentalAnimationApi::class, ExperimentalPagerApi::class)
+@OptIn(ExperimentalAnimationApi::class, ExperimentalPagerApi::class, ExperimentalMaterialApi::class)
 @Composable
 fun BottomNavGraph(
     navController: NavHostController
@@ -64,6 +66,9 @@ fun BottomNavGraph(
 
         composable(route = Screen.devcon.route){
             devcon2(navController = navController)
+        }
+        composable(route = Screen.faq.route){
+            FAQScreen(navController = navController)
         }
 
         composable(route = Screen.itcom.route){

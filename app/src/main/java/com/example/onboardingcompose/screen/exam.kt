@@ -65,7 +65,7 @@ fun exam(navController: NavHostController,
         Box(modifier = Modifier.fillMaxWidth()) {
 
             Image(
-                painter = painterResource(id = R.drawable.examtop),
+                painter = painterResource(id = R.drawable.examtopfinal),
                 contentDescription = null,
                 //alignment = Alignment.TopCenter,
                 modifier = Modifier

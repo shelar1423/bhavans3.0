@@ -1,6 +1,7 @@
 package com.example.onboardingcompose.screen
 
 
+import android.inputmethodservice.Keyboard.Row
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -93,8 +94,12 @@ fun HomeScreen(
             .verticalScroll(rememberScrollState())
             .fillMaxHeight()
     ) {
-        Row(modifier = Modifier.fillMaxWidth().height(160.dp)) {
-            Box(modifier = Modifier.width(160.dp)) {
+        Row(modifier = Modifier
+            .fillMaxWidth()
+            .height(150.dp)) {
+            Box(modifier = Modifier
+                .width(100.dp)
+                .padding(top = 20.dp)) {
                 Image(
                     painter = painterResource(id = R.drawable.logohome),
                     contentDescription = null,
@@ -102,31 +107,57 @@ fun HomeScreen(
                     modifier = Modifier
                         //.background(color = Color.White)
                         // .padding(top = 20.dp, bottom = 20.dp, start = 0.dp, end = 240.dp)
-                        .fillMaxWidth()
+                       // .fillMaxWidth()
+                       // .height(150.dp).width(120.dp)
                         .clickable { navController.navigate(Screen.website.route) }
 
 
                 )
+
             }
 
             Box(modifier = Modifier.fillMaxWidth()) {
                 Column() {
-                    Text(
-                        text = " Hello Bhavanite,",
-                        //modifier = Modifier.padding(start = 160.dp, top = 29.dp),
-                        color = Color.White,
-                        fontSize = 25.sp,
-                        fontFamily = homefont
-                    )
+Row(modifier = Modifier.fillMaxWidth()){
+    Box(modifier = Modifier.weight(7f)) {
+
+
+        Text(
+            text = " Hello Bhavanite,",
+            modifier = Modifier.padding(top = 10.dp),
+            color = Color.White,
+            fontSize = 25.sp,
+            fontFamily = homefont
+        )
+    }
+    Box(modifier = Modifier.weight(2f)) {
+        Image(
+            painter = painterResource(id = R.drawable.iicon),
+            contentDescription = null,
+            // alignment = Alignment.TopEnd,
+            modifier = Modifier
+                //.background(color = Color.White)
+                .padding(top = 10.dp, end = 5.dp)
+                // .fillMaxWidth()
+                .height(35.dp)
+                .width(60.dp)
+                .clickable { navController.navigate(Screen.faq.route) }
+
+
+        )
+    }
+}
 
                     Text(
                         text = randomElement,
-                        // modifier = Modifier.padding(start = 170.dp, top = 80.dp,end=15.dp),
+                        modifier = Modifier.padding(start = 10.dp, top = 0.dp,end=15.dp),
                         color = Color.White,
                         fontSize = 17.sp,
                         fontFamily = homefont,
 
                         )
+
+
                 }
             }
 

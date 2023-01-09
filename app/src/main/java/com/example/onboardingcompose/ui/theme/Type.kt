@@ -1,7 +1,6 @@
 package com.example.onboardingcompose.ui.theme
 
 import androidx.compose.material.Typography
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -11,7 +10,8 @@ import com.example.onboardingcompose.R
 
 val bab = FontFamily(Font(R.font.nunito_extrabold_italic))
 val avtar = FontFamily(Font(R.font.ok))
-
+val ReemKufi = FontFamily(Font(R.font.reemkufi))
+val Poppins = FontFamily(Font(R.font.poppins))
 // Set of Material typography styles to start with
 val Typography = Typography(
     body1 = TextStyle(
