@@ -52,16 +52,19 @@ fun HomeScreen(
     val time1 = dateNow.time
     val homefont = FontFamily(
         Font(R.font.home))
-    val list = listOf("'Take risks in your life, If you win, you can lead! If you loose, you can guide!'",
-    "Don’t let what you cannot do interfere with what you can do.",
-    "You are braver than you believe, stronger than you seem and smarter than you think.",
-    "Life is not a problem to be solved, but a reality to be experienced.",
-    "Life is like riding a bicycle. To keep your balance, you must keep moving.",
-    "Make each day your masterpiece."+
-    "Arise, awake, and stop not till the goal is reached"+
-    "impossible itself says i'm possible",
-    "be a warrior not a worrier",
-    "Life is like a coin. You can spend it any way you wish, but you only spend it once.")
+    val list = listOf(
+        "Don’t let what you cannot do interfere with what you can do.",
+        "Make each day your masterpiece.",
+        "Arise, awake, and stop not till the goal is reached",
+        "Life is not a problem to be solved, but a reality to be experienced.",
+        "Be a warrior not a worrier",
+        "You do not find the happy life. You make it.",
+        "The most wasted of days is one without laughter",
+        "Happiness is not by chance, but by choice",
+        "Impossible is for the unwilling",
+        "Don’t let yesterday take up too much of today",
+        "Nothing is impossible. The word itself says “I’m possible!"
+        )
     val randomElement = list.random()
     val handler = LocalUriHandler.current
 
