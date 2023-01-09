@@ -1,7 +1,6 @@
 package com.example.onboardingcompose.navigation
 
 import act
-
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
@@ -9,7 +8,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.onboardingcompose.screen.FAQScreen
 import com.example.onboardingcompose.screen.*
 import com.example.onboardingcompose.screen.homescreen.*
 import com.example.onboardingcompose.screen.quespaper.*
@@ -149,7 +147,7 @@ fun BottomNavGraph(
 
         composable(route = Screen.feedback.route)
         {
-            feedback(navController=navController, url ="https://docs.google.com/forms/d/e/1FAIpQLSev_P_aTecLklvHdrnRdf89sgzHZcSk4BV65uZ00Z1rbJrJ3A/viewform?usp=sf_link")
+            feedback(navController=navController, url ="https://docs.google.com/forms/d/e/1FAIpQLSczQKr1wN2bkvTHM8Nex2FYd36bvAga7b2QMoFkyQ5MIV_W3w/viewform?usp=sf_link")
         }
 
         //question papers

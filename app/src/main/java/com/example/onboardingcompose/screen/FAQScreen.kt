@@ -20,7 +20,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -76,7 +75,7 @@ fun BottomText() {
         contentAlignment = Alignment.BottomCenter,
         modifier = Modifier.padding(top = 750.dp, start = 10.dp, end = 10.dp)
     ){
-        Text(text = "Can't find an answer to your questions? Feel free to contact us at digvijayshelar@gmail.com / vardhanabhi22@gmail.com",
+        Text(text = "Can't find an answer to your questions? Feel free to contact us at developerbvc@gmail.com",
             fontSize = 12.sp, color = IconColor3,
             fontFamily = Poppins
         )

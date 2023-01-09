@@ -1,7 +1,6 @@
 package com.example.onboardingcompose.screen
 
 
-import android.inputmethodservice.Keyboard.Row
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -126,7 +125,7 @@ Row(modifier = Modifier.fillMaxWidth()){
             text = " Hello Bhavanite,",
             modifier = Modifier.padding(top = 10.dp),
             color = Color.White,
-            fontSize = 25.sp,
+            fontSize = 20.sp,
             fontFamily = homefont
         )
     }
@@ -152,7 +151,7 @@ Row(modifier = Modifier.fillMaxWidth()){
                         text = randomElement,
                         modifier = Modifier.padding(start = 10.dp, top = 0.dp,end=15.dp),
                         color = Color.White,
-                        fontSize = 17.sp,
+                        fontSize = 15.sp,
                         fontFamily = homefont,
 
                         )

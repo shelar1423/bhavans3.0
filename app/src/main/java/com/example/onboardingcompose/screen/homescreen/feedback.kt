@@ -285,6 +285,7 @@ fun devcon2(navController: NavHostController,
                         )
                         Image(
                             painter = painterResource(id = R.drawable.github),
+
                             contentDescription = null,
                             //alignment = Alignment.BottomStart,
                             modifier = Modifier
