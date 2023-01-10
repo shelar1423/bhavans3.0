@@ -149,6 +149,10 @@ fun BottomNavGraph(
         {
             feedback(navController=navController, url ="https://docs.google.com/forms/d/e/1FAIpQLSczQKr1wN2bkvTHM8Nex2FYd36bvAga7b2QMoFkyQ5MIV_W3w/viewform?usp=sf_link")
         }
+        composable(route = Screen.ragpdf.route)
+        {
+            ragpdf(navController=navController, url ="https://drive.google.com/file/d/1i5PMjntsaLZ8Z9YYjX4PjCI5y4BywRe3/view?usp=share_link")
+        }
 
         //question papers
         composable(route = Screen.bcomg.route)
