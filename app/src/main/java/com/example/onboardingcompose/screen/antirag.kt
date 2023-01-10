@@ -30,7 +30,6 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.onboardingcompose.R
-import com.example.onboardingcompose.navigation.Screen
 import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 
 @Composable
@@ -55,7 +54,7 @@ fun antirag(navController: NavHostController,
         modifier = Modifier
             .verticalScroll(rememberScrollState())
             .fillMaxHeight()
-            .padding(start = 5.dp),
+            .padding(10.dp),
 
     ) {
         val im1 = painterResource(id = R.drawable.raghead2)
@@ -175,7 +174,7 @@ fun antirag(navController: NavHostController,
 
 
 
- */
+
         val gradient =
             Brush.horizontalGradient(
                 listOf(
@@ -188,6 +187,13 @@ fun antirag(navController: NavHostController,
             gradient = gradient,
         onClick ={ navController.navigate(Screen.ragpdf .route) })
 
+ */
+        Spacer(modifier = Modifier.height(10.dp))
+        Text(
+            text = "If any problem please report it to our anti - ragging committee or any other faculty without any hesitation. Immediate action will be taken"
+                    ,
+            color = Color.Red, fontSize = 25.sp, fontWeight = FontWeight.Bold,
+        modifier = Modifier.padding(20.dp))
         Spacer(modifier = Modifier.height(30.dp))
 
     }
