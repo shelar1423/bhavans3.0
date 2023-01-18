@@ -12,7 +12,7 @@ sealed class OnBoardingPage(
 ) {
     object First : OnBoardingPage(
         image = R.drawable.bvcreal,
-        title = "Bhavans",
+        title = "Bhavan's",
         description = "Welcome to the official Bhavan's App"
     )
 
