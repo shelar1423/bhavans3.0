@@ -60,7 +60,8 @@ object faq:Screen(route = "faq")
     object canteen:Screen(route = "b12")
     object b13:Screen(route = "b13")
 
-
+    object navfinal:Screen(route = "navfinal")
+    object navmid:Screen(route = "navmid")
 
 
 

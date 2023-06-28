@@ -224,6 +224,16 @@ fun BottomNavGraph(
             phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
         }
 
+        composable(route = Screen.navfinal.route)
+        {
+            navfinal(navController = navController)
+        }
+
+        composable(route = Screen.navmid.route)
+        {
+            navmid(navController = navController)
+        }
+
 
 
     }

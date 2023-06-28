@@ -238,8 +238,8 @@ Row(modifier = Modifier.fillMaxWidth()){
                 )
                 GradientB1(
                     gradient = gradient,
-                    onClick = { navController.navigate(Screen.three60.route) },
-                    text = "360° view",
+                    onClick = { navController.navigate(Screen.navmid.route) },
+                    text = "Navigation",
                     img = painterResource(id = R.drawable.icon360)
                 )
 
