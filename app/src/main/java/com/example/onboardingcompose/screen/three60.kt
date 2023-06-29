@@ -20,11 +20,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.zIndex
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.onboardingcompose.R
 import com.example.onboardingcompose.navigation.NavigationItem
 import com.example.onboardingcompose.navigation.Screen
+//import com.example.onboardingcompose.screen.CustomIndicator
+
+import com.example.onboardingcompose.screen.navfinal
 import com.example.onboardingcompose.ui.theme.*
 import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 import com.google.accompanist.pager.*
@@ -65,6 +69,7 @@ fun view360(
             .verticalScroll(rememberScrollState())
             .fillMaxHeight()
     ) {
+
         Box(modifier = Modifier.fillMaxWidth()) {
 
             Image(
@@ -280,9 +285,3 @@ fun GBhome(
     }
 
 }
-
-
-
-
-
-

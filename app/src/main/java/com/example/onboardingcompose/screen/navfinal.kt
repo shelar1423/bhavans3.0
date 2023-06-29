@@ -1,8 +1,17 @@
 package com.example.onboardingcompose.screen
 
 import android.widget.Toast
+import android.widget.Toolbar
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.core.animateDp
+import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.updateTransition
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -15,11 +24,15 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.zIndex
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.onboardingcompose.R
 import com.example.onboardingcompose.viewmodel.WelcomeViewModel
+import com.google.accompanist.pager.*
+import view360
 
+@OptIn(ExperimentalPagerApi::class, ExperimentalAnimationApi::class)
 @Composable
 fun navfinal(navController: NavHostController,
              welcomeViewModel: WelcomeViewModel = hiltViewModel()
@@ -45,6 +58,8 @@ fun navfinal(navController: NavHostController,
         .fillMaxWidth()
         .fillMaxHeight()
         .padding(2.dp)){
+
+        Spacer(modifier = Modifier.height(50.dp))
         Image(
             painter = painterResource(id = R.drawable.navigationhead1), contentDescription = null,
             modifier = Modifier
@@ -57,6 +72,7 @@ fun navfinal(navController: NavHostController,
     }
 
 }
+
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -83,7 +99,8 @@ fun DisplayJCSpinner() {
     Spacer(modifier = Modifier.height(0.dp))
     ExposedDropdownMenuBox(
         expanded = expandedState,
-        onExpandedChange = { expandedState = !expandedState }) {
+        onExpandedChange = { expandedState = !expandedState },
+        modifier = Modifier.padding(10.dp).background(Color.Cyan)) {
         TextField(
             value = selectedOption,
             onValueChange = {},
@@ -209,11 +226,12 @@ fun DisplayJCSpinner() {
     Spacer(modifier = Modifier.height(0.dp))
     ExposedDropdownMenuBox(expanded = expandedStateChild,
         onExpandedChange = { expandedStateChild = !expandedStateChild },
-        modifier = Modifier.padding(20.dp)) {
+        modifier = Modifier.padding(10.dp).background(Color.Cyan)) {
         TextField(value = selectedOptionChild, onValueChange = {},
             trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expandedStateChild) },
             readOnly = true,
-            textStyle = TextStyle.Default.copy(fontSize = 18.sp))
+            textStyle = TextStyle.Default.copy(fontSize = 18.sp)
+        )
 
         ExposedDropdownMenu(expanded = expandedStateChild,
             onDismissRequest = { expandedStateChild = false }) {
@@ -232,7 +250,7 @@ fun DisplayJCSpinner() {
     }
 
     Box(modifier = Modifier
-        .height(250.dp)
+        .height(400.dp)
         .fillMaxWidth()) {
 
         if (selectedOption == "BioChem") {

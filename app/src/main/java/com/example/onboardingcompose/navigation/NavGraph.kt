@@ -94,6 +94,16 @@ fun NavGraphBuilder.SetupNavGraph(
             navmid(navController = navController)
         }
 
+        composable(route = Screen.TabBar.route)
+        {
+            TabBar(navController = navController)
+        }
+
+        composable(route = Screen.TabLayout.route)
+        {
+            TabLayout(navController = navController)
+        }
+
 
         }
 
