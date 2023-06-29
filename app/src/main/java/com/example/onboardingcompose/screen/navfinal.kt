@@ -16,6 +16,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
@@ -30,6 +31,7 @@ import androidx.navigation.NavHostController
 import com.example.onboardingcompose.R
 import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 import com.google.accompanist.pager.*
+import com.example.onboardingcompose.ui.theme.nav
 import view360
 
 @OptIn(ExperimentalPagerApi::class, ExperimentalAnimationApi::class)
@@ -38,19 +40,7 @@ fun navfinal(navController: NavHostController,
              welcomeViewModel: WelcomeViewModel = hiltViewModel()
 ) {
     Box() {
-        Image(
-            painter = painterResource(id = R.drawable.navbg123), contentDescription = null,
-            modifier = Modifier
-                .padding(top = 1.dp)
-                .fillMaxWidth()
 
-                .fillMaxHeight(),
-/*.background(
-    Color.White
-)*/
-            contentScale = ContentScale.FillBounds,
-
-            )
 
     }
     Column(modifier = Modifier
@@ -93,14 +83,14 @@ fun DisplayJCSpinner() {
     var selectedOptionChild by remember {
         mutableStateOf(childOptions[0])
     }
-
+    Spacer(modifier = Modifier.height(100.dp))
     Text(text = "  Starting Point", color = Color.Black,
-        fontSize = 20.sp,fontWeight = FontWeight.SemiBold)
-    Spacer(modifier = Modifier.height(0.dp))
+        fontSize = 20.sp,fontWeight = FontWeight.SemiBold, modifier = Modifier.padding(top = 160.dp))
+
     ExposedDropdownMenuBox(
         expanded = expandedState,
         onExpandedChange = { expandedState = !expandedState },
-        modifier = Modifier.padding(10.dp).background(Color.Cyan)) {
+        modifier = Modifier.padding(10.dp).clip(shape = RoundedCornerShape(10.dp)).background(color = nav)){
         TextField(
             value = selectedOption,
             onValueChange = {},
@@ -226,7 +216,7 @@ fun DisplayJCSpinner() {
     Spacer(modifier = Modifier.height(0.dp))
     ExposedDropdownMenuBox(expanded = expandedStateChild,
         onExpandedChange = { expandedStateChild = !expandedStateChild },
-        modifier = Modifier.padding(10.dp).background(Color.Cyan)) {
+        modifier = Modifier.padding(10.dp).clip(shape = RoundedCornerShape(10.dp)).background(color = nav)) {
         TextField(value = selectedOptionChild, onValueChange = {},
             trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expandedStateChild) },
             readOnly = true,
@@ -952,17 +942,14 @@ fun DisplayJCSpinner() {
 @Composable
 fun navfinal2() {
     Box() {
-        Image(
-            painter = painterResource(id = R.drawable.navbg123), contentDescription = null,
-            modifier = Modifier
-                .padding(top = 1.dp)
-                .fillMaxWidth()
+      Image(
+            painter = painterResource(id = R.drawable.group_50), contentDescription = null,
+            modifier = Modifier.background(color = nav).fillMaxSize(),
 
-                .fillMaxHeight(),
 /*.background(
     Color.White
 )*/
-            contentScale = ContentScale.FillBounds,
+          contentScale = ContentScale.FillBounds,
 
             )
 
@@ -970,18 +957,10 @@ fun navfinal2() {
     Column(modifier = Modifier
         .fillMaxSize()
         .fillMaxWidth()
-        .fillMaxHeight()
-        .padding(2.dp),
+        .fillMaxHeight(),
         horizontalAlignment = Alignment.CenterHorizontally){
 
-        Image(
-            painter = painterResource(id = R.drawable.navigationhead1), contentDescription = null,
-            modifier = Modifier
-                .padding(top = 0.dp)
-                .fillMaxWidth()
-                .height(120.dp)
 
-        )
         DisplayJCSpinner()
     }
 
