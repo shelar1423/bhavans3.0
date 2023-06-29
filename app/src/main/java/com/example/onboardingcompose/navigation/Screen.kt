@@ -62,7 +62,6 @@ object faq:Screen(route = "faq")
 
     object navfinal:Screen(route = "navfinal")
     object navmid:Screen(route = "navmid")
-    object TabBar:Screen(route = "TabBar")
     object TabLayout:Screen(route = "TabLayout")
 
 

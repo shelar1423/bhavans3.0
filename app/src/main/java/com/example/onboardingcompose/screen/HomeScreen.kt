@@ -1,6 +1,7 @@
 package com.example.onboardingcompose.screen
 
 
+import android.annotation.SuppressLint
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -388,6 +389,7 @@ fun NavigationController(navController: NavHostController,startDestination: Stri
 }*/
 
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @ExperimentalAnimationApi
 @ExperimentalPagerApi
 @Composable
