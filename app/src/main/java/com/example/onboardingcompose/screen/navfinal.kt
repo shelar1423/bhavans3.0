@@ -107,7 +107,7 @@ fun DisplayJCSpinner() {
                 DropdownMenuItem(onClick = {
                     selectedOption = eachoption
                     expandedState = false
-                    Toast.makeText(mContext, "" + selectedOption, Toast.LENGTH_LONG).show()
+
                     childOptions.clear()
 
                     if (selectedOption.equals("BioChem")) {
@@ -230,7 +230,7 @@ fun DisplayJCSpinner() {
                 DropdownMenuItem(onClick = {
                     selectedOptionChild = eachoption
                     expandedStateChild = false
-                    Toast.makeText(mContext, "" + selectedOptionChild, Toast.LENGTH_LONG).show()
+
                 }) {
                     Text(text = eachoption, fontSize = 18.sp)
 
@@ -941,19 +941,19 @@ fun DisplayJCSpinner() {
 @OptIn(ExperimentalPagerApi::class, ExperimentalAnimationApi::class)
 @Composable
 fun navfinal2() {
-    Box() {
-      Image(
-            painter = painterResource(id = R.drawable.group_50), contentDescription = null,
-            modifier = Modifier.background(color = nav).fillMaxSize(),
+    Image(
+        painter = painterResource(id = R.drawable.navigationkifinalimage), contentDescription = null,
+        modifier = Modifier
+            .padding(top = 1.dp)
+            .fillMaxWidth()
 
+            .fillMaxHeight(),
 /*.background(
     Color.White
 )*/
-          contentScale = ContentScale.FillBounds,
+        contentScale = ContentScale.FillBounds,
 
-            )
-
-    }
+        )
     Column(modifier = Modifier
         .fillMaxSize()
         .fillMaxWidth()

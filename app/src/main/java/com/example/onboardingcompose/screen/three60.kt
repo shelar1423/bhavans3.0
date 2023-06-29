@@ -21,6 +21,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
+import com.example.onboardingcompose.ui.theme.v360
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.onboardingcompose.R
@@ -43,7 +44,7 @@ fun view360(
 
 ) {
     Image(
-        painter = painterResource(id = R.drawable.bg3601), contentDescription = null,
+        painter = painterResource(id = R.drawable.i360finale), contentDescription = null,
         modifier = Modifier
             .padding(top = 1.dp)
             .fillMaxWidth()
@@ -70,26 +71,6 @@ fun view360(
             .fillMaxHeight()
     ) {
 
-        Box(modifier = Modifier.fillMaxWidth()) {
-
-            Image(
-                painter = painterResource(id = R.drawable.t60viewtop),
-                contentDescription = null,
-                //alignment = Alignment.TopCenter,
-                modifier = Modifier
-                    .padding(top = 0.dp, bottom = 1.dp)
-
-                    .background(color = Color.Transparent)
-                .fillMaxWidth()
-                .fillMaxHeight()
-                .fillMaxSize(),
-                contentScale = ContentScale.FillWidth,
-            )
-
-
-
-
-        }
         val scroll = rememberScrollState(0)
 
 
