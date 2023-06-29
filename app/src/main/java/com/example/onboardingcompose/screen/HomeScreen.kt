@@ -241,7 +241,7 @@ Row(modifier = Modifier.fillMaxWidth()){
                     gradient = gradient,
                     onClick = { navController.navigate(Screen.TabLayout.route) },
                     text = "Navigation",
-                    img = painterResource(id = R.drawable.icon360)
+                    img = painterResource(id = R.drawable.navicon123)
                 )
 
 

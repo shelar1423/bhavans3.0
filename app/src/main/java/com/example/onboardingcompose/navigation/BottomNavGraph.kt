@@ -126,7 +126,7 @@ fun BottomNavGraph(
         }
         composable(route = Screen.placement.route)
         {
-            placement(navController=navController, url ="https://www.bhavansvc.ac.in/placementcell.html")
+            placement(navController=navController, url ="https://www.facebook.com/people/Bvcplacementcell/100064001289517/")
         }
         composable(route = Screen.payment.route)
         {

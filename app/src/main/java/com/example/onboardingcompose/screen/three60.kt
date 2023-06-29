@@ -33,6 +33,7 @@ import com.example.onboardingcompose.screen.navfinal
 import com.example.onboardingcompose.ui.theme.*
 import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 import com.google.accompanist.pager.*
+import com.example.onboardingcompose.ui.theme.nav
 
 
 @ExperimentalAnimationApi
@@ -60,8 +61,8 @@ fun view360(
     val gradient =
         Brush.horizontalGradient(
             listOf(
-                Color(0xFF121C42),
-                Color(0xFF3483A3)
+                Color(0xFFC0C7E9),
+                Color(0xFFC0C7E9)
             )
         )
 
@@ -74,7 +75,7 @@ fun view360(
         val scroll = rememberScrollState(0)
 
 
-        Box(modifier = Modifier.height(20.dp))
+        Box(modifier = Modifier.height(230.dp))
         /*
         Box(modifier = Modifier.height(45.dp)) {
             Spacer(modifier = Modifier.height(10.dp))
@@ -127,7 +128,7 @@ fun view360(
                 Column(Modifier.weight(8f)) {
                     GBhome(
                         text = "IT BLOCK AND COMMERCE BLOCK",
-                        textColor = Color.White,
+                        textColor = v360,
                         onClick = { navController.navigate(Screen.itcom.route) },
                         gradient = gradient
 
@@ -144,7 +145,7 @@ fun view360(
                 Column(Modifier.weight(8f)) {
                     GBhome(
                         text = "BIO CHEMISTRY AND SCIENCE BLOCK",
-                        textColor = Color.White,
+                        textColor = v360,
                         onClick = { navController.navigate(Screen.biosci.route) },
                         gradient = gradient
 
@@ -164,7 +165,7 @@ fun view360(
                 Column(Modifier.weight(8f)) {
                     GBhome(
                         text = "VIVEK BHARATHI AND MBA BLOCK",
-                        textColor = Color.White,
+                        textColor = v360,
                         onClick = { navController.navigate(Screen.vbmba.route) },
                         gradient = gradient
                     )
@@ -180,7 +181,7 @@ fun view360(
                 Column(Modifier.weight(8f)) {
                     GBhome(
                         text = "LIBRARY BLOCK",
-                        textColor = Color.White,
+                        textColor = v360,
                         onClick = { navController.navigate(Screen.libblock.route) },
                         gradient = gradient
 
@@ -200,7 +201,7 @@ fun view360(
                 Column(Modifier.weight(8f)) {
                     GBhome(
                         text = "PARKING GATE AND SPORTS ROOM",
-                        textColor = Color.White,
+                        textColor = v360,
                         onClick = { navController.navigate(Screen.parking.route) },
                         gradient = gradient
                     )
@@ -216,7 +217,7 @@ fun view360(
                 Column(Modifier.weight(8f)) {
                     GBhome(
                         text = "CANTEEN",
-                        textColor = Color.White,
+                        textColor = v360,
                         onClick = { navController.navigate(Screen.canteen.route) },
                         gradient = gradient
                     )

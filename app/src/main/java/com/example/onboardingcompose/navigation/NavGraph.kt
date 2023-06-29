@@ -10,6 +10,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.onboardingcompose.screen.*
+import com.example.onboardingcompose.screen.homescreen.placement
 import com.google.accompanist.pager.ExperimentalPagerApi
 
 @ExperimentalAnimationApi
@@ -69,6 +70,10 @@ fun NavGraphBuilder.SetupNavGraph(
         composable(route = Screen.notification.route)
         {
             notification(navController=navController, url ="http://www.bvcexams.com/Examination%20Notifications.html")
+        }
+        composable(route = Screen.placement.route)
+        {
+            placement(navController=navController, url ="https://www.facebook.com/people/Bvcplacementcell/100064001289517/")
         }
 
         composable(route = Screen.almanac.route)
