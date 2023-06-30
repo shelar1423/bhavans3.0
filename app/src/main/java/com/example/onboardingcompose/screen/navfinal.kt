@@ -535,7 +535,7 @@ fun DisplayJCSpinner() {
                     Box() {
                         Image(
                             painter = img, contentDescription = null,
-                            modifier = Modifier
+                            modifier = Modifier.fillMaxSize()
                                 .fillMaxHeight()
                                 .fillMaxWidth()
                                 .align(Alignment.BottomCenter),
@@ -553,7 +553,7 @@ fun DisplayJCSpinner() {
                                 .fillMaxWidth()
                                 .align(Alignment.BottomCenter),
 
-                            contentScale = ContentScale.FillHeight
+                            contentScale = ContentScale.FillBounds
                         )
                     }
                 }
@@ -1023,7 +1023,9 @@ fun DisplayJCSpinner() {
                     }
                 }
             }
+
         }
+        Spacer(modifier = Modifier.height(40.dp))
     }}
 
 
