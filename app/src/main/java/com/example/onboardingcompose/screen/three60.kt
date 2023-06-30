@@ -44,8 +44,8 @@ fun view360(
     welcomeViewModel: WelcomeViewModel = hiltViewModel()
 
 ) {
-    Image(
-        painter = painterResource(id = R.drawable.i360finale), contentDescription = null,
+    /*Image(
+        painter = painterResource(id = R.drawable.i360finalebg), contentDescription = null,
         modifier = Modifier
             .padding(top = 1.dp)
             .fillMaxWidth()
@@ -56,7 +56,7 @@ fun view360(
 )*/
         contentScale = ContentScale.FillBounds,
 
-        )
+        )*/
 
     val gradient =
         Brush.horizontalGradient(
@@ -69,13 +69,27 @@ fun view360(
     Column(
         modifier = Modifier
             .verticalScroll(rememberScrollState())
-            .fillMaxHeight()
+            .fillMaxHeight().background(color = Color.Transparent)
     ) {
+        Image(
+            painter = painterResource(id = R.drawable.i360top),
+            contentDescription = null,
+            //alignment = Alignment.TopCenter,
+            modifier = Modifier
+                .padding(top = 0.dp, bottom = 1.dp)
+
+                .background(color = Color.Transparent)
+                .fillMaxWidth(),
+            //.fillMaxHeight()
+            //.fillMaxSize(),
+            contentScale = ContentScale.FillWidth,
+        )
+
 
         val scroll = rememberScrollState(0)
 
 
-        Box(modifier = Modifier.height(230.dp))
+        Box(modifier = Modifier.height(30.dp))
         /*
         Box(modifier = Modifier.height(45.dp)) {
             Spacer(modifier = Modifier.height(10.dp))
