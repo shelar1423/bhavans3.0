@@ -271,6 +271,7 @@ fun DisplayJCSpinner() {
                 }
             }
         }
+        Spacer(modifier = Modifier.height(30.dp))
 
         Box(
             modifier = Modifier
