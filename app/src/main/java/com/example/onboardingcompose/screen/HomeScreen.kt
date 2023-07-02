@@ -1,6 +1,8 @@
 package com.example.onboardingcompose.screen
 
 
+import act
+import com.example.onboardingcompose.ui.theme.nav
 import android.annotation.SuppressLint
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.*
@@ -38,6 +40,41 @@ import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 import com.google.accompanist.pager.ExperimentalPagerApi
 import java.text.SimpleDateFormat
 import java.util.*
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.Icon
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Tab
+import androidx.compose.material.TabRow
+import androidx.compose.material.TabRowDefaults
+import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.LibraryBooks
+import androidx.compose.material.icons.rounded.*
+
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment.Companion.BottomCenter
+import androidx.compose.ui.draw.clip
+
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.google.accompanist.pager.HorizontalPager
+import com.google.accompanist.pager.pagerTabIndicatorOffset
+import com.google.accompanist.pager.rememberPagerState
+import kotlinx.coroutines.launch
 
 
 @ExperimentalAnimationApi
@@ -393,102 +430,168 @@ fun NavigationController(navController: NavHostController,startDestination: Stri
 @ExperimentalAnimationApi
 @ExperimentalPagerApi
 @Composable
-fun Navigation() {
+fun Navigation(    navController: NavHostController,) {
+    val pagerState = rememberPagerState()
+    val coroutineScope = rememberCoroutineScope()
 
-
-    val navController = rememberNavController()
-
-    Scaffold(
-
-        bottomBar = {
-
-
-            BottomBar(navController)
-
-        }) {
-        BottomNavGraph(navController = navController)
+    val interactionSource = remember {
+        MutableInteractionSource()
     }
 
-}
+    Box(
+        modifier=Modifier.fillMaxSize(),
+        contentAlignment= BottomCenter
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+
+        ) {
+            HorizontalPager(
+                count = tabRowItems.size,
+                state = pagerState,
+            ) { count ->
+                when (count) {
+                    0 -> HomeScreen(navController = navController, name = toString())
+                    1 -> act(navController = navController)
+                    2 -> exam(navController = navController)
+                }
+            }
+        }
+        //We first add TabRow which will be the container for Tab.
+        //
+        //selectedTabIndex, the index of the currently selected tab.
+        //
+        //indicator, that represents which tab is currently selected. but we don't need it so we made it Transparent
+        TabRow(
+            backgroundColor = colorResource(id = R.color.ButtonBlue),
+            modifier = Modifier.fillMaxWidth().clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp)),
+            selectedTabIndex = pagerState.currentPage,
+            indicator = { tabPositions ->
+                TabRowDefaults.Indicator(
+                    Modifier.pagerTabIndicatorOffset(pagerState, tabPositions),
+                    color = Color.Transparent
+                )
+            }
+        ) {
+
+            //Inside of the TabRow we will create Tab. Since we’ve already created tabs list, we’ll simply call tabRowItems.forEachIndex and set Tabs.
+            //
+            //selected, whether this tab is selected or not.
+            //
+            //In onClick method, we launch the coroutineScope and call animateScrollToPage function. It simply animates to the given page to the middle of the viewport.
+            tabRowItems.forEachIndexed { index, item ->
+
+                Tab(
+                    modifier = Modifier
+                        .clickable(
+                            indication = null,
+                            interactionSource = interactionSource,
+                            onClick = {
+                                coroutineScope.launch { pagerState.animateScrollToPage(index) }
+                            }
+                        )
+                    ,
+                    selected = pagerState.currentPage == index,
+                    onClick = {
+                        // we have already added the clickable in the Modifier
+                    },
+                    text = {
+                        BottomNavItem(
+                            item.title,
+                            icon = item.icon,
+                            selected = pagerState.currentPage == index,
+                            interactionSource = interactionSource,
+                            onCLick = {
+                                coroutineScope.launch { pagerState.animateScrollToPage(index) }
+                            }
+                        )
+                    }
+                )
+            }
+        }
+
+    }
+
+        //HorizontalPager A horizontally scrolling layout that allows users to flip between items to the left and right.
+        //
+        //Finally, we’ll add HorizontalPager. count is the number of pages and state is the object to be used to control or observe the pager’s state which we’ve already created above.
+        //
+        //Inside of the HorizontalPager, we’ll get current page and call screens.
+
+    }
+
+
+
+
+data class TabRowItem(
+    val title: String,
+    val icon: ImageVector,
+)
+
+val tabRowItems = listOf(
+    TabRowItem(
+        title = "Home",
+        icon = Icons.Rounded.Home,
+    ),
+    TabRowItem(
+        title = "Exam",
+        icon = Icons.Rounded.Book,
+    ),
+    TabRowItem(
+        title = "Paper",
+        icon = Icons.Default.LibraryBooks,
+    )
+)
 
 @Composable
-fun BottomBar(
-    navController: NavController
+fun BottomNavItem(
+    title: String,
+    icon: ImageVector,
+    selected: Boolean,
+    interactionSource: MutableInteractionSource,
+    onCLick: () -> Unit
 ) {
 
-    val items = listOf(
-        NavigationItem.Home,
-        NavigationItem.academics,
-        NavigationItem.Activities,
-    )
+    val background =
+        if (selected) nav.copy(alpha = 0.6f) else Color.Transparent
 
-    val navBackStackEntry by navController.currentBackStackEntryAsState()
-    val currentRoute = navBackStackEntry?.destination?.route
+    val contentColor =
+        if (selected) Color.White else Color.Black
 
-    val bottomBarDestination = items.any { it.route == currentRoute }
-
-    if (bottomBarDestination) {
-        BottomNavigation(backgroundColor = Color.Transparent, elevation = 0.dp){
-
-            items.forEach {
-                BottomNavigationItem(selected = currentRoute == it.route,
-                    label = {
-                        Text(
-                            text = it.label,
-                            fontWeight = FontWeight.SemiBold,
-                            color = if (currentRoute == it.route) Color.Black else Color.Black
-                        )
-                    },
-                    icon = {
-                        Icon(
-                            imageVector = it.Icon, contentDescription = null,
-                            tint = if (currentRoute == it.route) Color(0xFFFF0623) else Color(
-                                0xFF4027DE
-                            )
-                        )
-
-                    },
-
-                    onClick = {
-                        if (currentRoute != it.route) {
-
-                            navController.graph?.startDestinationRoute?.let {
-                                navController.popBackStack(it, true)
-                            }
-
-                            navController.navigate(it.route) {
-                                popUpTo(navController.graph.findStartDestination().id)
-                                launchSingleTop = true
-                            }
-
-                        }
-
-                    }        )
-
+    Box(
+        modifier = Modifier
+            .height(40.dp)
+            .clip(CircleShape)
+            .background(background)
+            .clickable(
+                indication = null,
+                interactionSource = interactionSource,
+                onClick = { onCLick() }
+            )
+    ) {
+        Row(
+            modifier = Modifier
+                .padding(start = 10.dp, end = 10.dp, top = 8.dp, bottom = 8.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(4.dp)
+        ) {
+            Icon(
+                imageVector = icon,
+                contentDescription = "icon",
+                tint = contentColor
+            )
+            AnimatedVisibility(visible = selected) {
+                Text(
+                    text = title,
+                    color = contentColor
+                )
             }
         }
     }
-
 }
 
 
-@Composable
-fun Settings() {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text(text = "Settings")
-
-        }
-    }
-}
-
-
+// our screens
+// home screen
 

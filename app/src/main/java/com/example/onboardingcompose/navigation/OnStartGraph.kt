@@ -23,7 +23,7 @@ fun NavGraphBuilder.onStartGraph(
         startDestination = Screen.SplashScreen.route
     ) {
         composable(route = Screen.HomeScreen.route) {
-            Navigation()
+            Navigation(navController = navController)
         }
         composable(route = Screen.SplashScreen.route) {
             SplashScreen(navController = navController, splashViewModel = splashViewModel)

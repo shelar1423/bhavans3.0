@@ -26,7 +26,7 @@ fun RootNavGraph(
         SetupNavGraph(navController = navController)
         onStartGraph(navController = navController, splashViewModel = splashViewModel)
         composable(route = Graph.BOTTOM_NAV_GRAPH) {
-            Navigation()
+            Navigation(navController = navController)
         }
 
     }
