@@ -9,8 +9,6 @@ import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -23,8 +21,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -36,6 +32,8 @@ import com.example.onboardingcompose.navigation.BottomNavGraph
 import com.example.onboardingcompose.navigation.NavigationItem
 import com.example.onboardingcompose.navigation.Screen
 import com.example.onboardingcompose.ui.theme.bab
+import com.example.onboardingcompose.ui.theme.bb
+import com.example.onboardingcompose.ui.theme.c3
 import com.example.onboardingcompose.viewmodel.WelcomeViewModel
 import com.google.accompanist.pager.ExperimentalPagerApi
 import java.text.SimpleDateFormat
@@ -61,16 +59,15 @@ import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.LibraryBooks
 import androidx.compose.material.icons.rounded.*
+import androidx.compose.runtime.*
 
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment.Companion.BottomCenter
 import androidx.compose.ui.draw.clip
 
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.unit.*
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.pagerTabIndicatorOffset
 import com.google.accompanist.pager.rememberPagerState
@@ -432,6 +429,7 @@ fun NavigationController(navController: NavHostController,startDestination: Stri
 @ExperimentalPagerApi
 @Composable
 fun Navigation(    navController: NavHostController,) {
+
     val pagerState = rememberPagerState()
     val coroutineScope = rememberCoroutineScope()
 
@@ -465,10 +463,10 @@ fun Navigation(    navController: NavHostController,) {
         //
         //indicator, that represents which tab is currently selected. but we don't need it so we made it Transparent
         TabRow(
-            backgroundColor = colorResource(id = R.color.ButtonBlue),
+            backgroundColor = c3,
             modifier = Modifier
-                .fillMaxWidth()
-                .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp)),
+                .fillMaxWidth().padding(10.dp)
+                .clip(CircleShape),
             selectedTabIndex = pagerState.currentPage,
             indicator = { tabPositions ->
                 TabRowDefaults.Indicator(
@@ -536,6 +534,8 @@ val tabRowItems = listOf(
     TabRowItem(
         title = "Home",
         icon = Icons.Rounded.Home,
+
+
     ),
     TabRowItem(
         title = "Exam",
@@ -544,6 +544,7 @@ val tabRowItems = listOf(
     TabRowItem(
         title = "Paper",
         icon = Icons.Default.LibraryBooks,
+
     )
 )
 
@@ -560,7 +561,7 @@ fun BottomNavItem(
         if (selected) nav.copy(alpha = 0.6f) else Color.Transparent
 
     val contentColor =
-        if (selected) Color.White else Color.Black
+        if (selected) Color.White else bb
 
     Box(
         modifier = Modifier
@@ -577,7 +578,7 @@ fun BottomNavItem(
             modifier = Modifier
                 .padding(start = 10.dp, end = 10.dp, top = 8.dp, bottom = 8.dp),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(4.dp)
+            horizontalArrangement = Arrangement.spacedBy(1.dp)
         ) {
             Icon(
                 imageVector = icon,
@@ -587,7 +588,8 @@ fun BottomNavItem(
             AnimatedVisibility(visible = selected) {
                 Text(
                     text = title,
-                    color = contentColor
+                    color = contentColor,
+                    fontSize = 10.sp
                 )
             }
         }

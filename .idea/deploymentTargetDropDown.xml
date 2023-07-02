@@ -7,12 +7,12 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\digvi\.android\avd\Resizable_Experimental_API_33.avd" />
+            <value value="C:\Users\digvi\.android\avd\Nexus_5X_Edited_API_31.avd" />
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2023-06-30T08:15:44.053244700Z" />
+    <timeTargetWasSelectedWithDropDown value="2023-07-02T15:47:13.382509900Z" />
     <targetsSelectedWithDialog>
       <Target>
         <type value="QUICK_BOOT_TARGET" />

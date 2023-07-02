@@ -44,6 +44,7 @@ val IconColor3 = Color(0xFF818181)
 val c1= Color(0xFF73e8ff)
 val c2=Color(0xFFFFFFFF)
 val c4= Color(0xFF0167E2)
-val c3=Color(0xFF8BECCE)
+val c3=Color(0xFF24729F)
+val bb = Color(0xFFD2E9E9)
 
 
