@@ -330,6 +330,7 @@ Row(modifier = Modifier.fillMaxWidth()){
 
             }
         }
+        Spacer(modifier = Modifier.height(60.dp))
 
     }
 
@@ -465,7 +466,9 @@ fun Navigation(    navController: NavHostController,) {
         //indicator, that represents which tab is currently selected. but we don't need it so we made it Transparent
         TabRow(
             backgroundColor = colorResource(id = R.color.ButtonBlue),
-            modifier = Modifier.fillMaxWidth().clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp)),
+            modifier = Modifier
+                .fillMaxWidth()
+                .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp)),
             selectedTabIndex = pagerState.currentPage,
             indicator = { tabPositions ->
                 TabRowDefaults.Indicator(

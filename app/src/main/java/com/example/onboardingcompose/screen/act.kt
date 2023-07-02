@@ -154,6 +154,8 @@ fun act(navController: NavHostController,
             }
 
             }
+
+        Spacer(modifier = Modifier.height(60.dp))
         }
 
     }
