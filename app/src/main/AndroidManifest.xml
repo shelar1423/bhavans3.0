@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.onboardingcompose">
+    package="com.bhavansvivekananda.onboardingcompose">
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
-        android:name=".MyApplication"
+        android:name="com.bhavansvivekananda.onboardingcompose.MyApplication"
         android:icon="@drawable/iconfinal2"
         android:label="@string/app_name"
         android:usesCleartextTraffic="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.CustomSplashScreenTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.bhavansvivekananda.onboardingcompose.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.CustomSplashScreenTheme">
             <intent-filter>
