@@ -10,7 +10,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.bhavansvivekananda.onboardingcompose.screen.*
+import com.bhavansvivekananda.onboardingcompose.screen.homescreen.alumni
+import com.bhavansvivekananda.onboardingcompose.screen.homescreen.devcon2
+import com.bhavansvivekananda.onboardingcompose.screen.homescreen.noti1
 import com.bhavansvivekananda.onboardingcompose.screen.homescreen.placement
+import com.bhavansvivekananda.onboardingcompose.screen.quespaper.*
 import com.google.accompanist.pager.ExperimentalPagerApi
 
 @ExperimentalAnimationApi
@@ -35,7 +39,10 @@ fun NavGraphBuilder.SetupNavGraph(
         }
 
 
-
+        composable(route = Screen.alumni.route)
+        {
+            alumni(navController=navController, url ="https://alumni.bhavansvc.ac.in/")
+        }
         composable(route = Screen.antirag.route)
         {
             antirag(navController = navController)
@@ -50,6 +57,78 @@ fun NavGraphBuilder.SetupNavGraph(
         composable(route = Screen.mba.route)
         {
            mba(navController=navController, url ="https://www.google.com/maps/place/MBA+block/@17.4887849,78.5339989,90m/data=!3m1!1e3!4m22!1m16!4m15!1m6!1m2!1s0x3bcb9b102ac29611:0xf3f87c17db4e78e2!2sCommerceBlockBVC,+BHAVAN'S+VIVEKANANDA+COLLEGE,+New+Kranthi+Nagar,+Sainikpuri,+Secunderabad,+Telangana!2m2!1d78.5347303!2d17.4892123!1m6!1m2!1s0x3bcb9b0fcc30cadd:0x4c09f90816ab32d7!2sLibrary+Block+Bhavan's+vivekanada+college,+692,+New+Kranthi+Nagar,+Sainikpuri,+Secunderabad,+Telangana+500094!2m2!1d78.5345619!2d17.4881206!3e2!3m4!1s0x3bcb9b0fd89865f5:0x97bbfef9f60d690a!8m2!3d17.4889935!4d78.5338783")
+        }
+        //question papers
+        composable(route = Screen.bcomg.route)
+        {
+            bcomg(navController=navController, url ="https://drive.google.com/drive/folders/1k2KAu9benSHdKF9QjA7--aoz_ot3JzP1?usp=share_link")
+        }
+        composable(route = Screen.bcomh.route)
+        {
+            bcomh(navController=navController, url ="https://drive.google.com/drive/folders/1TKp23MXOBcc2kIDR8mJyNVAFNyknttGc?usp=share_link")
+        }
+        composable(route = Screen.bcomc.route)
+        {
+            bcomc(navController=navController, url ="https://drive.google.com/drive/folders/18kCyUZT06oLcU3FvNZK6XqDNBcBWl01e?usp=share_link")
+        }
+        composable(route = Screen.bba.route)
+        {
+            bba(navController=navController, url ="https://drive.google.com/drive/folders/1wHcTMpFARsRB5QzfiPTNRMNdCgrNrXm1?usp=share_link")
+        }
+        composable(route = Screen.bca.route)
+        {
+            bca(navController=navController, url ="https://drive.google.com/drive/folders/1uorsnr-AcEIiAwuihTrtmPqNiGyY6V0O?usp=share_link")
+        }
+        composable(route = Screen.ba.route)
+        {
+            ba(navController=navController, url ="https://drive.google.com/drive/folders/1c9XUe_sf8LHrH3WTjHHT5ldelffeDVXw?usp=share_link")
+        }
+        composable(route = Screen.bscl.route)
+        {
+            bscl(navController=navController, url ="https://drive.google.com/drive/folders/1Dc2AovZ20L0pnisEbyZVnF3gpIjFvMiV?usp=share_link")
+        }
+        composable(route = Screen.bscp.route)
+        {
+            bscp(navController=navController, url ="https://drive.google.com/drive/folders/1XlpnMqF-ZUv0HKZ_Illm-xNd29BOc5go?usp=share_link")
+        }
+        composable(route = Screen.mscc.route)
+        {
+            mscc(navController=navController, url ="https://drive.google.com/drive/folders/1m6BLs02TmeblOFarhlfs0L6goZQ1Zu_h?usp=share_link")
+        }
+        composable(route = Screen.mba1.route)
+        {
+            mba1(navController=navController, url ="https://drive.google.com/drive/folders/1MJRv-C_148Nj-IX0Ovu80oaTm9UXbpeD?usp=share_link")
+        }
+        composable(route = Screen.mscm.route)
+        {
+            mscm(navController=navController, url ="https://drive.google.com/drive/folders/1QJ1mqCxaHlZOkoOF3hjnQ0RXBjVKD-pW?usp=share_link")
+        }
+        composable(route = Screen.mcom.route)
+        {
+            mcom(navController=navController, url ="https://drive.google.com/drive/folders/1W-47JYlLWZ73JM3oCBwsouEdj8KfylAk?usp=share_link")
+        }
+        composable(route = Screen.mscb.route)
+        {
+            mscb(navController=navController, url ="https://drive.google.com/drive/folders/1A-__w-0yuaNwT9J1CjbDKz902leLircn?usp=share_link")
+        }
+        composable(route = Screen.phdp.route)
+        {
+            phdp(navController=navController, url ="https://drive.google.com/drive/folders/1uxhq-xnmpxUrLEPZynk7xe7Td8DQjSXq?usp=share_link")
+        }
+        composable(route = Screen.phdm.route)
+        {
+            phdm(navController=navController, url ="https://drive.google.com/drive/folders/1-jW-QWYBYckCW16ZrCFjAv9bIfYHe9YV?usp=share_link")
+        }
+        composable(route = Screen.phdb.route)
+        {
+            phdb(navController=navController, url ="https://drive.google.com/drive/folders/1sDh9fF5_8sObLPwtMSap7oJh8hp_bWl1?usp=share_link")
+        }
+        composable(route = Screen.phdma.route)
+        {
+            phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
+        }
+        composable(route = Screen.devcon2.route){
+            devcon2(navController = navController)
         }
         composable(route = Screen.bio.route)
         {

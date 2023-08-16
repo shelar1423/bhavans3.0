@@ -317,7 +317,7 @@ Row(modifier = Modifier.fillMaxWidth()){
                 )
                 GradientB1(
                     gradient = gradient,
-                    onClick = { navController.navigate(Screen.devcon.route) },
+                    onClick = { navController.navigate(Screen.devcon2.route) },
                     text = "FeedBack",
                     img = painterResource(id = R.drawable.feedbackfinal)
                 )

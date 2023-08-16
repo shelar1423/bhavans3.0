@@ -90,7 +90,7 @@ fun noti1(navController: NavHostController,
             fdb(
                 gradient = gradient,
                 text = "Developer Contact",
-                onClick = {navController.navigate(Screen.devcon.route)}
+                onClick = {navController.navigate(Screen.devcon2.route)}
 
             )
             fdb(

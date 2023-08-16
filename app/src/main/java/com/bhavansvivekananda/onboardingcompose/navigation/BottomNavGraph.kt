@@ -58,11 +58,9 @@ fun BottomNavGraph(
             view360(navController = navController)
         }
 
-        composable(route = Screen.feedbackmain.route){
-            noti1(navController = navController)
-        }
 
-        composable(route = Screen.devcon.route){
+
+        composable(route = Screen.devcon2.route){
             devcon2(navController = navController)
         }
         composable(route = Screen.faq.route){
