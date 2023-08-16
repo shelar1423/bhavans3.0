@@ -5,18 +5,17 @@ package com.bhavansvivekananda.onboardingcompose.navigation
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.bhavansvivekananda.onboardingcompose.screen.*
-import com.bhavansvivekananda.onboardingcompose.screen.homescreen.alumni
-import com.bhavansvivekananda.onboardingcompose.screen.homescreen.devcon2
-import com.bhavansvivekananda.onboardingcompose.screen.homescreen.noti1
-import com.bhavansvivekananda.onboardingcompose.screen.homescreen.placement
+import com.bhavansvivekananda.onboardingcompose.screen.homescreen.*
 import com.bhavansvivekananda.onboardingcompose.screen.quespaper.*
 import com.google.accompanist.pager.ExperimentalPagerApi
 
+@OptIn(ExperimentalMaterialApi::class)
 @ExperimentalAnimationApi
 @ExperimentalPagerApi
 fun NavGraphBuilder.SetupNavGraph(
@@ -57,6 +56,10 @@ fun NavGraphBuilder.SetupNavGraph(
         composable(route = Screen.mba.route)
         {
            mba(navController=navController, url ="https://www.google.com/maps/place/MBA+block/@17.4887849,78.5339989,90m/data=!3m1!1e3!4m22!1m16!4m15!1m6!1m2!1s0x3bcb9b102ac29611:0xf3f87c17db4e78e2!2sCommerceBlockBVC,+BHAVAN'S+VIVEKANANDA+COLLEGE,+New+Kranthi+Nagar,+Sainikpuri,+Secunderabad,+Telangana!2m2!1d78.5347303!2d17.4892123!1m6!1m2!1s0x3bcb9b0fcc30cadd:0x4c09f90816ab32d7!2sLibrary+Block+Bhavan's+vivekanada+college,+692,+New+Kranthi+Nagar,+Sainikpuri,+Secunderabad,+Telangana+500094!2m2!1d78.5345619!2d17.4881206!3e2!3m4!1s0x3bcb9b0fd89865f5:0x97bbfef9f60d690a!8m2!3d17.4889935!4d78.5338783")
+        }
+        composable(route = Screen.payment.route)
+        {
+            payment(navController=navController, url ="https://www.feepayr.com/")
         }
         //question papers
         composable(route = Screen.bcomg.route)
@@ -127,6 +130,10 @@ fun NavGraphBuilder.SetupNavGraph(
         {
             phdma(navController=navController, url ="https://drive.google.com/drive/folders/1kYBCm_PEj1Kv_Be_G1WhPqZWG2C99yhK?usp=share_link")
         }
+        composable(route = Screen.faq.route){
+            FAQScreen(navController = navController)
+        }
+
         composable(route = Screen.devcon2.route){
             devcon2(navController = navController)
         }
