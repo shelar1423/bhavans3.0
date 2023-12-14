@@ -37,40 +37,100 @@ import com.bhavansvivekananda.onboardingcompose.viewmodel.WelcomeViewModel
 
 @ExperimentalMaterialApi
 @Composable
-fun FAQScreen(navController: NavHostController,
-              welcomeViewModel: WelcomeViewModel = hiltViewModel()
+fun FAQScreen(
+    navController: NavHostController,
+    welcomeViewModel: WelcomeViewModel = hiltViewModel()
 ) {
-Box(modifier = Modifier.fillMaxSize().background(Color.Black))
-    Card(
-        shape = RoundedCornerShape(20.dp),
-        elevation = 5.dp,
-        modifier = Modifier
-            .padding(16.dp)
-            .fillMaxWidth().graphicsLayer(),
+    var bottomSheetState by remember { mutableStateOf(BottomSheetState(BottomSheetValue.Collapsed)) }
 
-
-    ) {
-        Box(modifier = Modifier.padding(16.dp)) {
-            Column(
-                modifier = Modifier.align(Alignment.CenterStart),
-            ) {
-                // Credit card details goes here
-                CreditCardDetails(studentinfo ="STUDENT INFO",cardNumber = "107221861010", cardHolderName = "Digvijay Shelar", batch = "21/24")
-            }
-            Image(
-                painter = painterResource(id = R.drawable.digvijaydp),
-                contentDescription = "Credit Card Icon",
+    BottomSheetScaffold(
+        scaffoldState = rememberBottomSheetScaffoldState(bottomSheetState = bottomSheetState),
+        sheetContent = {
+            // Customize the BottomSheet content as needed
+            Box(
                 modifier = Modifier
-                    .align(Alignment.CenterEnd)
-                    .size(100.dp, 150.dp)
-            )
+                    .fillMaxWidth()
+                    .height(200.dp)
+                    .background(Color.White),
+                contentAlignment = Alignment.Center
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(16.dp),
+                    horizontalArrangement = Arrangement.SpaceAround,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+
+
+
+                    Button(
+                        onClick = {
+                            // Handle button click
+                        },
+                        modifier = Modifier
+                            .size(48.dp)
+                    ) {
+                        Text("1")
+                    }
+
+                    Spacer(modifier = Modifier.width(8.dp))
+
+                    Button(
+                        onClick = {
+                            // Handle button click
+                        },
+                        modifier = Modifier
+                            .size(48.dp)
+                    ) {
+                        Text("2")
+                    }
+                }
+            }
+        },
+        sheetShape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp),
+        sheetBackgroundColor = Color.White,
+        sheetPeekHeight = 48.dp // Adjust this value as needed
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Color.Black)
+        ) {
+            Card(
+                shape = RoundedCornerShape(20.dp),
+                elevation = 5.dp,
+                modifier = Modifier
+                    .padding(16.dp)
+                    .fillMaxWidth().graphicsLayer(),
+            ) {
+                Box(modifier = Modifier.padding(16.dp)) {
+                    Column(
+                        modifier = Modifier.align(Alignment.CenterStart),
+                    ) {
+                        // Credit card details go here
+                        CreditCardDetails(
+                            studentinfo = "STUDENT INFO",
+                            cardNumber = "107221861010",
+                            cardHolderName = "Digvijay Shelar",
+                            batch = "21/24"
+                        )
+                    }
+                    Image(
+                        painter = painterResource(id = R.drawable.digvijaydp),
+                        contentDescription = "Credit Card Icon",
+                        modifier = Modifier
+                            .align(Alignment.CenterEnd)
+                            .size(100.dp, 150.dp)
+                    )
+                }
+            }
         }
     }
-    }
-
+}
 
 @Composable
-fun CreditCardDetails(studentinfo:String,cardNumber: String, cardHolderName: String, batch:String) {
+fun CreditCardDetails(studentinfo: String, cardNumber: String, cardHolderName: String, batch: String) {
     Text(
         text = studentinfo,
         style = TextStyle(fontSize = 18.sp, textAlign = TextAlign.Center, fontWeight = FontWeight.Bold),
@@ -92,8 +152,8 @@ fun CreditCardDetails(studentinfo:String,cardNumber: String, cardHolderName: Str
         style = TextStyle(fontSize = 18.sp, ),
         modifier = Modifier.padding(bottom = 8.dp)
     )
-
 }
+
 
 
 
