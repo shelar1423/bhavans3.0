@@ -17,6 +17,9 @@ class SplashViewModel @Inject constructor(
     private val repository: DataStoreRepository
 ) : ViewModel() {
 
+    // variable to store boolean value of is registration is done by the user
+    var registrationCheck: MutableState<Boolean> = mutableStateOf(false)
+
     private val _isLoading: MutableState<Boolean> = mutableStateOf(true)
     val isLoading: State<Boolean> = _isLoading
 
