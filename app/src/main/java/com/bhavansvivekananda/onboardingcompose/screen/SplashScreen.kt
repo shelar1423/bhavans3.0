@@ -11,6 +11,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavController
 import com.bhavansvivekananda.onboardingcompose.R
+import com.bhavansvivekananda.onboardingcompose.navigation.Screen
 import com.bhavansvivekananda.onboardingcompose.viewmodel.SplashViewModel
 import kotlinx.coroutines.delay
 
@@ -21,6 +22,21 @@ fun SplashScreen(
 ) {
 
     val screen by splashViewModel.startDestination
+
+    // variable to fetch registration status from the view model
+    val registrationCheck by splashViewModel.registrationCheck
+
+    if (registrationCheck) {
+        LaunchedEffect(key1 = true) {
+            delay(2000)
+            navController.navigate(screen)
+        }
+    } else {
+        LaunchedEffect(key1 = true) {
+            delay(2000)
+            navController.navigate(Screen.RegistrationScreen.route)
+        }
+    }
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -42,11 +58,6 @@ fun SplashScreen(
             contentDescription = "logo",
             contentScale = ContentScale.FillBounds
         )
-
-        LaunchedEffect(key1 = true) {
-            delay(2000)
-            navController.navigate(screen)
-        }
 
     }
 
