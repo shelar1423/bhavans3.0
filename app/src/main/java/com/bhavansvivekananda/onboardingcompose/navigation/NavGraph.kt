@@ -3,6 +3,7 @@
 package com.bhavansvivekananda.onboardingcompose.navigation
 
 
+import SplashScreen
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.ExperimentalMaterialApi
@@ -108,6 +109,9 @@ fun NavGraphBuilder.SetupNavGraph(
         composable(route = Screen.bscl.route)
         {
             bscl(navController=navController, url ="https://drive.google.com/drive/folders/1Dc2AovZ20L0pnisEbyZVnF3gpIjFvMiV?usp=share_link")
+        }
+        composable(route=Screen.SplashScreen.route){
+            SplashScreen()
         }
         composable(route = Screen.bscp.route)
         {

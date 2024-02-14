@@ -7,6 +7,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Book
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.LibraryBooks
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.graphics.vector.ImageVector
 
 
@@ -90,6 +92,7 @@ object faq:Screen(route = "faq")
     object Navscreen :Screen(route = "nav1")
 
 
+
 }
 sealed class NavigationItem(val route: String, val label: String,val Icon: ImageVector) {
 
@@ -105,3 +108,13 @@ sealed class NavigationItem(val route: String, val label: String,val Icon: Image
 
 }
 
+object PostOfficeAppRouter {
+
+    var currentScreen: MutableState<Screen> = mutableStateOf(Screen.SplashScreen)
+
+    fun navigateTo(destination : Screen){
+        currentScreen.value = destination
+    }
+
+
+}
