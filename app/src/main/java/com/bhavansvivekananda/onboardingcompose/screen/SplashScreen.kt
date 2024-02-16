@@ -43,7 +43,7 @@ fun SplashScreen(
 
                 MyTextFieldComponent(
                     labelValue = stringResource(id = R.string.first_name),
-                    painterResource(id = R.drawable.digvijaydp),
+                    painterResource(id = R.drawable.iconfinal2),
                     onTextChanged = {
                         signupViewModel.onEvent(SignupUIEvent.FirstNameChanged(it))
                     },
