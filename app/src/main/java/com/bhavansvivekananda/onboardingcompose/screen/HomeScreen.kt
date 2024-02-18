@@ -4,6 +4,7 @@ package com.bhavansvivekananda.onboardingcompose.screen
 import act
 import com.bhavansvivekananda.onboardingcompose.ui.theme.nav
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -68,9 +69,11 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.*
+import com.bhavansvivekananda.onboardingcompose.firebase.SignInActivity
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.pagerTabIndicatorOffset
 import com.google.accompanist.pager.rememberPagerState
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.launch
 
 
@@ -175,7 +178,15 @@ Row(modifier = Modifier.fillMaxWidth()){
                 // .fillMaxWidth()
                 .height(35.dp)
                 .width(60.dp)
-                .clickable { navController.navigate(Screen.faq.route) }
+                .clickable {
+                    FirebaseAuth.getInstance().signOut()
+                    navController.navigate(Screen.MySignIn.route)
+
+
+
+                }
+                /*.clickable { navController.navigate(Screen.faq.route) }*/
+
 
 
         )

@@ -4,13 +4,20 @@ package com.bhavansvivekananda.onboardingcompose.navigation
 
 
 import SplashScreen
+import android.content.Context
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import com.bhavansvivekananda.onboardingcompose.firebase.MySignIn
+import com.bhavansvivekananda.onboardingcompose.firebase.SignInActivity
+import com.bhavansvivekananda.onboardingcompose.firebase.SignUpActivity
+
 import com.bhavansvivekananda.onboardingcompose.screen.*
 import com.bhavansvivekananda.onboardingcompose.screen.homescreen.*
 import com.bhavansvivekananda.onboardingcompose.screen.quespaper.*
@@ -110,9 +117,7 @@ fun NavGraphBuilder.SetupNavGraph(
         {
             bscl(navController=navController, url ="https://drive.google.com/drive/folders/1Dc2AovZ20L0pnisEbyZVnF3gpIjFvMiV?usp=share_link")
         }
-        composable(route=Screen.SplashScreen.route){
-            SplashScreen()
-        }
+
         composable(route = Screen.bscp.route)
         {
             bscp(navController=navController, url ="https://drive.google.com/drive/folders/1XlpnMqF-ZUv0HKZ_Illm-xNd29BOc5go?usp=share_link")
@@ -125,6 +130,7 @@ fun NavGraphBuilder.SetupNavGraph(
         {
             mba1(navController=navController, url ="https://drive.google.com/drive/folders/1MJRv-C_148Nj-IX0Ovu80oaTm9UXbpeD?usp=share_link")
         }
+
         composable(route = Screen.mscm.route)
         {
             mscm(navController=navController, url ="https://drive.google.com/drive/folders/1QJ1mqCxaHlZOkoOF3hjnQ0RXBjVKD-pW?usp=share_link")
@@ -212,6 +218,17 @@ fun NavGraphBuilder.SetupNavGraph(
         {
             TabLayout(navController = navController)
         }
+        composable(route = Screen.SignInActivity.route)
+        {
+           // SignInActivity::class.java
+            SignInActivity::class.constructors
+        }
+        composable(route = Screen.MySignIn.route)
+        {
+            MySignIn(context = LocalContext.current , navController = navController)
+        }
+
+
 
 
         }

@@ -8,6 +8,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+
+import com.bhavansvivekananda.onboardingcompose.firebase.SignUpActivity
 import com.bhavansvivekananda.onboardingcompose.screen.*
 import com.bhavansvivekananda.onboardingcompose.screen.homescreen.*
 import com.bhavansvivekananda.onboardingcompose.screen.quespaper.*
@@ -236,6 +238,15 @@ fun BottomNavGraph(
         {
             TabLayout(navController = navController)
         }
+
+        composable(route = Screen.SignInActivity.route)
+        {
+            SignUpActivity::class.java
+        }
+
+
+
+
 
 
 

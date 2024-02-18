@@ -27,7 +27,7 @@ fun NavGraphBuilder.onStartGraph(
             Navigation(navController = navController)
         }
         composable(route = Screen.SplashScreen.route) {
-            SplashScreen()
+            SplashScreen(navController = navController, splashViewModel = splashViewModel)
         }
         // registration screen
         composable(route = Screen.RegistrationScreen.route) {

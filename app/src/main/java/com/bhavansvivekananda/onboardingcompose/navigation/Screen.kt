@@ -91,6 +91,9 @@ object faq:Screen(route = "faq")
     object phdma :Screen(route = "phdma")
     object Navscreen :Screen(route = "nav1")
 
+    object SignInActivity :Screen(route = "SignInActivity")
+    object MySignIn :Screen(route = "MySignIn")
+
 
 
 }

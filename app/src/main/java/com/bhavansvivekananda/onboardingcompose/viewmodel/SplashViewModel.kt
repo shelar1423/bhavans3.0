@@ -1,15 +1,13 @@
 package com.bhavansvivekananda.onboardingcompose.viewmodel
 
+
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bhavansvivekananda.onboardingcompose.data.DataStoreRepository
-
 import com.bhavansvivekananda.onboardingcompose.navigation.Screen
-
-
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -30,7 +28,8 @@ class SplashViewModel @Inject constructor(
         viewModelScope.launch {
             repository.readOnBoardingState().collect { completed ->
                 if (completed) {
-                    _startDestination.value = Screen.HomeScreen.route
+                   // _startDestination.value = Screen.HomeScreen.route
+                    _startDestination.value = Screen.MySignIn.route
                 } else {
                     _startDestination.value = Screen.Welcome.route
                 }

@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "1080874079973",
-    "project_id": "collegecompanion-6cdbd",
-    "storage_bucket": "collegecompanion-6cdbd.appspot.com"
+    "project_number": "818887627407",
+    "project_id": "connectcampus-24df8",
+    "storage_bucket": "connectcampus-24df8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1080874079973:android:ddae3d58ad4b5e487da60c",
+        "mobilesdk_app_id": "1:818887627407:android:27ace37ee2e015eacd16fa",
         "android_client_info": {
           "package_name": "com.bhavansvivekananda.onboardingcompose"
         }
@@ -15,26 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAQ5VqOSoBt5MU7bR8D__mEsRjW-k5nrwU"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1080874079973:android:627d8c687ba7b4a97da60c",
-        "android_client_info": {
-          "package_name": "com.bhavansvivekananda.onboardingcompose"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAQ5VqOSoBt5MU7bR8D__mEsRjW-k5nrwU"
+          "current_key": "AIzaSyCtR1THX3h6K2P6_qh2k7q4uaPyFHnBAf0"
         }
       ],
       "services": {
