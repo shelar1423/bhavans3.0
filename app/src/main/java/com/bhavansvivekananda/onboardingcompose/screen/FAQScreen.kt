@@ -8,6 +8,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -16,10 +17,14 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.graphics.BlurEffect
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -32,18 +37,136 @@ import com.bhavansvivekananda.onboardingcompose.viewmodel.WelcomeViewModel
 
 @ExperimentalMaterialApi
 @Composable
-fun FAQScreen(navController: NavHostController,
-              welcomeViewModel: WelcomeViewModel = hiltViewModel()
+fun FAQScreen(
+    navController: NavHostController,
+    welcomeViewModel: WelcomeViewModel = hiltViewModel()
 ) {
-    Image(
+    var bottomSheetState by remember { mutableStateOf(BottomSheetState(BottomSheetValue.Collapsed)) }
+
+    BottomSheetScaffold(
+        scaffoldState = rememberBottomSheetScaffoldState(bottomSheetState = bottomSheetState),
+        sheetContent = {
+            // Customize the BottomSheet content as needed
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(200.dp)
+                    .background(Color.White),
+                contentAlignment = Alignment.Center
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(16.dp),
+                    horizontalArrangement = Arrangement.SpaceAround,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+
+
+
+                    Button(
+                        onClick = {
+                            // Handle button click
+                        },
+                        modifier = Modifier
+                            .size(48.dp)
+                    ) {
+                        Text("1")
+                    }
+
+                    Spacer(modifier = Modifier.width(8.dp))
+
+                    Button(
+                        onClick = {
+                            // Handle button click
+                        },
+                        modifier = Modifier
+                            .size(48.dp)
+                    ) {
+                        Text("2")
+                    }
+                }
+            }
+        },
+        sheetShape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp),
+        sheetBackgroundColor = Color.White,
+        sheetPeekHeight = 48.dp // Adjust this value as needed
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Color.Black)
+        ) {
+            Card(
+                shape = RoundedCornerShape(20.dp),
+                elevation = 5.dp,
+                modifier = Modifier
+                    .padding(16.dp)
+                    .fillMaxWidth().graphicsLayer(),
+            ) {
+                Box(modifier = Modifier.padding(16.dp)) {
+                    Column(
+                        modifier = Modifier.align(Alignment.CenterStart),
+                    ) {
+                        // Credit card details go here
+                        CreditCardDetails(
+                            studentinfo = "STUDENT INFO",
+                            cardNumber = "107221861010",
+                            cardHolderName = "Digvijay Shelar",
+                            batch = "21/24"
+                        )
+                    }
+                    Image(
+                        painter = painterResource(id = R.drawable.digvijaydp),
+                        contentDescription = "Credit Card Icon",
+                        modifier = Modifier
+                            .align(Alignment.CenterEnd)
+                            .size(100.dp, 150.dp)
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun CreditCardDetails(studentinfo: String, cardNumber: String, cardHolderName: String, batch: String) {
+    Text(
+        text = studentinfo,
+        style = TextStyle(fontSize = 18.sp, textAlign = TextAlign.Center, fontWeight = FontWeight.Bold),
+        modifier = Modifier.padding(bottom = 8.dp)
+    )
+
+    Text(
+        text = cardNumber,
+        style = TextStyle(fontSize = 18.sp,),
+        modifier = Modifier.padding(bottom = 8.dp)
+    )
+    Text(
+        text = cardHolderName,
+        style = TextStyle(fontSize = 18.sp,),
+        modifier = Modifier.padding(bottom = 8.dp)
+    )
+    Text(
+        text = batch,
+        style = TextStyle(fontSize = 18.sp, ),
+        modifier = Modifier.padding(bottom = 8.dp)
+    )
+}
+
+
+
+
+
+    /*Image(
         painter = painterResource(id = R.drawable.devbg), contentDescription = null,
         modifier = Modifier
             .padding(top = 0.dp)
             .fillMaxHeight()
             .fillMaxWidth(),
-        /*.background(
+        *//*.background(
             Color.White
-        )*/
+        )*//*
         contentScale = ContentScale.FillBounds,
 
         )
@@ -178,3 +301,4 @@ fun ExpandableFAQCard(title: String, description: String) {
     }
 }
 
+*/
